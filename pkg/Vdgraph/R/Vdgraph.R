@@ -37,13 +37,13 @@ maxx=sqrt(kvar1)
 plot(c(0,maxx),c(miny,maxy),type="n",ylab="Variance",xlab="Radius",
      main="Variance Dispersion Graph")
 #Adds the line for maximum variance
-lines(vdgr[,1],vdgr[,2],lty=2)
+lines(vdgr[,1],vdgr[,2],lty=2,col="red")
 #Adds the line for minimum variance
-lines(vdgr[,1],vdgr[,3],lty=4)
+lines(vdgr[,1],vdgr[,3],lty=4,col="blue")
 #Adds the line for average variance
-lines(vdgr[,1],vdgr[,4],lty=1)
+lines(vdgr[,1],vdgr[,4],lty=1,col="black")
 #Adds the legend
-legend("topleft",inset=.02,legend=,c("Max","Min","Avg"),lty=(c(1,2,4)))
+legend("topleft",inset=.02,legend=,c("Max","Min","Avg"),lty=(c(2,4,1)),col=(c("red","blue","black")))
 #gets default graphic parameters
 defpar<-par()
 }
