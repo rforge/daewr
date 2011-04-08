@@ -44,7 +44,7 @@ lines(vdgr[,1],vdgr[,3],lty=4,col="blue")
 lines(vdgr[,1],vdgr[,4],lty=1,col="black")
 #Adds the legend
 legend("topleft",inset=.02,legend=,c("Max","Min","Avg"),lty=(c(2,4,1)),col=(c("red","blue","black")))
-#gets default graphic parameters
+#Sets the graphic parameters back to the default
 defpar<-par()
 }
 
