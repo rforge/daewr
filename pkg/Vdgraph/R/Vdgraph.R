@@ -18,11 +18,9 @@ function(des)
     dim(rdes)<-ndpts*kvar1
 cat("number of design points=",ndpts,"\n")
 cat("number of factors=",kvar1,"\n")
-cat("Coordinates of the Variance Dispersion Graph","\n")
 v<-Vardsgr(ndpts,kvar1,kdv1,rdes)
 vdgr<-matrix(v,ncol=4)
 colnames(vdgr)<-c("Radius","Maximum","Minimum","Average")
-print(vdgr)
 #modifies plot region
 par(mai=c(2.5,.75,.5,.25))
 #Creates the plot region
@@ -44,7 +42,8 @@ lines(vdgr[,1],vdgr[,3],lty=4,col="blue")
 lines(vdgr[,1],vdgr[,4],lty=1,col="black")
 #Adds the legend
 legend("topleft",inset=.02,legend=,c("Max","Min","Avg"),lty=(c(2,4,1)),col=(c("red","blue","black")))
-#Sets the graphic parameters back to the default
+#gets default graphic parameters
 defpar<-par()
+return(vdgr)
 }
 
