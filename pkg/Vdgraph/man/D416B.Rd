@@ -3,7 +3,7 @@
 \alias{D416B}
 \title{Roquemore (1976) Hybrid design D416B}
 \description{
-    An .rda file containing the design in a matrix.
+    this is an .rda file containing the design in a matrix.
 }
 \usage{data(D416B)}
 \format{Four columns of independent variables}
@@ -11,4 +11,4 @@
 \references{
     Myers, R. H. and Montgomery D. C. \emph{Response Surface Methodology} 2nd Ed., John Wiley and Sons NY, 2002. p.386
 }
-\keyword{datasets}
+\keyword{}

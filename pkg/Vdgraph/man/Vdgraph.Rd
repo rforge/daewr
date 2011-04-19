@@ -1,6 +1,6 @@
 \name{Vdgraph}
 \alias{Vdgraph}
-\title{ This function makes a Variance Dispersion Graph of a response surface design 
+\title{ this function makes a Variance Dispersion Graph of a response surface design 
 }
 \description{
 This function calls the function Vardsgr which uses Vining's (1993) fortran 
@@ -13,7 +13,7 @@ Vdgraph(des)
 \arguments{
   \item{des}{ des is a matrix containing a response surface design in coded units. 
 There should be one column for each factor in the design, and one row for each run in the design. 
-The maximum number of rows allowed is 99, and the maximum number of columns is 6.}
+The maximum number of rows allowed is 99, and the maximum number of columns is 7.}
 }
 \value{ vdgpl
  \item{vdgpl}{This is a graph containing the Variance Dispersion Graph}
@@ -25,7 +25,7 @@ Journal of Quality Technology, Vol 25, No. 1, pp. 45-58, 1993.
 pp 333-335. 1993.
  
 }
-\note{ this function calls the function Vardsgr to get the coordinates for the plot}
+\note{ This function calls the function Vardsgr to get the coordinates for the plot.}
 \author{ John S. Lawson \email{lawson@byu.edu}}
 \examples{
 
@@ -44,4 +44,4 @@ des2<-as.matrix(des2)
 Vdgraph(des2)
 
 }
-\keyword{ hplot }
+\keyword{ }

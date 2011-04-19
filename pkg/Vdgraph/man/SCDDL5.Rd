@@ -3,7 +3,7 @@
 \alias{SCDDL5}
 \title{Draper and Lin's Small Composite Design for five factors}
 \description{
-    An .rda file containing the design in a matrix.
+    This is an .rda file containing the design in a matrix.
 }
 \usage{data(SCDDL5)}
 \format{Five columns of independent variables}
@@ -11,4 +11,4 @@
 \references{
     Myers, R. H. and Montgomery D. C. \emph{Response Surface Methodology} 2nd Ed., John Wiley and Sons NY, 2002. p.386
 }
-\keyword{datasets}
+\keyword{}
