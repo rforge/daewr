@@ -7,5 +7,5 @@ Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
 Description: This package calls a modification of the published FORTRAN code for producing variance dispersion graphs. For more details on variance dispersion graphs see "A Computer Program for Generating Variance Dispersion Graphs" by G. Vining, Journal of Quality Technology, Vol. 25 No. 1 January 1993. 
 License: GPL2.0 
-Dependencies:
+Depends: rsm
 LazyLoad: yes
