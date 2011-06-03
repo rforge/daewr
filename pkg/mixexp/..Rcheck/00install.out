@@ -1,0 +1,33 @@
+* install options are ' --no-html'
+
+* installing *source* package 'mixexp' ...
+** libs
+  making DLL ...
+make: Nothing to be done for `all'.
+installing to C:/Users/Lawson/Documents/my_r_pkg/mixexp/..Rcheck/mixexp/libs
+  ... done
+** R
+** data
+** preparing package for lazy loading
+gdata: read.xls support for 'XLS' (Excel 97-2004) files ENABLED.
+
+gdata: Unable to load perl libaries needed by read.xls()
+gdata: to support 'XLSX' (Excel 2007+) files.
+
+gdata: Run the function 'installXLSXsupport()'
+gdata: to automatically download and install the perl
+gdata: libaries needed to support Excel XLS and XLSX formats.
+
+Attaching package: 'gdata'
+
+The following object(s) are masked from 'package:utils':
+
+    object.size
+
+** help
+Warning: bad markup (extra space?) at Effplot.Rd:18:13
+*** installing help indices
+** building package indices ...
+** testing if installed package can be loaded
+
+* DONE (mixexp)

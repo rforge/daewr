@@ -1,0 +1,74 @@
+* using log directory 'C:/Users/Lawson/Documents/my_r_pkg/mixexp/..Rcheck'
+* using R version 2.11.1 (2010-05-31)
+* using session charset: ISO8859-1
+* checking for file './DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'mixexp' version '0.5-1'
+* checking package name space information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... WARNING
+Subdirectory './src' contains object files.
+* checking for executable files ... WARNING
+Found the following executable file(s):
+  src/cnvrt.o
+  src/mixexp.dll
+Source packages should not contain undeclared executable files.
+See section 'Package structure' in manual 'Writing R Extensions'.
+* checking whether package 'mixexp' can be installed ... WARNING
+Found the following significant warnings:
+  Warning: bad markup (extra space?) at Effplot.Rd:18:13
+See 'C:/Users/Lawson/Documents/my_r_pkg/mixexp/..Rcheck/00install.out' for details.
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory(s) with names of check directories:
+  ..Rcheck
+Most likely, these were included erroneously.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the name space can be loaded with stated dependencies ... OK
+* checking whether the name space can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+MixturePlot: no visible binding for global variable 'base'
+MixturePlot: no visible binding for global variable 'high'
+* checking Rd files ... WARNING
+prepare_Rd: DesignPoints.Rd:42: Dropping empty section \keyword
+prepare_Rd: bad markup (extra space?) at Effplot.Rd:18:13
+prepare_Rd: Effplot.Rd:84: Dropping empty section \keyword
+prepare_Rd: Eflags.Rd:27: Dropping empty section \keyword
+prepare_Rd: MixturePlot.Rd:64: Dropping empty section \keyword
+prepare_Rd: Nrows.Rd:24: Dropping empty section \keyword
+prepare_Rd: SCD.Rd:32: Dropping empty section \keyword
+prepare_Rd: SLD.Rd:30: Dropping empty section \keyword
+prepare_Rd: Vertcen.Rd:24: Dropping empty section \keyword
+prepare_Rd: Xvert.Rd:45: Dropping empty section \keyword
+prepare_Rd: conmx.Rd:14: Dropping empty section \keyword
+prepare_Rd: crvtave.Rd:41: Dropping empty section \keyword
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... WARNING
+Argument items with no description in Rd object 'Effplot':
+  dir
+
+* checking data for non-ASCII characters ... OK
+* checking line endings in C/C++/Fortran sources/headers ... WARNING
+Found the following sources/headers with CR or CRLF line endings:
+  src/cnvrt.f
+Some Unix compilers require LF line endings.
+* checking line endings in Makefiles ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
