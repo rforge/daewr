@@ -9,5 +9,6 @@ export(crvtave,
 	   MixturePlot,
 	   DesignPoints,
 	   Xvert,
-	   Effplot
+	   Effplot,
+	   Fillv
        )
