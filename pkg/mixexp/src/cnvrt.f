@@ -768,4 +768,3 @@ C      WRITE(1,610) (CNTRD(J),J=1,NVAR)
 C 610  FORMAT(' ',10E12.4)
       RETURN
       END
-
