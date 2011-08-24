@@ -15,7 +15,7 @@ Effplot(des,mod,dir)
               plots for linear models can be made when the number of factors is greater than 6.}			  
   \item{mod}{ an interger representing the model to be traced: 1 for a linear model,
               2 for a quadratic model, and 3 for a special cubic model}
-  \item{dir} { an interger representing the direction for which the effect plot is made: 1 for
+  \item{dir}{ an interger representing the direction for which the effect plot is made: 1 for
                Cox direction, 2 for Pieple direction.}
 }
 \value{
