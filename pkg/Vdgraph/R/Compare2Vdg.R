@@ -1,12 +1,12 @@
 Compare2Vdg <-
-function(name1,des,name2,des2) 
+function(des,des2,name1=deparse(substitute(des)),name2=deparse(substitute(des2))) 
 {
 #Check if names are too long for the legend
 cn1<-nchar(name1)
 cn2<-nchar(name2)
 mcn<-max(cn1,cn2)
   if(mcn>40) {
-    stop("The character strings are too long to fit in the legend","\n")
+    stop("The name character strings are too long to fit in the legend","\n")
              }
 #Next check if des is a data frame, and if so convert it to a matrix
   if(is.data.frame(des)) des<-as.matrix(des)
