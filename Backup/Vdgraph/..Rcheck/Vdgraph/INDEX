@@ -1,0 +1,29 @@
+Compare2Vdg             this function compares Variance Dispersion
+                        Graph of two response surface designs with the
+                        same number of factors on the same scale
+D310                    Roquemore (1976) Hybrid design D310
+D311A                   Roquemore (1976) Hybrid design 311A
+D311B                   Roquemore (1976) Hybrid design D311B
+D416A                   Roquemore (1976) Hybrid design 416A
+D416B                   Roquemore (1976) Hybrid design D416B
+D416C                   Roquemore (1976) Hybrid design D416C
+D628A                   Roquemore (1976) Hybrid design D628A
+Hex2                    Hexagonal design for two factors
+SCDDL5                  Draper and Lin's Small Composite Design for
+                        five factors
+SCDH2                   Hartley's Small Composite Design for two
+                        factors
+SCDH3                   Hartley's Small Composite Design for three
+                        factors
+SCDH4                   Hartley's Small Composite Design for four
+                        factors
+SCDH5                   Hartley's Small Composite Design for five
+                        factors
+SCDH6                   Hartley's Small Composite Design for six
+                        factors
+Vardsgr                 Loads compiled fortran in shared file vdg
+Vdgraph                 this function makes a Variance Dispersion Graph
+                        of a response surface design
+Vdgraph-package         This package creates variance dispersion graphs
+                        for response surface designs
+f                       Calculate column means of design

@@ -1,0 +1,18 @@
+* install options are ' --no-html'
+
+* installing *source* package 'Vdgraph' ...
+** libs
+  making DLL ...
+gfortran     -O3  -c vdg.f -o vdg.o
+gcc -shared -s -static-libgcc -o Vdgraph.dll tmp.def vdg.o -lgfortran -LC:/PROGRA~2/R/R-211~1.1/bin -lR
+installing to C:/Users/Lawson/Documents/r-forge-project/pkg/Vdgraph/..Rcheck/Vdgraph/libs
+  ... done
+** R
+** data
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices ...
+** testing if installed package can be loaded
+
+* DONE (Vdgraph)
