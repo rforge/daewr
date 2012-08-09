@@ -1,0 +1,98 @@
+Apo                     apolipoprotein survey varaince component study
+BIBsize                 Balanced incomplete blocksize
+BPmonitor               blood pressure monitor experiment
+Bdish                   Confounded Block Dishwashing Experiment
+Bff                     Confounded block fractional mouse growth
+                        experiment
+BoxM                    Box and Meyer's unreplicated 2^4 from Chapter 3
+COdata                  CO emmisions experiment data from Chapter 3
+Fcrit                   F-Distribution critical values
+Fpower                  F-Distribution Power Calculation
+Gaptest                 Automated Daniel Method
+LGB                     Lawson, Grimshaw, Burt Test
+MPV                     mixture process variable experiment with
+                        mayonnaise
+Naph                    Yields of naphthalene black
+SPMPV                   Split-plot mixture process variable experiment
+                        with vinyl
+Smotor                  Single array for starting motor experiment
+Tet                     Tetracycline concentration in plasma
+Treb                    Box-Behnken design for trebuchet experiment
+Tukey1df                Tukey's single degree of freedom test for
+                        additivity
+antifungal              Two-period crossover study of antifungal agent
+apple                   Confounded apple slice browning experiment
+arso                    2^{(7-3)} arsenic removal experiment
+augm                    2^{(7-3)} arsenic removal experiment augmented
+                        with mirror image
+bha                     mouse liver enzyme experiment
+bioequiv                Extra-period crossover bioequivalence study
+bioeqv                  Latin Square bioequivalence experiment
+blood                   Variance component study of calcium in blood
+                        serum
+bread                   Bread rise experiment data from Chapter 2
+cake                    Split-Plot response surface for cake baking
+                        experiment
+castf                   cast fatigue experiment
+cement                  CCD design for cement workability experiment
+chem                    Chemical process experiment data from Chapter 3
+chipman                 Williams' crossover design for sprinting
+                        experiment
+cont                    Control factor array and summary statistics for
+                        controller circuit design experiment
+cpipe                   Split-plot response surface for ceramic pipe
+                        experiment
+culture                 paecilomyces variotii culture experiment
+daewr-package           Data frames and functions for Design and
+                        Analysis of Experiments with R
+dairy                   Repeated measures study with dairy cow diets
+drug                    Data from rat behavior experiment in Chapter 4
+eptaxr                  Single array and raw response for silicon layer
+                        growth experiment
+eptaxs2                 Control array and variance of response for
+                        silicon layer growth experiment
+eptaxyb                 Control array and mean response for silicon
+                        layer growth experiment
+fullnormal              Nornal Plot of Effects
+gagerr                  Gauge R&R Study
+gapstat                 Gap Statistic
+gear                    Unreplicated split-plot fractional-factorial
+                        experiment on geometric distortion of drive
+                        gears
+hardwood                low grade hardwood conjoint study
+inject                  Single array for injection molding experiment
+mod                     Mod function
+pastry                  Blocked response surface design for pastry
+                        dough experiment
+pest                    Pesticide formulation experiment
+pesticide               pesticide application experiment
+plasma                  Unreplicated split-plot 2^5 experiment on
+                        plasma treatment of paper
+polvdat                 Polvoron mixture experiment
+polymer                 polymerization strength variability study
+prodstd                 Complete control factor array and noise factor
+                        array for connector experiment
+qsar                    Library of substituted hydroxyphenylurea
+                        compounds
+rcb                     generalized RCB golf driving experiment
+residue                 Herbicide degradation experiment
+rubber                  Rubber Elasticity data
+sausage                 Split-plot experiment on sausage casing with
+                        RCB in whole plot
+soup                    dry mix soup experiment
+soupmx                  dry soup mix variance component study
+splitPdes               Split-plot cookie baking experiment
+strung                  Repeated measures study with dairy cow diets
+strungtile              Strung out control factor array and raw
+                        response data for Ina tile experiment
+sugarbeet               Sugarbeet data from Chapter 2
+taste                   taste test panel experiment
+teach                   Teaching experiment data from Chapter 2
+tile                    Control factor array and summary statistics for
+                        Ina tile experiment
+vci                     confidence limits for method of moments
+                        estimators of variance components
+virus                   Assay of Viral Contamination experiment data
+                        from Chapter 3
+volt                    Volt meter experiment data from Chapter 3
+web                     Web page design experiment data from Chapter 3
