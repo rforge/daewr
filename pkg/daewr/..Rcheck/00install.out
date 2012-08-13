@@ -1,0 +1,16 @@
+* installing *source* package 'daewr' ...
+** R
+** data
+** preparing package for lazy loading
+** help
+Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/BIBsize.Rd:71: unexpected END_OF_INPUT '
+'
+Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/fullnormal.Rd:94: unexpected END_OF_INPUT '
+'
+Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/mod.Rd:41: unexpected END_OF_INPUT '
+'
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+
+* DONE (daewr)
