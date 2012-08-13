@@ -1,0 +1,63 @@
+* using log directory 'C:/Users/Lawson/Documents/r-forge-project/pkg/Vdgraph/..Rcheck'
+* using R version 2.11.1 (2010-05-31)
+* using session charset: ISO8859-1
+* checking for file './DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'Vdgraph' version '2.0-1'
+* checking package name space information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking for executable files ... OK
+* checking whether package 'Vdgraph' can be installed ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... WARNING
+Found the following directory(s) with names of check directories:
+  ..Rcheck
+Most likely, these were included erroneously.
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the name space can be loaded with stated dependencies ... OK
+* checking whether the name space can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... NOTE
+prepare_Rd: Compare2Vdg.Rd:53: Dropping empty section \keyword
+prepare_Rd: D310.Rd:15: Dropping empty section \keyword
+prepare_Rd: D311A.Rd:14: Dropping empty section \keyword
+prepare_Rd: D311B.Rd:14: Dropping empty section \keyword
+prepare_Rd: D416A.Rd:14: Dropping empty section \keyword
+prepare_Rd: D416B.Rd:14: Dropping empty section \keyword
+prepare_Rd: D416C.Rd:14: Dropping empty section \keyword
+prepare_Rd: D628A.Rd:14: Dropping empty section \keyword
+prepare_Rd: Hex2.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDDL5.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDH2.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDH3.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDH4.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDH5.Rd:14: Dropping empty section \keyword
+prepare_Rd: SCDH6.Rd:14: Dropping empty section \keyword
+prepare_Rd: Vardsgr.Rd:31: Dropping empty section \keyword
+prepare_Rd: Vdgraph.Rd:46: Dropping empty section \keyword
+prepare_Rd: f.Rd:17: Dropping empty section \keyword
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking data for non-ASCII characters ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable use of $BLAS_LIBS ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
