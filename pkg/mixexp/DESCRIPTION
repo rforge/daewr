@@ -1,7 +1,7 @@
 Package: mixexp
 Type: Package
 Title: Design and analysis of mixture experiments
-Version: 0.5-1
+Version: 1.0-1
 Date: 2011-5-24
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
