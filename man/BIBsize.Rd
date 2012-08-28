@@ -35,7 +35,6 @@ John Lawson
 }
 \examples{
 BIBsize(6,3)
-
 ## The function is currently defined as
 BIBsize<-function(t,k)
 {
@@ -65,6 +64,10 @@ BIBsize<-function(t,k)
        b<-b+1
       #cat("b=",b, "r=",r)
         }
+
+    #cat("lambda=",lambda)
+    }
+  cat("Posible BIB design with b=",b," and r=",r," lambda=",lambda,"\n") 
 }
-
-
+       }
+\keyword{  }
