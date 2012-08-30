@@ -1,7 +1,7 @@
 \name{arso}
 \alias{arso}
 \docType{data}
-\title{  \eqn{2^{(7-3)}}{2^{(7-3)}} arsenic removal experiment}
+\title{  2^(7-3)2^(7-3) arsenic removal experiment}
 \description{
 Data from the  \eqn{2^{(7-3)}}{2^{(7-3)}} arsenic removal experiment in chapter 6 of Design and Analysis
 of Experiments with R
