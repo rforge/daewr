@@ -1,27 +1,31 @@
 \name{gapstat}
 \alias{gapstat}
-\title{Gap Statistic}
-\description{This function calculates the gap statistic used in the automated Daniel method of detecting an outlier in an 8, 16 or 32 run \eqn{2^{k-p}} design.
+%- Also NEED an '\alias' for EACH other topic documented here.
+\title{This function computes the gap statistic which is used to test for an outlier using Daniels method
+}
+\description{
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-gapstat<-function(beta,pse)
+gapstat(beta, pse)
 }
+%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{beta}{
-input - This is the the vector of effects or regression coefficients calculated from the design where an outlier is suspected. This vector of coefficients should not include the intercept. This function is called by the function Gaptest at the first and second pass through the data.
+input - vector of coefficients from saturated model fit to the data
 }
   \item{pse}{
-input - This Lenth's pse statistic calculated on the vector beta befor the call to this function.  
+input - Lenth's PSE statistic calculated from the elements of beta
 }
 }
 \details{
+%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-The result is the gap statistic \eqn{gap=((\beta_s-\beta_l)/pse)/(z_s-z_l)}.
-
+returned gap statistic
 }
 \references{
- Lawson, J. and Gatlin, J.  "Finding bad values in factorials - revisited" \emph{Quality Engineering} Vol 18, pages 491-501., 2006.
+%% ~put references to the literature/web site here ~
 }
 \author{
 John Lawson
@@ -36,39 +40,28 @@ John Lawson
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-Beta<-c(.06,.25,-.01,.5,0,-.02,0,.14,.03,-.01,.02,.04,.02,.01,.02)
-names(Beta)<-c("A","B","C","D","AB","AC","AD","BC","BD","CD","ABC","ABD","ACD","BCD","ABCD")
-gapstat(Beta,.06)
 
 ## The function is currently defined as
-gapstat<-function(beta,pse) {
-# computes the standardized gap score
-p<-length(beta)
-psehe<-pse
-# gets positive coefficients
-sel<-beta >= 0
-betap<-beta[sel]
-# sorts positive elements
-betap<-sort(betap)
-# gets Beta_s
-betas<-betap[1]
-#gets negative coefficients
-sel<-beta < 0
-betan<-beta[sel]
-nn<-length(betan)
-# sorts negative coefficients
-betan<-sort(betan)
-#gets Beta_L
-betal<-betan[nn]
-# gets Z_L and Z_S
-zl<-qnorm((nn-.375)/(p+.25))
-zs<-qnorm((nn+1-.375)/(p+.25))
-# calculates gap statistic
-gap<-((betas-betal)/psehe)/(zs-zl)
-return(gap)
-                      }
-
-
+function (beta, pse) 
+{
+    p <- length(beta)
+    psehe <- pse
+    sel <- beta >= 0
+    betap <- beta[sel]
+    betap <- sort(betap)
+    betas <- betap[1]
+    sel <- beta < 0
+    betan <- beta[sel]
+    nn <- length(betan)
+    betan <- sort(betan)
+    betal <- betan[nn]
+    zl <- qnorm((nn - 0.375)/(p + 0.25))
+    zs <- qnorm((nn + 1 - 0.375)/(p + 0.25))
+    gap <- ((betas - betal)/psehe)/(zs - zl)
+    return(gap)
+  }
 }
-\keyword{ }
-
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
