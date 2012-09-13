@@ -5,7 +5,7 @@ MixturePlot = function(x=NULL,y=NULL,z=NULL,w=NULL,des=NULL,
                         x2lab="Fraction X2", x1lab="Fraction X1", 
                         corner.labs = c("X3", "X2", "X1"), 
                         colorkey=list(dx=0.04,x0=0.95,y0=0.45,y1=0.90,add=TRUE,mode="all"),
-                        pseudo=FALSE,user.func=NULL,...)
+                        pseudo=FALSE,user.func=NULL)
 {
 ##############################################
 #Argument list
@@ -94,7 +94,7 @@ if (is.na(mod)==TRUE){
 	if(is.null(user.func)==TRUE){
 		stop("There must be a model specified or a user supplied function for predictions on the simplex")
 	}else{
-		trian$w=user.func(grid=new2,...) #add ... to argument when creating the function
+		trian$w=user.func(grid=new2) #add ... to argument when creating the function
 	}
 }else{	
 	trian$w = predict(fm1, newdata=data.frame(new2))
