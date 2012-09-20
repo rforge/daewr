@@ -55,7 +55,7 @@ MixturePlot(dat$x3,dat$x2,dat$x1,dat$y, x3lab="Fraction x3",
   x2lab="Fraction x2", x1lab="Fraction x1", corner.labs=c("x3","x2","x1"),
   constrts=FALSE,contrs=TRUE,cols=TRUE, mod=2,n.breaks=9)
 
-## Weed control example from Lawson & Erjavec
+# Weed control example from Lawson & Erjavec
 x1<-c(1,0,0,.5,.5,0,.33333,.33333,.33333)
 x2<-c(0,1,0,.5,0,.5,.33333,.33333,.33333)
 x3<-c(0,0,1,0,.5,.5,.33333,.33333,.33333)
