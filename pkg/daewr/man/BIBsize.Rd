@@ -14,25 +14,19 @@ input - number of levels of the treatment factor
 input - blocksize or number of experimental units per block
 }
 }
-\details{
-}
+
 \value{
 a list containing the b=number of blocks, r=number of treatment replicates and lambda for a potential BIB design with t levels of treatment factor and blocksize k.
 }
-\references{
-}
+
 \author{
 John Lawson
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 BIBsize(6,3)
 ## The function is currently defined as
@@ -70,4 +64,4 @@ BIBsize<-function(t,k)
   cat("Posible BIB design with b=",b," and r=",r," lambda=",lambda,"\n") 
 }
        }
-\keyword{  }
+\keyword{datagen}
