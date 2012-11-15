@@ -15,15 +15,11 @@ of Experiments with R
     \item{\code{Dilution}}{a factor with levels \code{3} \code{4} \code{5}}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(virus)
 }

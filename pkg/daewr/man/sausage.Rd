@@ -19,15 +19,11 @@ of Experiments with R
     \item{\code{ys}}{a numeric vector containing the response}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(sausage)
 }

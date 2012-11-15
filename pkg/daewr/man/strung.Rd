@@ -16,15 +16,11 @@ of Experiments with R (strung out format)
 	\item{\code{protein}}{a numeric vector }
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(strung)
 }

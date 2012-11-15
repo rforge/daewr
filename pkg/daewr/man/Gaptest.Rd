@@ -9,37 +9,23 @@ This function uses Daniel's Method to find an outlier in an unreplicated  \eqn{2
 \usage{
 Gaptest(DesY)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{DesY}{
 input this is a data frame containing an unreplicated \eqn{2^{(k-p)}} design. The last variable in the data frame should be the numeric response. 
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
+
 \references{
 Box, G.E.P. (1991) "George's column: Finding bad values in factorial designs", Quality Engineering, 3, 249-254.
 }
 \author{
 John Lawson
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 # Example from Box(1991)
 data(BoxM)
@@ -163,5 +149,5 @@ function (DesY)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{htest}
+

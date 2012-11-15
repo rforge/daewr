@@ -12,5 +12,6 @@ export(Fcrit,
 	   vci,
 	   BIBsize,
 	   mod,
-	   fullnormal
+	   fullnormal,
+	   Altscreen
 	   )

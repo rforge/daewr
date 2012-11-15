@@ -3,8 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{This function performs Tukey's single degree of freedom test for interaction in an unreplicated two-factor design
 }
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\description{This function performs Tukey's single degree of freedom test for interaction in an unreplicated two-factor design
 }
 \usage{
 Tukey1df(data)
@@ -15,31 +14,11 @@ Tukey1df(data)
 input - this is a data frame with three variables, the first variable is a numeric response and next two variables are factors. There should be \eqn{ab} lines in the data frame where \eqn{a} is the number of levels of the first factor, and \eqn{b} is the number of levels of the second factor.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 John Lawson
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -115,5 +94,5 @@ function (data)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{htest}
+

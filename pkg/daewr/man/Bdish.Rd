@@ -18,12 +18,8 @@ of Experiments with R
     \item{\code{y}}{a numeric vector containing the response}
   }
 }
-}
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
 data(Bdish)

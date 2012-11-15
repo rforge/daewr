@@ -20,31 +20,25 @@ input - degrees of freedom for denominator
 input - noncentrality parameter
 }
 }
-\details{
-}
+
 \value{
 probability of exceeding fcrit(alpha, nu1,nu2) with the non-central F-distribution
 with nu1 and nu2 degrees of freedom and noncentrality parameter nc
 }
-\references{
-}
+
 \author{
 John Lawson
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 Fpower(0.05,2,15,6.428)
 
 ## The function is currently defined as
 function(alpha,nu1,nu2,nc) 1-pf(Fcrit(alpha,nu1,nu2),nu1,nu2,nc)
 }
-\keyword{ }
+\keyword{datagen}
 

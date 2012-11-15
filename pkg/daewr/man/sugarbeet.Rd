@@ -14,14 +14,11 @@ with R
     \item{\code{yield}}{a numeric vector}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
-\references{
-}
+
 \examples{
 data(sugarbeet)
 }

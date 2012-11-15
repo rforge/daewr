@@ -16,15 +16,11 @@ of Experiments with R (compact format)
 	\item{\code{S0K}}{a numeric vector }
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(qsar)
 }

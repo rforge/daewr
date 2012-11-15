@@ -14,22 +14,14 @@ Fcrit(alpha, nu1, nu2)
   \item{nu2}{ input - denominator degrees of freedom for F-distribution
 }
 }
-\details{
-}
+
 \value{ returned critical value
 }
-\references{
-}
+
 \author{
 John Lawson
 }
-\note{
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-}
 \examples{
 Fcrit(.05,2,15)
 ## The function is currently defined as
@@ -37,5 +29,5 @@ function(alpha,nu1,nu2) qf(1-alpha,nu1,nu2)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{  }
+\keyword{datagen}
 

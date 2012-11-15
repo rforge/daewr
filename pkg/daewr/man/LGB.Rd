@@ -27,31 +27,19 @@ input - this is a logical variable that controls whether a half-normal plot is m
 input - this is a logical variable that controls whether the significance limit line is drawn on the half-normal plot (default is TRUE)
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
+
+
 \references{
 Lawson, J., Grimshaw, S., Burt, J. (1998) "A quantitative method for identifying active contrasts in unreplicated factorial experiments based on the half-normal plot", Computational Statistics and Data Analysis, 26, 425-436.
 }
 \author{
 John Lawson
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 data(chem)
 modf<-lm(y~A*B*C*D,data=chem)
@@ -127,5 +115,5 @@ function (Beta, alpha = 0.05, rpt = TRUE, plt = TRUE, pltl = TRUE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{htest}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

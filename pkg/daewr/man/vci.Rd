@@ -22,22 +22,15 @@ vci(confl,c1,ms1,nu1,c2,ms2,nu2)
   \item{nu2}{ input - Anova degrees of freedom for mean square 2
 }
 }
-\details{
-}
 \value{ returned delta, Lower and Upper limits
 }
-\references{
-}
+
 \author{
 John Lawson
 }
-\note{
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-}
+
 \examples{
 vci(.90,.05,.014852,2,.05,.026885,18)
 ## The function is currently defined as
@@ -67,5 +60,5 @@ vci<-function(confl,c1,ms1,nu1,c2,ms2,nu2){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{  }
+\keyword{ htest }
 
