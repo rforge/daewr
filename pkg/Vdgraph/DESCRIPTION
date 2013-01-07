@@ -1,7 +1,7 @@
 Package: Vdgraph
 Type: Package
 Title: This package creates variance dispersion graphs for response surface designs
-Version: 2.1-1
+Version: 2.1-2
 Date: 2011-03-22
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>

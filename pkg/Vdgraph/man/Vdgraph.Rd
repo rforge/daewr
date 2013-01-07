@@ -34,13 +34,13 @@ Vdgraph(D310)
 
 library(rsm)
 bbhrsm<-bbd(4,n0=3)
-des<-bbhrsm[,2:5]
+des<-bbhrsm[,c("x1","x2","x3","x4")]
 des<-as.matrix(des)
 Vdgraph(des)
 
 dat<-ccd(~A+B,generators=B~A,n0=c(1,1),alpha=1.212,wbreps=1)
-des2<-dat[,2:3]
+des2<-dat[,c("A","B")]
 Vdgraph(des2)
 
 }
-\keyword{ }
+\keyword{hplot }

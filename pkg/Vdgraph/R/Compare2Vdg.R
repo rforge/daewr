@@ -24,7 +24,7 @@ mcn<-max(cn1,cn2)
          kvar1<-rc[2]
          }
       check=1+2*kvar1+kvar1*(kvar1-1)/2
-       if (ndpts<check) {
+       if (ndpts<check){
          stop("The number of design points will not allow estimation of the quadratic model","\n")
          } else {
          kdv1<-ndpts*kvar1

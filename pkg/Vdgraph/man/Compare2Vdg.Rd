@@ -24,7 +24,7 @@ name1 defaults to des }
   \item{name2}{ name2 is a character string containing a descriptive name for the second design. This
 descriptive name should be no more than 40 characters in order to fit in the space for a legend. If left out 
 name2 defaults to des2 }
-  \item{ncolleg} { The number of columns in the legend this can be 1 or 2}
+  \item{ncolleg}{ The number of columns in the legend this can be 1 or 2}
 }
 \value{ vdgpl
  \item{vdgpl}{This is a graph containing the two Variance Dispersion Graphs, one for each design}
@@ -47,10 +47,11 @@ Compare2Vdg(SCDH5,SCDDL5,"Hartley's Small Composite-5 fac","Draper and Lin's Sma
 
 library(rsm)
 BB.des3<-bbd(3)
+BB.des3<-BB.des3[,c("x1","x2","x3")]
 CCD.des3<-ccd(3, n0=5)
-CCD.des3<-CCD.des3[,2:4]
+CCD.des3<-CCD.des3[,c("x1","x2","x3")]
 Compare2Vdg(BB.des3,CCD.des3,"Box Behnken 3 Factors","Central Composite 3 Factors",ncolleg=1)
 
 
 }
-\keyword{ }
+\keyword{ hplot }
