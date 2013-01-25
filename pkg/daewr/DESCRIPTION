@@ -9,3 +9,4 @@ Description: This package contains data frames and functions used in the book "D
 License: GPL-2 
 Depends: FrF2,BsMD
 LazyLoad: yes
+LazyData: yes
