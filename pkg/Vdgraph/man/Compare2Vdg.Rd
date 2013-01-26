@@ -45,12 +45,6 @@ data(SCDDL5)
 Compare2Vdg(SCDH5,SCDDL5,"Hartley's Small Composite-5 fac","Draper and Lin's Small Composite-5 fac",ncolleg=1)
 
 
-library(rsm)
-BB.des3<-bbd(3)
-BB.des3<-BB.des3[,c("x1","x2","x3")]
-CCD.des3<-ccd(3, n0=5)
-CCD.des3<-CCD.des3[,c("x1","x2","x3")]
-Compare2Vdg(BB.des3,CCD.des3,"Box Behnken 3 Factors","Central Composite 3 Factors",ncolleg=1)
 
 
 }
