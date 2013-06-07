@@ -129,32 +129,3 @@ cat("==> to retrieve a design type ModelRobust('MR8m4g3') etc.","\n")
                  }
 
 
-ModelRobust( )
-ModelRobust('MR8m4g3')
-ModelRobust('MR8m4g5')
-ModelRobust('MR8m4g3', randomize=TRUE)
-ModelRobust('MR8m5g2')
-ModelRobust('MR8m5g2', randomize=TRUE)
-ModelRobust('MR8m6g1')
-ModelRobust('MR8m6g1', randomize=TRUE)
-ModelRobust('MR12m5g5')
-ModelRobust('MR12m5g5', randomize=TRUE)
-ModelRobust('MR12m6g5')
-ModelRobust('MR12m6g5', randomize=TRUE)
-ModelRobust('MR12m7g4')
-ModelRobust('MR12m7g4', randomize=TRUE)
-ModelRobust('MR12m8g3')
-ModelRobust('MR12m8g3', randomize=TRUE)
-ModelRobust('MR12m9g2')
-ModelRobust('MR12m9g2', randomize=TRUE)
-ModelRobust('MR16m7g5')
-ModelRobust('MR16m7g5', randomize=TRUE)
-ModelRobust('MR16m8g5')
-ModelRobust('MR16m8g5', randomize=TRUE)
-ModelRobust('MR16m9g5')
-ModelRobust('MR16m9g5', randomize=TRUE)
-ModelRobust('MR16m10g3')
-ModelRobust('MR16m10g3', randomize=TRUE)
-
-
-

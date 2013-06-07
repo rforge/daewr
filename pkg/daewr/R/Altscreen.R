@@ -32,9 +32,3 @@ Altscreen<-function(nfac, randomize=FALSE) {
 
 
 
-Altscreen(6)
-Altscreen(6, randomize=TRUE)
-Altscreen(7)
-Altscreen(7, randomize=TRUE)
-Altscreen(8)
-Altscreen(8, randomize=TRUE)

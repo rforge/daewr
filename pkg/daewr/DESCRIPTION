@@ -1,7 +1,7 @@
 Package: daewr
 Type: Package
 Title: Design and Analysis of Experiments with R
-Version: 1.0-4
+Version: 1.0-5
 Date: 2012-06-01
 Author: John Lawson
 Maintainer: John Lawson <lawson@byu.edu>
