@@ -15,6 +15,7 @@ export(Fcrit,
 	   fullnormal,
 	   Altscreen,
 	   ModelRobust,
+	   DefScreen,
 	   OptPB,
 	   EEw1s1,
 	   EEw1s2,
@@ -22,5 +23,8 @@ export(Fcrit,
 	   EEw2s1,
 	   EEw2s2,
 	   EEw2s3,
-	   EEw3
+	   EEw3,
+	   ihstep,
+	   fhstep,
+	   bstep
 	   )

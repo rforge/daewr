@@ -1,4 +1,4 @@
-OptPB<-function(nruns,nfactors){
+OptPB<-function(nruns,nfactors, randomize=FALSE){
   if (nruns != 12 & nruns !=20 ) {stop("This function only works for nruns=12 or nruns=20")}
 library(FrF2)
 if (nruns==12) {
@@ -36,5 +36,7 @@ if (nruns==20) {
   if (nfactors> 15)  {stop("With 20 runs you must use between 8 and 15 factors")}
 
                }
+  if (randomize==TRUE) {design <- design[sample(1:nruns), ]}
+			   
 return(design)
   } 
