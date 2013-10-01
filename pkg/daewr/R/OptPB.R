@@ -1,6 +1,5 @@
 OptPB<-function(nruns,nfactors, randomize=FALSE){
   if (nruns != 12 & nruns !=20 ) {stop("This function only works for nruns=12 or nruns=20")}
-library(FrF2)
 if (nruns==12) {
   if (nfactors < 5) {stop("At least 5 factors required for 12-run PB design")}
   if (nfactors==5 | nfactors==6 | nfactors==7 | nfactors==8) { design<-pb(12,nfactors)
