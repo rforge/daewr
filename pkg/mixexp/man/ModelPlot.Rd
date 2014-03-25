@@ -1,28 +1,28 @@
 \name{ModelPlot}
 \alias{ModelPlot}
-\title{ This function makes contour plots of a user supplied function in the simplex mixture space.}
+\title{This function makes contour plots of a user supplied function in the simplex mixture space.
+}
 \description{
 This function makes contour plots in the simplex mixture space, it also can draw constraint lines and show design points.
 }
 \usage{
-ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL),slice=NULL,lims=rep(0,6),
-					   constraints = FALSE,
-					   constraint.pars = list(lty=2,lwd=2),
-					   contour = FALSE, 
-					   contour.pars = list(lwd=0.5,cex.lab=1.3),
-					   cuts = 10,at = NULL, res=300, pseudo=FALSE, 
-					   fill=FALSE, color.palette = heat.colors, 
-					   main=NULL, axislabs=c("Fraction X1","Fraction X2","Fraction X3"),
-					   axislab.pars = list(),
-					   axislab.offset=0,
-					   cornerlabs = c("X1", "X2", "X3"),
-					   cornerlab.pars = list(),
-					   grid=TRUE, grid.pars = list(col='darkgrey',lty=3,lwd=0.5),
-					   colorkey = FALSE,
-					   labels=TRUE, label.style="align",
+ModelPlot(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL),
+          slice=NULL,lims=rep(0,6), constraints = FALSE,
+          constraint.pars = list(lty=2,lwd=2),
+          contour = FALSE, contour.pars = list(lwd=0.5,cex.lab=1.3),
+          cuts = 10,at = NULL, res=300, pseudo=FALSE, 
+          fill=FALSE, color.palette = heat.colors, 
+          main=NULL, axislabs=c("Fraction X1","Fraction X2","Fraction X3"),
+          axislab.pars = list(),
+          axislab.offset=0,
+          cornerlabs = c("X1", "X2", "X3"),
+          cornerlab.pars = list(),
+          grid=TRUE, grid.pars = list(col='darkgrey',lty=3,lwd=0.5),
+          colorkey = FALSE,
+          labels=TRUE, label.style="align", ...)
 }
 \arguments{
-  \item{user.func}{function supplied by the user that takes as arguments a dataframe called 'grid' and returns the predictions.  Typically, this will be a wrapper function for the predict() (e.g. predict(model,newdata=grid)). Additional arguments for user.func besides 'grid.'  Typically, will be used to fix values of process variables.}  
+  \item{user.func}{function supplied by the user that takes as arguments a dataframe called 'grid' and returns the predictions.  Typically, this will be a wrapper function for the predict() (e.g. predict(model,newdata=grid)). Additional arguments for the user.func besides 'grid' will typically be used to fix values of process variables.}  
   \item{dimensions}{list argument that specifies the mixture variables to be plotted on the ternary plot. Values must correspond to variable names from the user-supplied model.}
   \item{slice}{list argument that specifies the value of fixed mixture components.}
   \item{lims}{vector of lower and upper constraints for ternary plot components (top, left, right).}
@@ -33,13 +33,13 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
   \item{cuts}{number of breaks between levels (used for contours if 'at' not specified).}
   \item{at}{list of contour levels (e.g. at=c(1,3,5,10) will draw contours at those heights). Overrides cuts argument.}
   \item{res}{resolution of the grid.  Corresponds to number equally spaced values along the baseline of the simplex.}
-  \item{pseudo}{if TRUE uses pseudo components to zoom in on constrained region.  Will create the smallest equilateral triangle that still contains the whole constrained region.}
+  \item{pseudo}{if TRUE uses pseudo components to zoom in on constrained region. Will create the smallest equilateral triangle that still contains the whole constrained region.}
   \item{fill}{if TRUE regions between contour lines will be colored.}
   \item{color.palette}{is the color palette to use.}
   \item{main}{character value for main title or list containing character value and graphical parameters (e.g. main=list("main title",cex=2)).}
   \item{axislabs}{character vector of axis labels for ternary components.}
   \item{axislab.pars}{list of graphical parameters controlling the appearance of the axislabels.}
-  \item{axislab.offset}{numeric value that creates or eliminates space between the angled axislabels and the tickmarks prevents axis labels from overlapping with tickmarks.  Typically, absolute value would not exceed 0.05.}
+  \item{axislab.offset}{numeric value that creates or eliminates space between the angled axislabels and the tickmarks. Prevents axis labels from overlapping with tickmarks.  Typically, absolute value would not exceed 0.05. }
   \item{cornerlabs}{character vector of corner labels for x1, x2 and x3 vertices.}
   \item{cornerlab.pars}{list of graphical parameters controlling the appearance of the axislabels.}
   \item{grid}{logical argument.  If true, adds grid lines to the ternary plot.}
@@ -47,6 +47,7 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
   \item{colorkey}{logical or list of parameters.  See levelplot documentation for more details.}
   \item{labels}{logical argument.  If true, labels contour lines.}
   \item{label.style}{controls placement of contour labels.  Choose from "mixed","flat", or "align." See panel.levelplot documentation for more details.}
+  \item{...}{expressions evaluated in the context of the function that creates the grid. Typically, will be used to fix values of process variables.}
 }
 
 \references{
@@ -56,7 +57,7 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
 
 }
 
-\author{Cameron Willden \email{cwillden@gmail.com}}
+\author{Cameron Willden \email{ccwillden@gmail.com}}
 \examples{
 mite<-SCD(4)
 yavg<-c(1.8,25.4,28.6,38.5,4.9,3.1,28.7,3.4,37.4,10.7,22.0,2.6,2.4,

@@ -12,9 +12,8 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
 					   cornerlab.pars = list(),
 					   grid=TRUE, grid.pars = list(col='darkgrey',lty=3,lwd=0.5),
 					   colorkey = FALSE,
-					   labels=TRUE, label.style="align",
-					   ...)
-  ##############################################
+					   labels=TRUE, label.style="align", ...)
+  ##############################################   
   #Argument list
   # user.func - function supplied by the user that takes as arguments a dataframe called 'grid' and returns
   #       the predictions.  Typically, this will be a wrapper function for the predict() (e.g. predict(model,newdata=grid))
@@ -86,8 +85,8 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
   #add check that user specifies x1, x2, x3
   
   #Depends on the following libraries
-  library(lattice)
-  library(grid)
+  #library(lattice)
+  #library(grid)
 
 l.bnds <- lims[seq(1,5,by=2)]
 if(sum(l.bnds>=mx)>0) stop("The lower bound on at least on component on the ternary plot is larger than the proportion of the mixture not occupied by the fixed component(s).  The constraints are not consistent.")

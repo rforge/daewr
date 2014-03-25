@@ -53,7 +53,7 @@ lincon<-cbind(lincon,v)
 conmx<-rbind(conmx,lincon)
             }
 
-# delete rwos where contraint is zero
+# delete rows where contraint is zero
 conmx<-conmx[abs(conmx[,nfac+1])>0, ]
 
 # calls crvtave to create exteme vertices design plus centroid
@@ -61,7 +61,11 @@ des<-crvtave(ndm,conmx)
 des<-data.frame(des)
 
 if (nfac==3) {
-DesignPoints(des=des)
- }
+   if (nlc>0) {
+   DesignPoints(des=des)
+              }
+   else { DesignPoints(des,x1lower=x1[1],x1upper=x1[2],x2lower=x2[1],x2upper=x2[2],x3lower=x3[1],x3upper=x3[2]) }
+             }
 return(des)
  }
+####End Function #################################
