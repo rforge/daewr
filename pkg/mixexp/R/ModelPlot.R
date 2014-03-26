@@ -87,7 +87,7 @@ ModelPlot = function(user.func = NULL, dimensions = list(x1=NULL,x2=NULL,x3=NULL
   #Depends on the following libraries
   #library(lattice)
   #library(grid)
-
+base = high = NULL
 l.bnds <- lims[seq(1,5,by=2)]
 if(sum(l.bnds>=mx)>0) stop("The lower bound on at least on component on the ternary plot is larger than the proportion of the mixture not occupied by the fixed component(s).  The constraints are not consistent.")
 

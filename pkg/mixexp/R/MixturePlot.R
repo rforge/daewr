@@ -48,7 +48,7 @@ z<-des$x1
 w<-des$y
                          }
 
- 
+base = high = NULL 
 #Depends on the following libraries
 #library(lattice)
 #library(grid)

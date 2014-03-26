@@ -1,5 +1,5 @@
 useDynLib(mixexp)
-
+import(gdata, lattice, grid)
 export(crvtave,
        Eflags,
 	   Nrows,

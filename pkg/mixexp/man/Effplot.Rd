@@ -7,7 +7,8 @@ This function makes effect plots using the Cox or Pieple directions in constrain
 }
 \usage{
 Effplot(des=NULL,nfac=3,mod=1,dir=1,ufunc=NULL,dimensions = list(NULL),
-x1=c(0,1),x2=c(0,1),x3=c(0,1),x4=c(0,1),x5=c(0,1),x6=c(0,1),x7=c(0,1),x8=c(0,1),x9=c(0,1),x10=c(0,1),x11=c(0,1),x12=c(0,1))
+x1=c(0,1),x2=c(0,1),x3=c(0,1),x4=c(0,1),x5=c(0,1),x6=c(0,1),x7=c(0,1),
+x8=c(0,1),x9=c(0,1),x10=c(0,1),x11=c(0,1),x12=c(0,1))
 }
 \arguments{
   \item{des}{ data frame containing the design points and response data for a mixture experiment. The 
