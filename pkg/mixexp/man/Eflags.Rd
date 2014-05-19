@@ -1,7 +1,7 @@
 \name{Eflags}
 \alias{Eflags}
 \title{ Loads compiled fortran in shared file cnvrt and returs the error messages}
-\description{This function loads and runs the compiled fortran code cnvrt and prints error messages. cnvrt is Pieple's 1988 JQT fortran code for extreme vertices designs. }
+\description{This function loads and runs the compiled fortran code cnvrt and prints error messages. cnvrt is Piepel's 1988 JQT fortran code for extreme vertices designs. }
 \usage{ 
 Eflags(ndm,nvrr,ncon2,rtheta2) 
 }
