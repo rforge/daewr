@@ -1,63 +1,80 @@
-* using log directory 'C:/Users/Lawson/Documents/r-forge-project/pkg/Vdgraph/..Rcheck'
-* using R version 2.11.1 (2010-05-31)
+* using log directory 'C:/Users/Lawson/Documents/r-forge-project/daewr/pkg/Vdgraph/..Rcheck'
+* using R version 3.0.2 (2013-09-25)
+* using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: ISO8859-1
 * checking for file './DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'Vdgraph' version '2.0-1'
-* checking package name space information ... OK
+* this is package 'Vdgraph' version '2.2-1'
+* checking package namespace information ... OK
 * checking package dependencies ... OK
-* checking if this is a source package ... OK
-* checking for executable files ... OK
-* checking whether package 'Vdgraph' can be installed ... OK
-* checking package directory ... OK
+* checking if this is a source package ... NOTE
+Found the following apparent object files/libraries:
+  src-i386/Vdgraph.dll src-i386/vdg.o src-x64/Vdgraph.dll src-x64/vdg.o
+Object files/libraries should not be included in a source package.
+* checking if there is a namespace ... OK
+* checking for executable files ... WARNING
+Found the following executable files:
+  src-i386/Vdgraph.dll
+  src-i386/vdg.o
+  src-x64/Vdgraph.dll
+Source packages should not contain undeclared executable files.
+See section 'Package structure' in the 'Writing R Extensions' manual.
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  ..Rcheck
+These were most likely included in error. See section 'Package
+structure' in the 'Writing R Extensions' manual.
 * checking for portable file names ... OK
+* checking whether package 'Vdgraph' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
+* checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... WARNING
-Found the following directory(s) with names of check directories:
-  ..Rcheck
+Found the following directory with the name of a check directory:
+  ./..Rcheck
 Most likely, these were included erroneously.
 * checking R files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
-* checking whether the package can be loaded ... OK
-* checking whether the package can be loaded with stated dependencies ... OK
-* checking whether the package can be unloaded cleanly ... OK
-* checking whether the name space can be loaded with stated dependencies ... OK
-* checking whether the name space can be unloaded cleanly ... OK
-* checking for unstated dependencies in R code ... OK
+* loading checks for arch 'i386'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+** checking loading without being on the library search path ... OK
+* loading checks for arch 'x64'
+** checking whether the package can be loaded ... OK
+** checking whether the package can be loaded with stated dependencies ... OK
+** checking whether the package can be unloaded cleanly ... OK
+** checking whether the namespace can be loaded with stated dependencies ... OK
+** checking whether the namespace can be unloaded cleanly ... OK
+** checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
 * checking R code for possible problems ... OK
-* checking Rd files ... NOTE
-prepare_Rd: Compare2Vdg.Rd:53: Dropping empty section \keyword
-prepare_Rd: D310.Rd:15: Dropping empty section \keyword
-prepare_Rd: D311A.Rd:14: Dropping empty section \keyword
-prepare_Rd: D311B.Rd:14: Dropping empty section \keyword
-prepare_Rd: D416A.Rd:14: Dropping empty section \keyword
-prepare_Rd: D416B.Rd:14: Dropping empty section \keyword
-prepare_Rd: D416C.Rd:14: Dropping empty section \keyword
-prepare_Rd: D628A.Rd:14: Dropping empty section \keyword
-prepare_Rd: Hex2.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDDL5.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDH2.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDH3.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDH4.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDH5.Rd:14: Dropping empty section \keyword
-prepare_Rd: SCDH6.Rd:14: Dropping empty section \keyword
-prepare_Rd: Vardsgr.Rd:31: Dropping empty section \keyword
-prepare_Rd: Vdgraph.Rd:46: Dropping empty section \keyword
-prepare_Rd: f.Rd:17: Dropping empty section \keyword
+* checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
 * checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
 * checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
 * checking line endings in C/C++/Fortran sources/headers ... OK
 * checking line endings in Makefiles ... OK
-* checking for portable use of $BLAS_LIBS ... OK
-* checking examples ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking compiled code ... OK
+* checking examples ...
+** running examples for arch 'i386' ... OK
+** running examples for arch 'x64' ... OK
 * checking PDF version of manual ... OK
+WARNING: There were 2 warnings.
+NOTE: There were 2 notes.
