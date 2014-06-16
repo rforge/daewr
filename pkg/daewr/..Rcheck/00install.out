@@ -1,16 +1,77 @@
 * installing *source* package 'daewr' ...
 ** R
 ** data
+*** moving datasets to lazyload DB
 ** preparing package for lazy loading
+Warning: package 'FrF2' was built under R version 3.0.3
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (1 wp factor and  2 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE12R4WP       4                   3          
+EE12R6WP       6                   2          
+EE14R7WP       7                   2          
+EE15R5WP       5                   3          
+EE16R4WP       4                   4          
+EE18R6WP       6                   3          
+EE20R4WP       4                   5          
+EE20R5WP       5                   4          
+EE21R7WP       7                   3          
+EE24R4WP       4                   6          
+EE24R6WP       6                   4          
+EE25R5WP       5                   5          
+EE28R7WP       7                   4          
+EE30R5WP       5                   6          
+EE30R6WP       6                   5          
+EE35R7WP       7                   5          
+EE36R6WP       6                   6          
+EE42R7WP       7                   6          
+  
+==> to retrieve a design type EEw1s2('EE12R6WP') etc. 
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (2 wp factors and  2 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE16R8WP       8                   2          
+EE18R9WP       9                   2          
+EE20R10WP     10                   2          
+EE21R7WP       7                   3          
+EE22R11WP     11                   2          
+EE24R8WP       8                   3          
+EE27R9WP       9                   3          
+EE28R7WP       7                   4          
+EE30R10WP     10                   3          
+EE32R8WP       8                   4          
+EE33R11WP     11                   3          
+EE35R7WP       7                   5          
+EE36R9WP       9                   4          
+EE40R8WP       8                   5          
+EE40R10WP     10                   4          
+EE42R7WP       7                   6          
+EE44R11WP     11                   4          
+EE45R9WP       9                   5          
+EE48R8WP       8                   6          
+EE50R10WP     10                   5          
+EE54R9WP       9                   6          
+EE55R11WP     11                   5          
+EE60R10WP     10                   6          
+EE66R11WP     11                   6          
+  
+==> to retrieve a design type EEw2s2('EE21R7WP') etc. 
 ** help
-Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/BIBsize.Rd:71: unexpected END_OF_INPUT '
-'
-Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/fullnormal.Rd:94: unexpected END_OF_INPUT '
-'
-Warning: C:/Users/John Lawson/Documents/my_r_pkg/daewr/man/mod.Rd:41: unexpected END_OF_INPUT '
-'
 *** installing help indices
 ** building package indices
 ** testing if installed package can be loaded
-
+*** arch - i386
+Warning: package 'FrF2' was built under R version 3.0.3
+*** arch - x64
+Warning: package 'FrF2' was built under R version 3.0.3
 * DONE (daewr)

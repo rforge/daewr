@@ -5,14 +5,18 @@
 #exportPattern(".")
 export(Fcrit,
        Fpower,
+       Fpower1,
+           Fpower2,
 	   Gaptest,
 	   gapstat,
 	   LGB,
+           LGBc,
 	   Tukey1df,
 	   vci,
 	   BIBsize,
 	   mod,
 	   fullnormal,
+           halfnorm,
 	   Altscreen,
 	   ModelRobust,
 	   DefScreen,
@@ -26,5 +30,6 @@ export(Fcrit,
 	   EEw3,
 	   ihstep,
 	   fhstep,
-	   bstep
+	   bstep,
+           colormap
 	   )

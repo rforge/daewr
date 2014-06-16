@@ -1,8 +1,7 @@
 
-R version 2.15.0 (2012-03-30)
-Copyright (C) 2012 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
-Platform: i386-pc-mingw32/i386 (32-bit)
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -23,8 +22,85 @@ Type 'q()' to quit R.
 > options(warn = 1)
 > options(pager = "console")
 > library('daewr')
+Loading required package: BsMD
+Loading required package: lattice
+Loading required package: FrF2
+Warning: package 'FrF2' was built under R version 3.0.3
+Loading required package: DoE.base
+Loading required package: grid
+Loading required package: conf.design
+
+Attaching package: 'DoE.base'
+
+The following objects are masked from 'package:stats':
+
+    aov, lm
+
+The following object is masked from 'package:graphics':
+
+    plot.design
+
+
+Attaching package: 'FrF2'
+
+The following object is masked from 'package:BsMD':
+
+    DanielPlot
+
 > 
-> assign(".oldSearch", search(), pos = 'CheckExEnv')
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("Altscreen")
+> ### * Altscreen
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Altscreen
+> ### Title: Alternate 16 run screening designs
+> ### Aliases: Altscreen
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> Altscreen(6)
+    A  B  C  D  E  F
+1   1  1  1  1  1  1
+2   1  1 -1 -1 -1 -1
+3  -1 -1  1  1 -1 -1
+4  -1 -1 -1 -1  1  1
+5   1  1  1 -1  1 -1
+6   1  1 -1  1 -1  1
+7  -1 -1  1 -1 -1  1
+8  -1 -1 -1  1  1 -1
+9   1 -1  1  1  1 -1
+10  1 -1 -1 -1 -1  1
+11 -1  1  1  1 -1  1
+12 -1  1 -1 -1  1 -1
+13  1 -1  1 -1 -1 -1
+14  1 -1 -1  1  1  1
+15 -1  1  1 -1  1  1
+16 -1  1 -1  1 -1 -1
+> Altscreen(6, randomize=TRUE)
+    A  B  C  D  E  F
+5   1  1  1 -1  1 -1
+6   1  1 -1  1 -1  1
+9   1 -1  1  1  1 -1
+12 -1  1 -1 -1  1 -1
+3  -1 -1  1  1 -1 -1
+10  1 -1 -1 -1 -1  1
+11 -1  1  1  1 -1  1
+15 -1  1  1 -1  1  1
+14  1 -1 -1  1  1  1
+1   1  1  1  1  1  1
+2   1  1 -1 -1 -1 -1
+7  -1 -1  1 -1 -1  1
+13  1 -1  1 -1 -1 -1
+8  -1 -1 -1  1  1 -1
+4  -1 -1 -1 -1  1  1
+16 -1  1 -1  1 -1 -1
+>      
+> 
+> 
 > cleanEx()
 > nameEx("Apo")
 > ### * Apo
@@ -51,12 +127,12 @@ Type 'q()' to quit R.
 > ### Name: BIBsize
 > ### Title: Balanced incomplete blocksize
 > ### Aliases: BIBsize
+> ### Keywords: datagen
 > 
 > ### ** Examples
 > 
 > BIBsize(6,3)
 Posible BIB design with b= 10  and r= 5  lambda= 2 
-> 
 > ## The function is currently defined as
 > BIBsize<-function(t,k)
 + {
@@ -86,1573 +162,4216 @@ Posible BIB design with b= 10  and r= 5  lambda= 2
 +        b<-b+1
 +       #cat("b=",b, "r=",r)
 +         }
++ 
++     #cat("lambda=",lambda)
++     }
++   cat("Posible BIB design with b=",b," and r=",r," lambda=",lambda,"\n") 
 + }
-+ 
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("BPmonitor")
-+ ### * BPmonitor
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: BPmonitor
-+ ### Title: blood pressure monitor experiment
-+ ### Aliases: BPmonitor
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(BPmonitor)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Bdish")
-+ ### * Bdish
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Bdish
-+ ### Title: Confounded Block Dishwashing Experiment
-+ ### Aliases: Bdish
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Bdish)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Bff")
-+ ### * Bff
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Bff
-+ ### Title: Confounded block fractional mouse growth experiment
-+ ### Aliases: Bff
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Bff)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("BoxM")
-+ ### * BoxM
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: BoxM
-+ ### Title: Box and Meyer's unreplicated 2^4 from Chapter 3
-+ ### Aliases: BoxM
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(BoxM)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("COdata")
-+ ### * COdata
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: COdata
-+ ### Title: CO emmisions experiment data from Chapter 3
-+ ### Aliases: COdata
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(COdata)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Fcrit")
-+ ### * Fcrit
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Fcrit
-+ ### Title: F-Distribution critical values
-+ ### Aliases: Fcrit
-+ 
-+ ### ** Examples
-+ 
-+ Fcrit(.05,2,15)
-+ ## The function is currently defined as
-+ function(alpha,nu1,nu2) qf(1-alpha,nu1,nu2)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Fpower")
-+ ### * Fpower
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Fpower
-+ ### Title: F-Distribution Power Calculation
-+ ### Aliases: Fpower
-+ 
-+ ### ** Examples
-+ 
-+ Fpower(0.05,2,15,6.428)
-+ 
-+ ## The function is currently defined as
-+ function(alpha,nu1,nu2,nc) 1-pf(Fcrit(alpha,nu1,nu2),nu1,nu2,nc)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Gaptest")
-+ ### * Gaptest
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Gaptest
-+ ### Title: Automated Daniel Method
-+ ### Aliases: Gaptest
-+ 
-+ ### ** Examples
-+ 
-+ # Lawson Gatlin Example
-+ library(FrF2)
-+ lawg<-FrF2(16,11,generators=c("ABC","BCD","ACD","ABD","ABCD","AB","AC"),randomize=FALSE)
-+ y<-c(31,48,43,32,54,52,60,34,47,43,30,26,67,49,80,41)
-+ lawg<-cbind(lawg,y)
-+ Gaptest(lawg)
-+ 
-+ # eight run example
-+ library(FrF2)
-+ des<-FrF2(8,6,generators=c("AB","AC","BC"),randomize=FALSE)
-+ y<-c(1.299,1.601,1.359,1.461,1.338,1.486,1.330,1.470)
-+ Des8<-cbind(des,y)
-+ Gaptest(Des8)
-+ #tes<-lm(y~(.)^3,data=Des8)
-+ #summary(tes)
-+ #c<-tes$coef
-+ #cn<-names(c)
-+ #ccn<-gsub("[^A-Z]","",cn)
-+ 
-+ 
-+ 
-+ 
-+ ## The function is currently defined as
-+ Gaptest<-function(DesY) {
-+ # function to compute gap statistic
-+ ncheck<-dim(DesY)
-+ ncheck<-ncheck[1]
-+  tcnd=TRUE
-+  if (ncheck==8) {tcnd=FALSE}
-+  if (ncheck==16) {tcnd=FALSE}
-+  if (ncheck==32) {tcnd=FALSE}
-+  if (tcnd) {stop("This function only works for 8, 16, or 32 run designs","\n")
-+     } else {
-+ if (ncheck==8) ncheck=16
-+ #####################################
-+ # 50th and 99th percentiles of the gap statistic ##
-+ critg16<-c(1.7884,5.1009)
-+ critg32<-c(1.7297,5.8758)
-+ 
-+ ### First Pass through the data ####
-+ 
-+ ###### Step 1  #######
-+ #fit model to saturated design
-+ modf<-lm(y~(.)^4,x=TRUE,data=DesY)
-+ 
-+ 
-+ #extract the regression coefficients
-+ nbeta<-dim(DesY)
-+ nbeta<-nbeta[1]
-+ he<-modf$coef
-+ # This extracts the coefficients that are not NA
-+ selcol<-which(!is.na(he))
-+ he<-he[selcol]
-+ he<-he[-1]
-+ #number of coefficients
-+ p<-length(he)
-+ #number of runs
-+ n<-p+1
-+ # This trims unnecessary characters from coefficient names
-+ cn1<-names(he)
-+ ccn1<-gsub("[^A-Z]","",cn1)
-+ names(he)<-ccn1
-+ 
-+ ##### End of Step 1 ########
-+ 
-+ ###### Steps 2 and 3  #######
-+ #calculate the pse statistic
-+ ahe<-abs(he)
-+ s0<-1.5*median(ahe)
-+ selhe<-ahe<(2.5*s0)
-+ pse=1.5*median(ahe[selhe])
-+ #library(BsMD)
-+ #pse<-LenthPlot(modf,plt=FALSE)
-+ #pse<-pse[2]
-+ #calculate the gap statistic
-+ gap<-gapstat(he,pse)
-+ # checks to see if gap statistic exceeds 50th percentile
-+ if (ncheck==16) {test=(gap>critg16[1])
-+  } else  {test=(gap>critg32[1])}
-+ ##### End Step 2 and 3  #####
-+ 
-+ if (test) {
-+ ##### Step 4  #####
-+ #extract the model X matrix
-+ X<-modf$x
-+ # This selects columns of the X matrix that correspond to non-missing
-+ # coefficients
-+ X<-X[,selcol]
-+ X<-X[,-1]
-+ #gets signs of regression coefficients
-+ se<-as.matrix(sign(he),nrow=1)
-+ # find signigicant effects using LGB
-+ sigef<-LGB(he,rpt=FALSE,plt=FALSE)
-+ # make signs of significant effects zero
-+  for (i in 1:length(he)) {
-+      if (sigef[i]=="yes")   {se[i]=0 }
-+                          }
-+ #gets sum of products of signed effects and rows of X matrix
-+ sp<-X
-+ 
-+ #finds index of largest sum of products as index of potential outlier
-+ asp<-abs(sp)
-+ oo<-max.col(t(asp))
-+ 
-+ ### End Step 4 ####
-+ 
-+ ###### Step 5  ######
-+ 
-+ # calculates the bias
-+  # first get absolute regression coefficients
-+ ae<-abs(he)
-+  # next sort absolute effects
-+ sae<-sort(ae)
-+  #get the number of effects in smallest half
-+ nsmall<-round(length(he)/2)
-+  # sum the smallest half absolute effects to get bias
-+ bias<-2*sum(sae[1:nsmall])
-+ 
-+ ##### Step 6 ######
-+  # gets corrected response vector
-+ y<-DesY$y
-+ ycorr<-DesY$y
-+ ycorr[oo]<-ycorr[oo]+(-1*sign(sp[oo]))*bias
-+  # makes vector of indicators for outlier
-+ detect<-c(rep("no",n))
-+ detect[oo]<-"yes"
-+ cat("Initial Outlier Report","\n")
-+ cat("Standardized-Gap = ",gap, "Significant at 50th percentile","\n")
-+ ### End of first pass throught the data #######
-+ 
-+ ### Second Pass throught the data ###########
-+ ### Step 1 ####
-+ # augment DesY with corrected data
-+ DesYc<-cbind(DesY[,1:(dim(DesY)[2]-1)],ycorr)
-+ # fit saturated model to corrected data
-+ modf<-lm(ycorr~(.)^4,x=TRUE,data=DesYc)
-+ 
-+ #extract the regression coefficients
-+ che<-modf$coef
-+ # This extracts the coefficients that are not NA
-+ che<-che[!is.na(che)]
-+ che<-che[-1]
-+ #number of coefficients
-+ p<-length(che)
-+ #number of runs
-+ n<-p+1
-+ # This trims unnecessary characters from coefficient names
-+ cn<-names(che)
-+ ccn<-gsub("[^A-Z]","",cn)
-+ names(che)<-ccn
-+ ### End of Step 1 ####
-+ 
-+ ###### Steps 2 and 3  #######
-+ #calculate the pse statistic
-+ ache<-abs(che)
-+ s0<-1.5*median(ache)
-+ selche<-ache<(2.5*s0)
-+ psec=1.5*median(ache[selche])
-+ 
-+ #psec<-LenthPlot(modf,plt=FALSE)
-+ #psec<-psec[2]
-+ #calculate the gap statistic
-+ gap<-gapstat(he,psec)
-+ # checks to see if gap statistic exceeds 99th percentile
-+ if (ncheck==16) test2=(gap>critg16[2]) else  test2=(gap>critg32[2])
-+ ##### End Step 2 and 3  #####
-+ 
-+ if (test2) {
-+ cat("Final Outlier Report","\n")
-+ cat("Standardized-Gap = ",gap, "Significant at 99th percentile","\n")
-+ cat("   ","\n")
-+ cat("    Corrrected Data Report  ","\n")
-+ cat("Response  Corrected Response   Detect Outlier","\n")
-+ cat(paste(format(DesY$y, width=8), format(DesYc$ycorr, width=13),
-+ "           ", format(detect, width=10),"\n"),sep="")
-+ 
-+ # use LGB to test significance of effects calculated from corrected data
-+ 
-+ tce<-LGB(che)
-+   } else {
-+ cat("Final Outlier Report","\n")
-+ cat("No significant outlier detected in second pass","\n" )
-+ # use LGB to test significance of effects calculated from corrected data
-+ LGB(he)
-+ cat("    ","\n")
-+          }
-+ 
-+ ### End of second pass through the data #####
+>        
+> 
+> 
+> cleanEx()
+> nameEx("BPmonitor")
+> ### * BPmonitor
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BPmonitor
+> ### Title: blood pressure monitor experiment
+> ### Aliases: BPmonitor
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(BPmonitor)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Bdish")
+> ### * Bdish
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Bdish
+> ### Title: Confounded Block Dishwashing Experiment
+> ### Aliases: Bdish
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Bdish)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Bff")
+> ### * Bff
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Bff
+> ### Title: Confounded block fractional mouse growth experiment
+> ### Aliases: Bff
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Bff)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("BoxM")
+> ### * BoxM
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: BoxM
+> ### Title: Box and Meyer's unreplicated 2^4 from Chapter 3
+> ### Aliases: BoxM
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(BoxM)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("COdata")
+> ### * COdata
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: COdata
+> ### Title: CO emmisions experiment data from Chapter 3
+> ### Aliases: COdata
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(COdata)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("DefScreen")
+> ### * DefScreen
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: DefScreen
+> ### Title: Definitive Screening Designs
+> ### Aliases: DefScreen
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> DefScreen(m=8,c=2)
+    A  B  C  D  E  F  G  H  J  K
+1   0  1  1  1  1  1  1  1  1  1
+2   0 -1 -1 -1 -1 -1 -1 -1 -1 -1
+3   1  0 -1 -1 -1 -1  1  1  1  1
+4  -1  0  1  1  1  1 -1 -1 -1 -1
+5   1 -1  0 -1  1  1 -1 -1  1  1
+6  -1  1  0  1 -1 -1  1  1 -1 -1
+7   1 -1 -1  0  1  1  1  1 -1 -1
+8  -1  1  1  0 -1 -1 -1 -1  1  1
+9   1 -1  1  1  0 -1 -1  1 -1  1
+10 -1  1 -1 -1  0  1  1 -1  1 -1
+11  1 -1  1  1 -1  0  1 -1  1 -1
+12 -1  1 -1 -1  1  0 -1  1 -1  1
+13  1  1 -1  1 -1  1  0 -1 -1  1
+14 -1 -1  1 -1  1 -1  0  1  1 -1
+15  1  1 -1  1  1 -1 -1  0  1 -1
+16 -1 -1  1 -1 -1  1  1  0 -1  1
+17  1  1  1 -1 -1  1 -1  1  1 -1
+18 -1 -1 -1  1  1 -1  1 -1 -1  1
+19  1  1  1 -1  1 -1  1 -1 -1  1
+20 -1 -1 -1  1 -1  1 -1  1  1 -1
+21  0  0  0  0  0  0  0  0 -1 -1
+22  0  0  0  0  0  0  0  0  1  1
+> DefScreen(12)
+    A  B  C  D  E  F  G  H  J  K  L  M
+1   0 -1 -1  1 -1  1 -1  1  1  1 -1  1
+2   0  1  1 -1  1 -1  1 -1 -1 -1  1 -1
+3  -1  0  1  1  1  1  1  1  1 -1 -1 -1
+4   1  0 -1 -1 -1 -1 -1 -1 -1  1  1  1
+5   1  1  0 -1  1  1 -1  1  1 -1  1  1
+6  -1 -1  0  1 -1 -1  1 -1 -1  1 -1 -1
+7   1 -1 -1  0  1 -1  1 -1  1 -1 -1  1
+8  -1  1  1  0 -1  1 -1  1 -1  1  1 -1
+9   1  1  1  1  0 -1  1  1  1  1  1  1
+10 -1 -1 -1 -1  0  1 -1 -1 -1 -1 -1 -1
+11  1 -1  1 -1  1  0  1  1 -1  1 -1  1
+12 -1  1 -1  1 -1  0 -1 -1  1 -1  1 -1
+13  1  1  1  1 -1  1  0 -1 -1 -1 -1  1
+14 -1 -1 -1 -1  1 -1  0  1  1  1  1 -1
+15 -1 -1  1  1  1 -1 -1  0 -1 -1  1  1
+16  1  1 -1 -1 -1  1  1  0  1  1 -1 -1
+17  1 -1  1  1  1  1 -1 -1  0  1  1 -1
+18 -1  1 -1 -1 -1 -1  1  1  0 -1 -1  1
+19  1  1 -1  1  1 -1 -1  1 -1  0 -1 -1
+20 -1 -1  1 -1 -1  1  1 -1  1  0  1  1
+21 -1  1 -1  1  1  1  1 -1 -1  1  0  1
+22  1 -1  1 -1 -1 -1 -1  1  1 -1  0 -1
+23  1 -1 -1  1 -1  1  1  1 -1 -1  1  0
+24 -1  1  1 -1  1 -1 -1 -1  1  1 -1  0
+25  0  0  0  0  0  0  0  0  0  0  0  0
+> DefScreen(m=4,c=4, randomize=TRUE)
+    A  B  C  D  E  F  G  H
+5   1 -1  0  1  1 -1  1 -1
+7   1 -1 -1  0  1  1 -1  1
+10 -1 -1  1  1 -1 -1 -1  1
+14 -1 -1  1 -1  1  1 -1 -1
+3   1  0  1  1 -1  1 -1 -1
+12 -1  1 -1  1  1 -1 -1 -1
+13  1  1 -1  1 -1 -1  1  1
+8  -1  1  1  0 -1 -1  1 -1
+17  0  0  0  0 -1 -1 -1 -1
+1   0  1  1  1  1  1  1  1
+2   0 -1 -1 -1 -1 -1 -1 -1
+11  1 -1  1 -1 -1  1  1  1
+18  0  0  0  0  1  1  1  1
+16 -1 -1 -1  1 -1  1  1 -1
+4  -1  0 -1 -1  1 -1  1  1
+6  -1  1  0 -1 -1  1 -1  1
+15  1  1  1 -1  1 -1 -1  1
+9   1  1 -1 -1  1  1  1 -1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw1s1")
+> ### * EEw1s1
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw1s1
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw1s1
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw1s1()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (1 wp factor and  1 sp factor)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE8R4WP        4                   2          
+EE10R5WP       5                   2          
+EE12R4WP       4                   3          
+EE12R6WP       6                   2          
+EE14R7WP       7                   2          
+EE15R5WP       5                   3          
+EE16R4WP       4                   4          
+EE18R6WP       6                   3          
+EE20R4WP       4                   5          
+EE20R5WP       5                   4          
+EE21R7WP       7                   3          
+EE24R4WP       4                   6          
+EE24R6WP       6                   4          
+EE25R5WP       5                   5          
+EE28R7WP       7                   4          
+EE30R5WP       5                   6          
+EE30R6WP       6                   5          
+EE35R7WP       7                   5          
+EE36R6WP       6                   6          
+EE42R7WP       7                   6          
+  
+==> to retrieve a design type EEw1s1('EE10R5WP') etc. 
+> EEw1s1('EE8R4WP')
+  WP w1 s1
+1  1 -1 -1
+2  1 -1  1
+3  2  1  1
+4  2  1 -1
+5  3  0  1
+6  3  0  0
+7  4 -1  1
+8  4 -1 -1
+> EEw1s1('EE8R4WP', randomize=TRUE)
+  WP w1 s1
+1  2  1  1
+2  2  1 -1
+4  4 -1 -1
+3  4 -1  1
+6  3  0  0
+5  3  0  1
+7  1 -1 -1
+8  1 -1  1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw1s2")
+> ### * EEw1s2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw1s2
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw1s2
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw1s2( )
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (1 wp factor and  2 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE12R4WP       4                   3          
+EE12R6WP       6                   2          
+EE14R7WP       7                   2          
+EE15R5WP       5                   3          
+EE16R4WP       4                   4          
+EE18R6WP       6                   3          
+EE20R4WP       4                   5          
+EE20R5WP       5                   4          
+EE21R7WP       7                   3          
+EE24R4WP       4                   6          
+EE24R6WP       6                   4          
+EE25R5WP       5                   5          
+EE28R7WP       7                   4          
+EE30R5WP       5                   6          
+EE30R6WP       6                   5          
+EE35R7WP       7                   5          
+EE36R6WP       6                   6          
+EE42R7WP       7                   6          
+  
+==> to retrieve a design type EEw1s2('EE12R6WP') etc. 
+> EEw1s2('EE12R4WP')
+   WP w1      s1 s2
+1   1 -1  0.0000 -1
+2   1 -1  1.0000  1
+3   1 -1 -1.0000  0
+4   2  1  1.0000  1
+5   2  1  1.0000 -1
+6   2  1 -1.0000  0
+7   3 -1 -1.0000 -1
+8   3 -1  0.0000  1
+9   3 -1  1.0000  0
+10  4  0 -1.0000 -1
+11  4  0 -1.0000  1
+12  4  0  0.1524  0
+> EEw1s2('EE12R4WP', randomize=TRUE)
+   WP w1      s1 s2
+1   2  1  1.0000  1
+2   2  1  1.0000 -1
+3   2  1 -1.0000  0
+6   4  0  0.1524  0
+4   4  0 -1.0000 -1
+5   4  0 -1.0000  1
+7   3 -1 -1.0000 -1
+9   3 -1  1.0000  0
+8   3 -1  0.0000  1
+12  1 -1 -1.0000  0
+10  1 -1  0.0000 -1
+11  1 -1  1.0000  1
+> EEw1s2('EE12R6WP')
+   WP w1 s1 s2
+1   1 -1  1  1
+2   1 -1 -1 -1
+3   2 -1  1 -1
+4   2 -1 -1  1
+5   3  0  1 -1
+6   3  0  0  0
+7   4  1  1 -1
+8   4  1 -1  1
+9   5  1 -1 -1
+10  5  1  1  1
+11  6  0  0 -1
+12  6  0  1  0
+> EEw1s2('EE12R6WP', randomize=TRUE)
+   WP w1 s1 s2
+2   5  1  1  1
+1   5  1 -1 -1
+3   6  0  0 -1
+4   6  0  1  0
+5   2 -1  1 -1
+6   2 -1 -1  1
+8   3  0  0  0
+7   3  0  1 -1
+9   4  1  1 -1
+10  4  1 -1  1
+11  1 -1  1  1
+12  1 -1 -1 -1
+> EEw1s2('EE14R7WP')
+   WP w1 s1 s2
+1   1  1  1 -1
+2   1  1 -1  1
+3   2  1  1  1
+4   2  1 -1 -1
+5   3  0  0  1
+6   3  0  1  0
+7   4  0  1  0
+8   4  0  0  1
+9   5 -1 -1 -1
+10  5 -1  1  1
+11  6 -1  1 -1
+12  6 -1 -1  1
+13  7 -1  0  0
+14  7 -1  0  0
+> EEw1s2('EE14R7WP', randomize=TRUE)
+   WP w1 s1 s2
+2   6 -1 -1  1
+1   6 -1  1 -1
+4   5 -1  1  1
+3   5 -1 -1 -1
+6   4  0  0  1
+5   4  0  1  0
+7   1  1  1 -1
+8   1  1 -1  1
+10  3  0  1  0
+9   3  0  0  1
+12  7 -1  0  0
+11  7 -1  0  0
+13  2  1  1  1
+14  2  1 -1 -1
+> EEw1s2('EE15R5WP')
+   WP w1 s1 s2
+1   1 -1 -1 -1
+2   1 -1  1  0
+3   1 -1  0  1
+4   2  0  1 -1
+5   2  0  0  0
+6   2  0 -1  1
+7   3 -1  1  1
+8   3 -1  0 -1
+9   3 -1 -1  0
+10  4  1  1 -1
+11  4  1 -1  1
+12  4  1  1  1
+13  5 -1  0  1
+14  5 -1  1  0
+15  5 -1 -1 -1
+> EEw1s2('EE15R5WP', randomize=TRUE)
+   WP w1 s1 s2
+2   1 -1  1  0
+3   1 -1  0  1
+1   1 -1 -1 -1
+4   2  0  1 -1
+5   2  0  0  0
+6   2  0 -1  1
+9   4  1  1  1
+7   4  1  1 -1
+8   4  1 -1  1
+11  3 -1  0 -1
+12  3 -1 -1  0
+10  3 -1  1  1
+14  5 -1  1  0
+13  5 -1  0  1
+15  5 -1 -1 -1
+> EEw1s2('EE16R4WP')
+   WP w1 s1 s2
+1   1  1 -1  0
+2   1  1  1 -1
+3   1  1  0  1
+4   1  1 -1 -1
+5   2  0  1  1
+6   2  0 -1  1
+7   2  0  0  0
+8   2  0  1 -1
+9   3 -1  1  1
+10  3 -1  1 -1
+11  3 -1 -1 -1
+12  3 -1 -1  1
+13  4  1 -1  1
+14  4  1  0 -1
+15  4  1  1  0
+16  4  1 -1 -1
+> EEw1s2('EE16R4WP', randomize=TRUE)
+   WP w1 s1 s2
+4   4  1 -1 -1
+2   4  1  0 -1
+3   4  1  1  0
+1   4  1 -1  1
+7   3 -1 -1 -1
+5   3 -1  1  1
+6   3 -1  1 -1
+8   3 -1 -1  1
+9   1  1 -1  0
+12  1  1 -1 -1
+11  1  1  0  1
+10  1  1  1 -1
+13  2  0  1  1
+14  2  0 -1  1
+15  2  0  0  0
+16  2  0  1 -1
+> EEw1s2('EE18R6WP')
+   WP w1 s1 s2
+1   1  1  1  1
+2   1  1 -1  0
+3   1  1  1 -1
+4   2  0  0  1
+5   2  0  1  0
+6   2  0  0 -1
+7   3 -1  1 -1
+8   3 -1  1  1
+9   3 -1  1  1
+10  4  0  1  0
+11  4  0  0 -1
+12  4  0  0  1
+13  5 -1 -1 -1
+14  5 -1 -1  1
+15  5 -1  0  0
+16  6  0  0  1
+17  6  0  0 -1
+18  6  0  1  0
+> EEw1s2('EE18R6WP', randomize=TRUE)
+   WP w1 s1 s2
+2   5 -1 -1  1
+1   5 -1 -1 -1
+3   5 -1  0  0
+5   3 -1  1  1
+4   3 -1  1 -1
+6   3 -1  1  1
+9   2  0  0 -1
+7   2  0  0  1
+8   2  0  1  0
+12  6  0  1  0
+11  6  0  0 -1
+10  6  0  0  1
+14  4  0  0 -1
+13  4  0  1  0
+15  4  0  0  1
+17  1  1 -1  0
+18  1  1  1 -1
+16  1  1  1  1
+> EEw1s2('EE20R4WP')
+   WP w1 s1 s2
+1   1  1  1 -1
+2   1  1 -1  1
+3   1  1  1  0
+4   1  1 -1 -1
+5   1  1  0  1
+6   2  1 -1  1
+7   2  1  1  1
+8   2  1  1 -1
+9   2  1 -1  0
+10  2  1  0 -1
+11  3  0  0  1
+12  3  0  1  1
+13  3  0 -1  0
+14  3  0 -1 -1
+15  3  0  1 -1
+16  4 -1 -1 -1
+17  4 -1  0  0
+18  4 -1  1 -1
+19  4 -1  1  1
+20  4 -1 -1  1
+> EEw1s2('EE20R4WP', randomize=TRUE)
+   WP w1 s1 s2
+1   3  0  0  1
+3   3  0 -1  0
+4   3  0 -1 -1
+2   3  0  1  1
+5   3  0  1 -1
+9   4 -1  1  1
+6   4 -1 -1 -1
+7   4 -1  0  0
+10  4 -1 -1  1
+8   4 -1  1 -1
+15  1  1  0  1
+13  1  1  1  0
+14  1  1 -1 -1
+11  1  1  1 -1
+12  1  1 -1  1
+20  2  1  0 -1
+19  2  1 -1  0
+17  2  1  1  1
+18  2  1  1 -1
+16  2  1 -1  1
+> EEw1s2('EE20R5WP')
+   WP w1 s1 s2
+1   1  1  1  0
+2   1  1  1  1
+3   1  1 -1  1
+4   1  1  0 -1
+5   2 -1 -1  1
+6   2 -1  1 -1
+7   2 -1  1  1
+8   2 -1 -1 -1
+9   3  0 -1 -1
+10  3  0  0  0
+11  3  0 -1  1
+12  3  0  1 -1
+13  4  1  1  1
+14  4  1 -1  0
+15  4  1  1 -1
+16  4  1  0  1
+17  5 -1 -1 -1
+18  5 -1 -1  1
+19  5 -1  1  1
+20  5 -1  1 -1
+> EEw1s2('EE20R5WP', randomize=TRUE)
+   WP w1 s1 s2
+1   2 -1 -1  1
+3   2 -1  1  1
+2   2 -1  1 -1
+4   2 -1 -1 -1
+8   3  0  1 -1
+5   3  0 -1 -1
+7   3  0 -1  1
+6   3  0  0  0
+10  5 -1 -1  1
+12  5 -1  1 -1
+9   5 -1 -1 -1
+11  5 -1  1  1
+15  1  1 -1  1
+13  1  1  1  0
+14  1  1  1  1
+16  1  1  0 -1
+19  4  1  1 -1
+18  4  1 -1  0
+20  4  1  0  1
+17  4  1  1  1
+> EEw1s2('EE21R7WP')
+   WP w1 s1 s2
+1   1  1 -1  0
+2   1  1  0  1
+3   1  1  1 -1
+4   2  1  1 -1
+5   2  1 -1  0
+6   2  1  0  1
+7   3 -1  1 -1
+8   3 -1  1  1
+9   3 -1 -1  0
+10  4 -1  1  1
+11  4 -1  1 -1
+12  4 -1 -1  0
+13  5  1  1  0
+14  5  1  0 -1
+15  5  1 -1  1
+16  6  0 -1 -1
+17  6  0  0  0
+18  6  0 -1  1
+19  7  0 -1 -1
+20  7  0 -1  1
+21  7  0  0  0
+> EEw1s2('EE21R7WP', randomize=TRUE)
+   WP w1 s1 s2
+3   6  0 -1  1
+2   6  0  0  0
+1   6  0 -1 -1
+6   3 -1 -1  0
+4   3 -1  1 -1
+5   3 -1  1  1
+7   4 -1  1  1
+8   4 -1  1 -1
+9   4 -1 -1  0
+11  5  1  0 -1
+12  5  1 -1  1
+10  5  1  1  0
+15  7  0  0  0
+14  7  0 -1  1
+13  7  0 -1 -1
+17  1  1  0  1
+18  1  1  1 -1
+16  1  1 -1  0
+20  2  1 -1  0
+21  2  1  0  1
+19  2  1  1 -1
+> EEw1s2('EE24R4WP')
+   WP w1 s1 s2
+1   1 -1  1  1
+2   1 -1 -1 -1
+3   1 -1  1 -1
+4   1 -1  1 -1
+5   1 -1 -1  1
+6   1 -1  0  0
+7   2  1  1  1
+8   2  1  1 -1
+9   2  1 -1  1
+10  2  1 -1 -1
+11  2  1  1  0
+12  2  1  0 -1
+13  3  1  1 -1
+14  3  1 -1 -1
+15  3  1  1  1
+16  3  1  1 -1
+17  3  1  0  1
+18  3  1 -1  0
+19  4  0 -1  1
+20  4  0  0 -1
+21  4  0 -1 -1
+22  4  0  1  1
+23  4  0  1  0
+24  4  0  0  0
+> EEw1s2('EE24R4WP', randomize=TRUE)
+   WP w1 s1 s2
+4   1 -1  1 -1
+1   1 -1  1  1
+3   1 -1  1 -1
+5   1 -1 -1  1
+6   1 -1  0  0
+2   1 -1 -1 -1
+8   3  1 -1 -1
+9   3  1  1  1
+10  3  1  1 -1
+7   3  1  1 -1
+12  3  1 -1  0
+11  3  1  0  1
+16  4  0  1  1
+17  4  0  1  0
+18  4  0  0  0
+15  4  0 -1 -1
+13  4  0 -1  1
+14  4  0  0 -1
+22  2  1 -1 -1
+20  2  1  1 -1
+23  2  1  1  0
+24  2  1  0 -1
+21  2  1 -1  1
+19  2  1  1  1
+> EEw1s2('EE24R6WP')
+   WP w1 s1 s2
+1   1 -1 -1 -1
+2   1 -1  1 -1
+3   1 -1 -1  1
+4   1 -1  1  1
+5   2  1  1 -1
+6   2  1 -1 -1
+7   2  1  0  1
+8   2  1  1  0
+9   3  1  1 -1
+10  3  1  1  1
+11  3  1  0 -1
+12  3  1 -1  0
+13  4 -1  1  1
+14  4 -1  1 -1
+15  4 -1 -1  1
+16  4 -1 -1 -1
+17  5  1  1 -1
+18  5  1  1  1
+19  5  1 -1  0
+20  5  1  0 -1
+21  6  0 -1 -1
+22  6  0  1  0
+23  6  0  0  0
+24  6  0 -1  1
+> EEw1s2('EE24R6WP', randomize=TRUE)
+   WP w1 s1 s2
+2   6  0  1  0
+1   6  0 -1 -1
+3   6  0  0  0
+4   6  0 -1  1
+8   3  1 -1  0
+5   3  1  1 -1
+6   3  1  1  1
+7   3  1  0 -1
+11  2  1  0  1
+9   2  1  1 -1
+12  2  1  1  0
+10  2  1 -1 -1
+14  1 -1  1 -1
+16  1 -1  1  1
+15  1 -1 -1  1
+13  1 -1 -1 -1
+18  5  1  1  1
+17  5  1  1 -1
+19  5  1 -1  0
+20  5  1  0 -1
+23  4 -1 -1  1
+24  4 -1 -1 -1
+22  4 -1  1 -1
+21  4 -1  1  1
+> EEw1s2('EE25R5WP')
+   WP w1 s1 s2
+1   1  1  1  1
+2   1  1  0  1
+3   1  1 -1 -1
+4   1  1 -1  0
+5   1  1  1 -1
+6   2  0  0 -1
+7   2  0  1  0
+8   2  0 -1  1
+9   2  0  0  1
+10  2  0 -1  0
+11  3 -1  1 -1
+12  3 -1 -1 -1
+13  3 -1  0  0
+14  3 -1 -1  1
+15  3 -1  1  1
+16  4 -1 -1 -1
+17  4 -1  1  1
+18  4 -1 -1  1
+19  4 -1  1 -1
+20  4 -1  0  0
+21  5  1  1  0
+22  5  1  1  1
+23  5  1 -1 -1
+24  5  1 -1  1
+25  5  1  0 -1
+> EEw1s2('EE25R5WP', randomize=TRUE)
+   WP w1 s1 s2
+3   3 -1  0  0
+5   3 -1  1  1
+2   3 -1 -1 -1
+4   3 -1 -1  1
+1   3 -1  1 -1
+7   1  1  0  1
+9   1  1 -1  0
+10  1  1  1 -1
+6   1  1  1  1
+8   1  1 -1 -1
+11  4 -1 -1 -1
+15  4 -1  0  0
+14  4 -1  1 -1
+13  4 -1 -1  1
+12  4 -1  1  1
+17  5  1  1  1
+16  5  1  1  0
+19  5  1 -1  1
+18  5  1 -1 -1
+20  5  1  0 -1
+22  2  0  1  0
+23  2  0 -1  1
+24  2  0  0  1
+21  2  0  0 -1
+25  2  0 -1  0
+> EEw1s2('EE28R7WP')
+   WP w1 s1 s2
+1   1  1 -1  0
+2   1  1  0  1
+3   1  1  1 -1
+4   1  1  0  1
+5   2 -1 -1  1
+6   2 -1  1  1
+7   2 -1  1  0
+8   2 -1  0 -1
+9   3  1  0 -1
+10  3  1  1  0
+11  3  1 -1  1
+12  3  1  0  1
+13  4  0 -1  1
+14  4  0  0  1
+15  4  0 -1 -1
+16  4  0  0  0
+17  5 -1  0  1
+18  5 -1 -1  0
+19  5 -1  1 -1
+20  5 -1  1  1
+21  6  0 -1 -1
+22  6  0  0  0
+23  6  0 -1  1
+24  6  0  0  1
+25  7  0  0  0
+26  7  0 -1 -1
+27  7  0  0  1
+28  7  0 -1  1
+> EEw1s2('EE28R7WP', randomize=TRUE)
+   WP w1 s1 s2
+1   1  1 -1  0
+4   1  1  0  1
+2   1  1  0  1
+3   1  1  1 -1
+6   7  0 -1 -1
+8   7  0 -1  1
+5   7  0  0  0
+7   7  0  0  1
+11  2 -1  1  0
+12  2 -1  0 -1
+10  2 -1  1  1
+9   2 -1 -1  1
+16  6  0  0  1
+13  6  0 -1 -1
+15  6  0 -1  1
+14  6  0  0  0
+18  4  0  0  1
+20  4  0  0  0
+19  4  0 -1 -1
+17  4  0 -1  1
+21  3  1  0 -1
+23  3  1 -1  1
+22  3  1  1  0
+24  3  1  0  1
+26  5 -1 -1  0
+25  5 -1  0  1
+27  5 -1  1 -1
+28  5 -1  1  1
+> EEw1s2('EE30R6WP')
+   WP     w1 s1 s2
+1   1  1.000 -1  1
+2   1  1.000 -1 -1
+3   1  1.000  0  0
+4   1  1.000  1 -1
+5   1  1.000  1  1
+6   2  1.000  1 -1
+7   2  1.000 -1  1
+8   2  1.000  1  1
+9   2  1.000 -1 -1
+10  2  1.000  0  0
+11  3 -1.000 -1 -1
+12  3 -1.000 -1  1
+13  3 -1.000  0 -1
+14  3 -1.000  1  0
+15  3 -1.000  1  1
+16  4  1.000  1 -1
+17  4  1.000  1  1
+18  4  1.000 -1 -1
+19  4  1.000 -1  1
+20  4  1.000  0  0
+21  5 -0.064  0 -1
+22  5 -0.064  1 -1
+23  5 -0.064  1  0
+24  5 -0.064  0  1
+25  5 -0.064 -1  0
+26  6 -1.000 -1 -1
+27  6 -1.000  1 -1
+28  6 -1.000  1  1
+29  6 -1.000  0  1
+30  6 -1.000 -1  0
+> EEw1s2('EE30R6WP', randomize=TRUE)
+   WP     w1 s1 s2
+4   4  1.000 -1  1
+5   4  1.000  0  0
+3   4  1.000 -1 -1
+2   4  1.000  1  1
+1   4  1.000  1 -1
+10  6 -1.000 -1  0
+7   6 -1.000  1 -1
+9   6 -1.000  0  1
+8   6 -1.000  1  1
+6   6 -1.000 -1 -1
+13  2  1.000  1  1
+11  2  1.000  1 -1
+15  2  1.000  0  0
+14  2  1.000 -1 -1
+12  2  1.000 -1  1
+17  5 -0.064  1 -1
+18  5 -0.064  1  0
+20  5 -0.064 -1  0
+19  5 -0.064  0  1
+16  5 -0.064  0 -1
+23  3 -1.000  0 -1
+21  3 -1.000 -1 -1
+24  3 -1.000  1  0
+25  3 -1.000  1  1
+22  3 -1.000 -1  1
+27  1  1.000 -1 -1
+30  1  1.000  1  1
+26  1  1.000 -1  1
+29  1  1.000  1 -1
+28  1  1.000  0  0
+> EEw1s2('EE30R5WP')
+   WP w1 s1 s2
+1   1  0  1 -1
+2   1  0  0  0
+3   1  0  1  1
+4   1  0  1 -1
+5   1  0  0  0
+6   1  0 -1 -1
+7   2 -1  1  1
+8   2 -1 -1 -1
+9   2 -1 -1  0
+10  2 -1 -1  1
+11  2 -1  0  1
+12  2 -1  1 -1
+13  3  1  0  1
+14  3  1  1 -1
+15  3  1 -1 -1
+16  3  1 -1  0
+17  3  1  1  1
+18  3  1 -1  1
+19  4 -1  1  1
+20  4 -1 -1 -1
+21  4 -1  0 -1
+22  4 -1 -1  1
+23  4 -1 -1  1
+24  4 -1  1  0
+25  5  1  1  1
+26  5  1 -1  1
+27  5  1 -1 -1
+28  5  1  1  0
+29  5  1  0 -1
+30  5  1 -1  1
+> EEw1s2('EE30R5WP', randomize=TRUE)
+   WP w1 s1 s2
+1   2 -1  1  1
+2   2 -1 -1 -1
+6   2 -1  1 -1
+3   2 -1 -1  0
+5   2 -1  0  1
+4   2 -1 -1  1
+7   4 -1  1  1
+10  4 -1 -1  1
+9   4 -1  0 -1
+8   4 -1 -1 -1
+12  4 -1  1  0
+11  4 -1 -1  1
+15  1  0  1  1
+14  1  0  0  0
+18  1  0 -1 -1
+17  1  0  0  0
+16  1  0  1 -1
+13  1  0  1 -1
+24  5  1 -1  1
+19  5  1  1  1
+20  5  1 -1  1
+22  5  1  1  0
+23  5  1  0 -1
+21  5  1 -1 -1
+29  3  1  1  1
+25  3  1  0  1
+28  3  1 -1  0
+27  3  1 -1 -1
+30  3  1 -1  1
+26  3  1  1 -1
+> EEw1s2('EE35R7WP')
+   WP w1 s1 s2
+1   1 -1  0 -1
+2   1 -1  1  0
+3   1 -1 -1 -1
+4   1 -1 -1  1
+5   1 -1  1  1
+6   2  1  1  1
+7   2  1 -1 -1
+8   2  1  1 -1
+9   2  1 -1  1
+10  2  1  0  0
+11  3 -1 -1 -1
+12  3 -1 -1  1
+13  3 -1  0 -1
+14  3 -1  1  1
+15  3 -1  1  0
+16  4  1 -1 -1
+17  4  1  1 -1
+18  4  1  1  1
+19  4  1 -1  1
+20  4  1  0  0
+21  5  0 -1  0
+22  5  0  0 -1
+23  5  0  1 -1
+24  5  0 -1  0
+25  5  0  0  1
+26  6  1 -1  1
+27  6  1 -1 -1
+28  6  1  1  1
+29  6  1  1 -1
+30  6  1  0  0
+31  7 -1  1 -1
+32  7 -1  0  1
+33  7 -1  1  1
+34  7 -1 -1  0
+35  7 -1 -1 -1
+> EEw1s2('EE35R7WP', randomize=TRUE)
+   WP w1 s1 s2
+3   2  1  1 -1
+1   2  1  1  1
+5   2  1  0  0
+4   2  1 -1  1
+2   2  1 -1 -1
+10  1 -1  1  1
+9   1 -1 -1  1
+8   1 -1 -1 -1
+7   1 -1  1  0
+6   1 -1  0 -1
+12  5  0  0 -1
+14  5  0 -1  0
+13  5  0  1 -1
+11  5  0 -1  0
+15  5  0  0  1
+19  3 -1  1  1
+20  3 -1  1  0
+18  3 -1  0 -1
+16  3 -1 -1 -1
+17  3 -1 -1  1
+24  6  1  1 -1
+21  6  1 -1  1
+22  6  1 -1 -1
+23  6  1  1  1
+25  6  1  0  0
+27  4  1  1 -1
+28  4  1  1  1
+30  4  1  0  0
+26  4  1 -1 -1
+29  4  1 -1  1
+35  7 -1 -1 -1
+34  7 -1 -1  0
+33  7 -1  1  1
+32  7 -1  0  1
+31  7 -1  1 -1
+> EEw1s2('EE36R6WP')
+   WP w1 s1 s2
+1   1  1  0 -1
+2   1  1  1  1
+3   1  1  1 -1
+4   1  1 -1  1
+5   1  1 -1  0
+6   1  1  1  1
+7   2 -1  1 -1
+8   2 -1  0 -1
+9   2 -1  1  1
+10  2 -1 -1  1
+11  2 -1  1  1
+12  2 -1 -1  0
+13  3 -1  1 -1
+14  3 -1 -1  1
+15  3 -1 -1 -1
+16  3 -1  1  1
+17  3 -1  1  0
+18  3 -1  0  1
+19  4  1  1  1
+20  4  1 -1 -1
+21  4  1  1 -1
+22  4  1 -1  1
+23  4  1  0  1
+24  4  1  1  0
+25  5  0  1 -1
+26  5  0 -1  1
+27  5  0 -1 -1
+28  5  0  1  0
+29  5  0 -1 -1
+30  5  0  0  0
+31  6  1 -1 -1
+32  6  1  1  1
+33  6  1  1 -1
+34  6  1 -1  1
+35  6  1  0  1
+36  6  1  1  0
+> EEw1s2('EE36R6WP', randomize=TRUE)
+   WP w1 s1 s2
+3   3 -1 -1 -1
+5   3 -1  1  0
+1   3 -1  1 -1
+4   3 -1  1  1
+2   3 -1 -1  1
+6   3 -1  0  1
+11  6  1  0  1
+7   6  1 -1 -1
+8   6  1  1  1
+12  6  1  1  0
+10  6  1 -1  1
+9   6  1  1 -1
+16  1  1 -1  1
+15  1  1  1 -1
+14  1  1  1  1
+18  1  1  1  1
+17  1  1 -1  0
+13  1  1  0 -1
+22  5  0  1  0
+24  5  0  0  0
+21  5  0 -1 -1
+19  5  0  1 -1
+20  5  0 -1  1
+23  5  0 -1 -1
+25  2 -1  1 -1
+27  2 -1  1  1
+26  2 -1  0 -1
+29  2 -1  1  1
+28  2 -1 -1  1
+30  2 -1 -1  0
+36  4  1  1  0
+33  4  1  1 -1
+31  4  1  1  1
+32  4  1 -1 -1
+35  4  1  0  1
+34  4  1 -1  1
+> EEw1s2('EE42R7WP')
+   WP w1 s1 s2
+1   1  1 -1 -1
+2   1  1  1 -1
+3   1  1  1  1
+4   1  1 -1  1
+5   1  1  0 -1
+6   1  1 -1  0
+7   2  1  1 -1
+8   2  1 -1  1
+9   2  1  1  0
+10  2  1 -1 -1
+11  2  1  0  1
+12  2  1 -1 -1
+13  3 -1 -1 -1
+14  3 -1 -1  1
+15  3 -1  1  0
+16  3 -1  1  1
+17  3 -1  0 -1
+18  3 -1 -1  1
+19  4  0  1 -1
+20  4  0 -1 -1
+21  4  0  1  1
+22  4  0 -1  1
+23  4  0  0  0
+24  4  0  0  0
+25  5 -1  1 -1
+26  5 -1  1  1
+27  5 -1 -1 -1
+28  5 -1  0  1
+29  5 -1 -1  0
+30  5 -1 -1  1
+31  6 -1  0  1
+32  6 -1 -1 -1
+33  6 -1 -1  1
+34  6 -1 -1  0
+35  6 -1  1  1
+36  6 -1  1 -1
+37  7  0  1 -1
+38  7  0 -1 -1
+39  7  0 -1  1
+40  7  0  1  1
+41  7  0  0  0
+42  7  0  0  0
+> EEw1s2('EE42R7WP', randomize=TRUE)
+   WP w1 s1 s2
+1   1  1 -1 -1
+4   1  1 -1  1
+5   1  1  0 -1
+3   1  1  1  1
+2   1  1  1 -1
+6   1  1 -1  0
+7   2  1  1 -1
+11  2  1  0  1
+12  2  1 -1 -1
+10  2  1 -1 -1
+8   2  1 -1  1
+9   2  1  1  0
+13  5 -1  1 -1
+14  5 -1  1  1
+17  5 -1 -1  0
+16  5 -1  0  1
+15  5 -1 -1 -1
+18  5 -1 -1  1
+19  6 -1  0  1
+22  6 -1 -1  0
+20  6 -1 -1 -1
+23  6 -1  1  1
+21  6 -1 -1  1
+24  6 -1  1 -1
+30  4  0  0  0
+29  4  0  0  0
+26  4  0 -1 -1
+27  4  0  1  1
+28  4  0 -1  1
+25  4  0  1 -1
+32  3 -1 -1  1
+36  3 -1 -1  1
+31  3 -1 -1 -1
+34  3 -1  1  1
+35  3 -1  0 -1
+33  3 -1  1  0
+42  7  0  0  0
+38  7  0 -1 -1
+39  7  0 -1  1
+37  7  0  1 -1
+41  7  0  0  0
+40  7  0  1  1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw1s3")
+> ### * EEw1s3
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw1s3
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw1s3
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw1s3()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (1 wp factor and  3 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE15R5WP       5                   3          
+EE16R4WP       4                   4          
+EE18R6WP       6                   3          
+EE20R4WP       4                   5          
+EE20R5WP       5                   4          
+EE24R4WP       4                   6          
+EE24R6WP       6                   4          
+EE30R6WP       6                   5          
+EE36R6WP       6                   6          
+  
+==> to retrieve a design type EEw1s3('EE15R5WP') etc. 
+> EEw1s3('EE16R4WP')
+   WP w1 s1 s2 s3
+1   1  0  0 -1 -1
+2   1  0  0  0  0
+3   1  0  1  1  0
+4   1  0 -1  0  1
+5   2 -1 -1  1 -1
+6   2 -1  1  1  1
+7   2 -1  1 -1 -1
+8   2 -1 -1 -1  1
+9   3 -1  1 -1  1
+10  3 -1  1  1 -1
+11  3 -1 -1  1  1
+12  3 -1 -1 -1 -1
+13  4  1  0  1  1
+14  4  1  1 -1  1
+15  4  1 -1 -1  0
+16  4  1  1  0 -1
+> EEw1s3('EE16R4WP', randomize=TRUE)
+   WP w1 s1 s2 s3
+1   2 -1 -1  1 -1
+3   2 -1  1 -1 -1
+2   2 -1  1  1  1
+4   2 -1 -1 -1  1
+6   4  1  1 -1  1
+8   4  1  1  0 -1
+5   4  1  0  1  1
+7   4  1 -1 -1  0
+12  3 -1 -1 -1 -1
+10  3 -1  1  1 -1
+9   3 -1  1 -1  1
+11  3 -1 -1  1  1
+15  1  0  1  1  0
+16  1  0 -1  0  1
+13  1  0  0 -1 -1
+14  1  0  0  0  0
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw2s1")
+> ### * EEw2s1
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw2s1
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw2s1
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw2s1()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (2 wp factors and  1 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE14R7WP       7                   2          
+EE16R8WP       8                   2          
+EE18R9WP       9                   2          
+EE20R10WP     10                   2          
+EE21R7WP       7                   3          
+EE22R11WP     11                   2          
+EE24R8WP       8                   3          
+EE24R12WP     12                   2          
+EE27R9WP       9                   3          
+EE28R7WP       7                   4          
+EE30R10WP     10                   3          
+EE32R8WP       8                   4          
+EE33R11WP     11                   3          
+EE35R7WP       7                   5          
+EE36R9WP       9                   4          
+EE36R12WP     12                   3          
+EE40R8WP       8                   5          
+EE40R10WP     10                   4          
+EE42R7WP       7                   6          
+EE44R11WP     11                   4          
+EE45R9WP       9                   5          
+EE48R8WP       8                   6          
+EE50R10WP     10                   5          
+EE54R9WP       9                   6          
+EE55R11WP     11                   5          
+EE60R10WP     10                   6          
+EE60R12WP     12                   5          
+EE66R11WP     11                   6          
+EE72R12WP     12                   6          
+  
+==> to retrieve a design type EEw2s1('EE21R7WP') etc. 
+> EEw2s1('EE21R7WP')
+   WP w1      w2 s1
+1   1  1  1.0000  1
+2   1  1  1.0000 -1
+3   1  1  1.0000  0
+4   2 -1 -1.0000 -1
+5   2 -1 -1.0000  0
+6   2 -1 -1.0000  1
+7   3  1 -1.0000  1
+8   3  1 -1.0000 -1
+9   3  1 -1.0000  0
+10  4  0  1.0000  1
+11  4  0  1.0000 -1
+12  4  0  1.0000  0
+13  5  1  0.0000  1
+14  5  1  0.0000 -1
+15  5  1  0.0000  0
+16  6  0 -0.1586 -1
+17  6  0 -0.1586  1
+18  6  0 -0.1586  0
+19  7 -1  1.0000  1
+20  7 -1  1.0000 -1
+21  7 -1  1.0000  0
+> EEw1s1('EE21R7WP', randomize=TRUE)
+   WP w1 s1
+3   2  1  1
+1   2  1 -1
+2   2  1  0
+4   3  1  0
+6   3  1 -1
+5   3  1  1
+9   6  0 -1
+7   6  0  0
+8   6  0  1
+12  4 -1  0
+11  4 -1 -1
+10  4 -1  1
+15  1 -1  0
+14  1 -1  1
+13  1 -1 -1
+17  7  1  0
+16  7  1 -1
+18  7  1  1
+20  5  0  0
+19  5  0 -1
+21  5  0  1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw2s2")
+> ### * EEw2s2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw2s2
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw2s2
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw2s2()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (2 wp factors and  2 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE16R8WP       8                   2          
+EE18R9WP       9                   2          
+EE20R10WP     10                   2          
+EE21R7WP       7                   3          
+EE22R11WP     11                   2          
+EE24R8WP       8                   3          
+EE27R9WP       9                   3          
+EE28R7WP       7                   4          
+EE30R10WP     10                   3          
+EE32R8WP       8                   4          
+EE33R11WP     11                   3          
+EE35R7WP       7                   5          
+EE36R9WP       9                   4          
+EE40R8WP       8                   5          
+EE40R10WP     10                   4          
+EE42R7WP       7                   6          
+EE44R11WP     11                   4          
+EE45R9WP       9                   5          
+EE48R8WP       8                   6          
+EE50R10WP     10                   5          
+EE54R9WP       9                   6          
+EE55R11WP     11                   5          
+EE60R10WP     10                   6          
+EE66R11WP     11                   6          
+  
+==> to retrieve a design type EEw2s2('EE21R7WP') etc. 
+> EEw2s2('EE21R7WP')
+   WP w1 w2 s1 s2
+1   1  1 -1  0  1
+2   1  1 -1 -1 -1
+3   1  1 -1  1 -1
+4   2 -1 -1  0 -1
+5   2 -1 -1  1  1
+6   2 -1 -1 -1  1
+7   3  1 -1  1 -1
+8   3  1 -1  0  1
+9   3  1 -1 -1 -1
+10  4  1  1  0 -1
+11  4  1  1 -1  1
+12  4  1  1  1  1
+13  5 -1  0 -1  1
+14  5 -1  0 -1 -1
+15  5 -1  0  1  0
+16  6 -1  1 -1  0
+17  6 -1  1  0  1
+18  6 -1  1  1 -1
+19  7  0  1  0  0
+20  7  0  1  1  1
+21  7  0  1 -1 -1
+> EEw1s2('EE21R7WP', randomize=TRUE)
+   WP w1 s1 s2
+3   2  1  0  1
+1   2  1  1 -1
+2   2  1 -1  0
+4   3 -1  1 -1
+6   3 -1 -1  0
+5   3 -1  1  1
+9   6  0 -1  1
+7   6  0 -1 -1
+8   6  0  0  0
+12  4 -1 -1  0
+11  4 -1  1 -1
+10  4 -1  1  1
+15  1  1  1 -1
+14  1  1  0  1
+13  1  1 -1  0
+17  7  0 -1  1
+16  7  0 -1 -1
+18  7  0  0  0
+20  5  1  0 -1
+19  5  1  1  0
+21  5  1 -1  1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw2s3")
+> ### * EEw2s3
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw2s3
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw2s3
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw2s3()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+  Designs for (2 wp factors and  3 sp factors)   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  
+---------------------------------------- 
+EE21R7WP       7                   3          
+EE24R8WP       8                   3          
+EE28R7WP       7                   4          
+EE32R8WP       8                   4          
+EE35R7WP       7                   5          
+EE40R8WP       8                   5          
+EE42R7WP       7                   6          
+EE48R8WP       8                   6          
+  
+==> to retrieve a design type EEw2s3('EE21R7WP') etc. 
+> EEw2s3('EE24R8WP')
+   WP w1 w2 s1 s2 s3
+1   1  1 -1  1 -1 -1
+2   1  1 -1  1  1  1
+3   1  1 -1 -1  1 -1
+4   2 -1 -1 -1 -1  1
+5   2 -1 -1  1  0 -1
+6   2 -1 -1  1  1  0
+7   3  0 -1 -1 -1 -1
+8   3  0 -1  1 -1  1
+9   3  0 -1 -1  1  1
+10  4  1  1 -1  0 -1
+11  4  1  1  1 -1  0
+12  4  1  1  0  1  1
+13  5  1  0  0  0  0
+14  5  1  0 -1 -1  1
+15  5  1  0  1  1 -1
+16  6 -1  0  1  1  1
+17  6 -1  0 -1  1 -1
+18  6 -1  0  1 -1 -1
+19  7 -1  1 -1 -1  1
+20  7 -1  1 -1 -1  1
+21  7 -1  1  1  1 -1
+22  8  1  1  0 -1 -1
+23  8  1  1  1  0  1
+24  8  1  1 -1  1  0
+> EEw1s3('EE24R8WP', randomize=TRUE)
+ Design name misspelled-Enter EEw1s3( ) to display list of names 
+>      
+> 
+> 
+> cleanEx()
+> nameEx("EEw3")
+> ### * EEw3
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: EEw3
+> ### Title: D-efficient Estimation Equivalent Response Surface Designs
+> ### Aliases: EEw3
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> EEw3()
+  
+Catalog of D-efficient Estimation Equivalent RS 
+      Designs for ( 3 wp factors )   
+  
+   Jones and Goos, JQT(2012) pp. 363-374 
+  
+Design Name whole plots sub-plots/whole plot  sub-plot factors 
+-------------------------------------------------------------- 
+EE22R11WP      11                 2                      2    
+EE48R12WP      12                 4                      3    
+  
+==> to retrieve a design type EEw3('EE22R11WP') etc. 
+> EEw3('EE22R11WP')
+   WP w1 w2 w3 s1 s2
+1   1  1  1  1  1  1
+2   1  1  1  1 -1 -1
+3   2 -1  1 -1  1  1
+4   2 -1  1 -1 -1 -1
+5   3  1 -1  1 -1  1
+6   3  1 -1  1  1 -1
+7   4  0 -1  0 -1  0
+8   4  0 -1  0  0  1
+9   5 -1 -1 -1 -1  1
+10  5 -1 -1 -1  1 -1
+11  6  1  1 -1 -1  1
+12  6  1  1 -1  1 -1
+13  7  1 -1 -1 -1 -1
+14  7  1 -1 -1  1  1
+15  8 -1  1  1 -1  1
+16  8 -1  1  1  1 -1
+17  9 -1 -1  1 -1 -1
+18  9 -1 -1  1  1  1
+19 10  0  0 -1  1  0
+20 10  0  0 -1  0 -1
+21 11  1  0  0  1  1
+22 11  1  0  0  0  0
+> EEw3('EE22R11WP', randomize=TRUE)
+   WP w1 w2 w3 s1 s2
+1   3  1 -1  1 -1  1
+2   3  1 -1  1  1 -1
+3   4  0 -1  0 -1  0
+4   4  0 -1  0  0  1
+5   6  1  1 -1 -1  1
+6   6  1  1 -1  1 -1
+8   8 -1  1  1  1 -1
+7   8 -1  1  1 -1  1
+10  2 -1  1 -1 -1 -1
+9   2 -1  1 -1  1  1
+11  9 -1 -1  1 -1 -1
+12  9 -1 -1  1  1  1
+13  5 -1 -1 -1 -1  1
+14  5 -1 -1 -1  1 -1
+15 11  1  0  0  1  1
+16 11  1  0  0  0  0
+17  7  1 -1 -1 -1 -1
+18  7  1 -1 -1  1  1
+19  1  1  1  1  1  1
+20  1  1  1  1 -1 -1
+22 10  0  0 -1  0 -1
+21 10  0  0 -1  1  0
+> EEw3('EE48R12WP')
+   WP w1 w2 w3 s1 s2 s3
+1   1  1 -1  1 -1 -1 -1
+2   1  1 -1  1 -1  0  1
+3   1  1 -1  1  1  1 -1
+4   1  1 -1  1  1 -1  0
+5   2 -1 -1 -1  1  1 -1
+6   2 -1 -1 -1 -1  1  1
+7   2 -1 -1 -1  1 -1  1
+8   2 -1 -1 -1 -1 -1 -1
+9   3  1 -1 -1 -1 -1  1
+10  3  1 -1 -1  1 -1 -1
+11  3  1 -1 -1 -1  1 -1
+12  3  1 -1 -1  1  1  1
+13  4 -1  1 -1  1 -1 -1
+14  4 -1  1 -1  1  1  1
+15  4 -1  1 -1 -1 -1  1
+16  4 -1  1 -1 -1  1 -1
+17  5 -1  1 -1  1 -1  1
+18  5 -1  1 -1  1  1 -1
+19  5 -1  1 -1 -1 -1 -1
+20  5 -1  1 -1 -1  1  1
+21  6 -1  1  1  1  1  1
+22  6 -1  1  1  1 -1 -1
+23  6 -1  1  1 -1 -1  1
+24  6 -1  1  1 -1  1 -1
+25  7  1  1  1 -1 -1 -1
+26  7  1  1  1 -1  1  1
+27  7  1  1  1  1  1 -1
+28  7  1  1  1  1 -1  1
+29  8 -1 -1  1 -1  1  1
+30  8 -1 -1  1  1  0  1
+31  8 -1 -1  1  0  1 -1
+32  8 -1 -1  1 -1 -1  0
+33  9  0  0  1  1  1  1
+34  9  0  0  1  1 -1 -1
+35  9  0  0  1  0  0  0
+36  9  0  0  1 -1  1 -1
+37 10 -1 -1  1  0 -1  1
+38 10 -1 -1  1  1  1  0
+39 10 -1 -1  1 -1  1  1
+40 10 -1 -1  1 -1  0 -1
+41 11  1  0  0  0  0 -1
+42 11  1  0  0  1  1  1
+43 11  1  0  0 -1 -1  1
+44 11  1  0  0 -1  1  0
+45 12  0  1  0 -1  0  1
+46 12  0  1  0  1  0  0
+47 12  0  1  0 -1 -1 -1
+48 12  0  1  0  0  1  1
+> EEw3('EE48R12WP', randomize=TRUE)
+   WP w1 w2 w3 s1 s2 s3
+2   3  1 -1 -1  1 -1 -1
+4   3  1 -1 -1  1  1  1
+3   3  1 -1 -1 -1  1 -1
+1   3  1 -1 -1 -1 -1  1
+8  10 -1 -1  1 -1  0 -1
+6  10 -1 -1  1  1  1  0
+5  10 -1 -1  1  0 -1  1
+7  10 -1 -1  1 -1  1  1
+9   7  1  1  1 -1 -1 -1
+12  7  1  1  1  1 -1  1
+11  7  1  1  1  1  1 -1
+10  7  1  1  1 -1  1  1
+15  8 -1 -1  1  0  1 -1
+14  8 -1 -1  1  1  0  1
+13  8 -1 -1  1 -1  1  1
+16  8 -1 -1  1 -1 -1  0
+19  1  1 -1  1  1  1 -1
+17  1  1 -1  1 -1 -1 -1
+20  1  1 -1  1  1 -1  0
+18  1  1 -1  1 -1  0  1
+24  6 -1  1  1 -1  1 -1
+21  6 -1  1  1  1  1  1
+23  6 -1  1  1 -1 -1  1
+22  6 -1  1  1  1 -1 -1
+28 12  0  1  0  0  1  1
+26 12  0  1  0  1  0  0
+27 12  0  1  0 -1 -1 -1
+25 12  0  1  0 -1  0  1
+32  5 -1  1 -1 -1  1  1
+29  5 -1  1 -1  1 -1  1
+31  5 -1  1 -1 -1 -1 -1
+30  5 -1  1 -1  1  1 -1
+36 11  1  0  0 -1  1  0
+33 11  1  0  0  0  0 -1
+34 11  1  0  0  1  1  1
+35 11  1  0  0 -1 -1  1
+39  4 -1  1 -1 -1 -1  1
+38  4 -1  1 -1  1  1  1
+37  4 -1  1 -1  1 -1 -1
+40  4 -1  1 -1 -1  1 -1
+41  2 -1 -1 -1  1  1 -1
+44  2 -1 -1 -1 -1 -1 -1
+42  2 -1 -1 -1 -1  1  1
+43  2 -1 -1 -1  1 -1  1
+45  9  0  0  1  1  1  1
+48  9  0  0  1 -1  1 -1
+47  9  0  0  1  0  0  0
+46  9  0  0  1  1 -1 -1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("Fcrit")
+> ### * Fcrit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Fcrit
+> ### Title: F-Distribution critical values
+> ### Aliases: Fcrit
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> Fcrit(.05,2,15)
+[1] 3.68232
+> ## The function is currently defined as
+> function(alpha,nu1,nu2) qf(1-alpha,nu1,nu2)
+function (alpha, nu1, nu2) 
+qf(1 - alpha, nu1, nu2)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Fpower")
+> ### * Fpower
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Fpower
+> ### Title: F-Distribution Power Calculation
+> ### Aliases: Fpower
+> 
+> ### ** Examples
+> 
+> Fpower(0.05,2,15,6.428)
+[1] 0.5245819
+> 
+> ## The function is currently defined as
+> function(alpha,nu1,nu2,nc) 1-pf(Fcrit(alpha,nu1,nu2),nu1,nu2,nc)
+function (alpha, nu1, nu2, nc) 
+1 - pf(Fcrit(alpha, nu1, nu2), nu1, nu2, nc)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Fpower1")
+> ### * Fpower1
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Fpower1
+> ### Title: F-Distribution Power Calculation
+> ### Aliases: Fpower1
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> Fpower1(alpha=.05,nlev=3,nreps=4,Delta=3,sigma=sqrt(2.1))
+     alpha nlev nreps Delta    sigma     power
+[1,]  0.05    3     4     3 1.449138 0.5903406
+> 
+> 
+> rmin <-2 #smallest number of replicates considered
+> rmax <-6 # largest number of replicates considered
+> alpha <- rep(0.05, rmax - rmin +1) 
+> sigma <-rep(sqrt(2.1), rmax - rmin +1)
+> nreps <-c(rmin:rmax)
+> nlev <- rep(3,rmax - rmin +1)
+> nreps <- rmin:rmax
+> Delta <- rep(3,rmax - rmin +1)
+> power <- Fpower1(alpha,nlev,nreps,Delta,sigma)
+> data.frame(r=nreps,Power=power)
+  r Power.alpha Power.nlev Power.nreps Power.Delta Power.sigma Power.power
+1 2        0.05          3           2           3    1.449138   0.1947995
+2 3        0.05          3           3           3    1.449138   0.4041857
+3 4        0.05          3           4           3    1.449138   0.5903406
+4 5        0.05          3           5           3    1.449138   0.7328895
+5 6        0.05          3           6           3    1.449138   0.8329923
+> 
+> 
+> ## The function is currently defined as
+> Fpower1<-function(alpha=NULL, nlev=NULL,nreps=NULL, Delta=NULL, sigma=NULL)
++ {
++ ##### Power Calculation for one way ANOVA ###########
++ # Argument list
++ # alpha the significance level of the test
++ # nlev the number of levels of the factor 
++ # nreps the number of replicates in each level of the factor
++ # Delta the size of a practical difference in two cell means
++ # sigma the standard deviation of the experimental error
++ #####################################################
++ if (is.null(alpha)|is.null(nlev)|is.null(nreps)|is.null(Delta)|is.null(sigma))
++   stop("you must supply alpha, nlev, nreps, Delta and sigma")
++ css<-(Delta^2)/2
++ nc<- (nreps*css)/(sigma^2)
++ df1<-nlev-1
++ df2<-(nreps-1)*nlev
++ power <- 1-pf(Fcrit(alpha,df1,df2),df1,df2,nc)
++ return(power)
++ }
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Fpower2")
+> ### * Fpower2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Fpower2
+> ### Title: F-Distribution Power Calculation
+> ### Aliases: Fpower2
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> power <- Fpower2(.05, nlev = c(4,4), nreps=2, Delta= 1, sigma=.32)
+> 
+> rmin <- 2 # smallest number of replicates
+> rmax <- 4 # largest number of replicates
+> alpha <- .05
+> sigma <- .32
+> Delta <- 1.0
+> nlev <- c(4,4)
+> nreps <- c(rmin:rmax)
+> result <- Fpower2(alpha, nlev, nreps, Delta, sigma)
+> options(digits = 5)
+> result
+     alpha a b nreps Delta sigma  powera  powerb
+[1,]  0.05 4 4     2     1  0.32 0.99838 0.99838
+[2,]  0.05 4 4     3     1  0.32 1.00000 1.00000
+[3,]  0.05 4 4     4     1  0.32 1.00000 1.00000
+> 
+> 
+> ## The function is currently defined as
+> Fpower2<-function(alpha=NULL, nlev=NULL,nreps=NULL, Delta=NULL, sigma=NULL)
++ {
++ ##### Power Calculation for two way ANOVA ###########
++ # Argument list
++ # alpha the significance level of the test.
++ # nlev vector containing the number of levels of the factors. 
++ # nreps the number of replicates in each combination of factor levels.
++ # Delta the size of a practical difference in two marginal factor level means.
++ # sigma the standard deviation of the experimental error.
++ ############################################################
++ if (is.null(alpha)|is.null(nlev)|is.null(nreps)|is.null(Delta)|is.null(sigma))
++   stop("you must supply alpha, nlev, nreps, Delta and sigma")
++ if(length(nlev)<2)
++   stop ("nlev must be a two component vecto containing levels of the 1st and 2nd factors")
++ a <- nlev[1]
++ b <- nlev[2]
++ cssb <- (Delta^2)/2
++ ncb <- a*(nreps*cssb)/(sigma^2)
++ cssa<-(Delta^2)/2
++ nca<- b*(nreps*cssa)/(sigma^2)
++ dfa<- a-1
++ dfb<- b-1
++ df2<-(nreps-1)*b*a
++ powera <- 1-pf(Fcrit(alpha,dfa,df2),dfa,df2,nca)
++ powerb <- 1-pf(Fcrit(alpha,dfb,df2),dfa,df2,nca)
++ result <-cbind(nreps,df2,powera,powerb)
++ }
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Gaptest")
+> ### * Gaptest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Gaptest
+> ### Title: This function uses Daniel's Method to find an outlier in an
+> ###   unreplicated 2^{(k-p)} design.
+> ### Aliases: Gaptest
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> # Example from Box(1991)
+> data(BoxM)
+> Gaptest(BoxM)
+Effect Report 
+   
+Label     Half Effect    Sig(.05) 
+A          -0.400        no         
+B          -2.110        no         
+C           1.855        no         
+D           0.505        no         
+AB          0.455        no         
+AC         -1.245        no         
+AD         -0.290        no         
+BC         -0.400        no         
+BD         -0.590        no         
+CD          0.745        no         
+ABC         0.600        no         
+ABD         0.360        no         
+ACD         0.200        no         
+BCD        -0.790        no         
+ABCD        0.760        no         
+   
+Lawson, Grimshaw & Burt Rn Statistic =  1 
+95th percentile of Rn =  1.201 
+Initial Outlier Report 
+Standardized-Gap =  3.3532 Significant at 50th percentile 
+Final Outlier Report 
+Standardized-Gap =  13.189 Significant at 99th percentile 
+    
+    Corrrected Data Report   
+Response  Corrected Response   Detect Outlier 
+   47.46         47.46             no         
+   49.62         49.62             no         
+   43.13         43.13             no         
+   46.31         46.31             no         
+   51.47         51.47             no         
+   48.49         48.49             no         
+   49.34         49.34             no         
+   46.10         46.10             no         
+   46.76         46.76             no         
+   48.56         48.56             no         
+   44.83         44.83             no         
+   44.45         44.45             no         
+   59.15         52.75             yes        
+   51.33         51.33             no         
+   47.02         47.02             no         
+   47.90         47.90             no         
+Effect Report 
+   
+Label     Half Effect    Sig(.05) 
+A        -4.5143e-15        no         
+B        -1.7100e+00        yes        
+C         1.4550e+00        yes        
+D         1.0500e-01        no         
+AB        5.5000e-02        no         
+AC       -8.4500e-01        yes        
+AD        1.1000e-01        no         
+BC        2.1701e-15        no         
+BD       -1.9000e-01        no         
+CD        3.4500e-01        no         
+ABC       2.0000e-01        no         
+ABD      -4.0000e-02        no         
+ACD       6.0000e-01        no         
+BCD      -3.9000e-01        no         
+ABCD      3.6000e-01        no         
+   
+Lawson, Grimshaw & Burt Rn Statistic =  1.6261 
+95th percentile of Rn =  1.201 
+> 
+> 
+> ## The function is currently defined as
+> function (DesY) 
++ {
++     ncheck <- dim(DesY)
++     ncheck <- ncheck[1]
++     tcnd = TRUE
++     if (ncheck == 8) {
++         tcnd = FALSE
++     }
++     if (ncheck == 16) {
++         tcnd = FALSE
++     }
++     if (ncheck == 32) {
++         tcnd = FALSE
++     }
++     if (tcnd) {
++         stop("This function only works for 8, 16, or 32 run designs", 
++             "\n")
++     }
++     else {
++         if (ncheck == 8) 
++             ncheck = 16
++         critg16 <- c(1.7884, 5.1009)
++         critg32 <- c(1.7297, 5.8758)
++         modf <- lm(y ~ (.)^4, x = TRUE, data = DesY)
++         nbeta <- dim(DesY)
++         nbeta <- nbeta[1]
++         he <- modf$coef
++         selcol <- which(!is.na(he))
++         he <- he[selcol]
++         he <- he[-1]
++         p <- length(he)
++         n <- p + 1
++         cn1 <- names(he)
++         ccn1 <- gsub("[^A-Z]", "", cn1)
++         names(he) <- ccn1
++         ahe <- abs(he)
++         s0 <- 1.5 * median(ahe)
++         selhe <- ahe < (2.5 * s0)
++         pse = 1.5 * median(ahe[selhe])
++         gap <- gapstat(he, pse)
++         if (ncheck == 16) {
++             test = (gap > critg16[1])
++         }
++         else {
++             test = (gap > critg32[1])
++         }
++         if (test) {
++             X <- modf$x
++             X <- X[, selcol]
++             X <- X[, -1]
++             se <- as.matrix(sign(he), nrow = 1)
++             sigef <- LGB(he, rpt = FALSE, plt = FALSE)
++             for (i in 1:length(he)) {
++                 if (sigef[i] == "yes") {
++                   se[i] = 0
++                 }
++             }
++             sp <- X %*% se
++             asp <- abs(sp)
++             oo <- max.col(t(asp))
++             ae <- abs(he)
++             sae <- sort(ae)
++             nsmall <- round(length(he)/2)
++             bias <- 2 * sum(sae[1:nsmall])
++             y <- DesY$y
++             ycorr <- DesY$y
++             ycorr[oo] <- ycorr[oo] + (-1 * sign(sp[oo])) * bias
++             detect <- c(rep("no", n))
++             detect[oo] <- "yes"
++             cat("Initial Outlier Report", "\n")
++             cat("Standardized-Gap = ", gap, "Significant at 50th percentile", 
++                 "\n")
++             DesYc <- cbind(DesY[, 1:(dim(DesY)[2] - 1)], ycorr)
++             modf <- lm(ycorr ~ (.)^4, x = TRUE, data = DesYc)
++             che <- modf$coef
++             che <- che[!is.na(che)]
++             che <- che[-1]
++             p <- length(che)
++             n <- p + 1
++             cn <- names(che)
++             ccn <- gsub("[^A-Z]", "", cn)
++             names(che) <- ccn
++             ache <- abs(che)
++             s0 <- 1.5 * median(ache)
++             selche <- ache < (2.5 * s0)
++             psec = 1.5 * median(ache[selche])
++             gap <- gapstat(he, psec)
++             if (ncheck == 16) 
++                 test2 = (gap > critg16[2])
++             else test2 = (gap > critg32[2])
++             if (test2) {
++                 cat("Final Outlier Report", "\n")
++                 cat("Standardized-Gap = ", gap, "Significant at 99th percentile", 
++                   "\n")
++                 cat("   ", "\n")
++                 cat("    Corrrected Data Report  ", "\n")
++                 cat("Response  Corrected Response   Detect Outlier", 
++                   "\n")
++                 cat(paste(format(DesY$y, width = 8), format(DesYc$ycorr, 
++                   width = 13), "           ", format(detect, 
++                   width = 10), "\n"), sep = "")
++                 tce <- LGB(che)
++             }
++             else {
++                 cat("Final Outlier Report", "\n")
++                 cat("No significant outlier detected in second pass", 
++                   "\n")
++                 LGB(he)
++                 cat("    ", "\n")
++             }
++         }
++     }
 +   }
+function (DesY) 
+{
+    ncheck <- dim(DesY)
+    ncheck <- ncheck[1]
+    tcnd = TRUE
+    if (ncheck == 8) {
+        tcnd = FALSE
+    }
+    if (ncheck == 16) {
+        tcnd = FALSE
+    }
+    if (ncheck == 32) {
+        tcnd = FALSE
+    }
+    if (tcnd) {
+        stop("This function only works for 8, 16, or 32 run designs", 
+            "\n")
+    }
+    else {
+        if (ncheck == 8) 
+            ncheck = 16
+        critg16 <- c(1.7884, 5.1009)
+        critg32 <- c(1.7297, 5.8758)
+        modf <- lm(y ~ (.)^4, x = TRUE, data = DesY)
+        nbeta <- dim(DesY)
+        nbeta <- nbeta[1]
+        he <- modf$coef
+        selcol <- which(!is.na(he))
+        he <- he[selcol]
+        he <- he[-1]
+        p <- length(he)
+        n <- p + 1
+        cn1 <- names(he)
+        ccn1 <- gsub("[^A-Z]", "", cn1)
+        names(he) <- ccn1
+        ahe <- abs(he)
+        s0 <- 1.5 * median(ahe)
+        selhe <- ahe < (2.5 * s0)
+        pse = 1.5 * median(ahe[selhe])
+        gap <- gapstat(he, pse)
+        if (ncheck == 16) {
+            test = (gap > critg16[1])
+        }
+        else {
+            test = (gap > critg32[1])
+        }
+        if (test) {
+            X <- modf$x
+            X <- X[, selcol]
+            X <- X[, -1]
+            se <- as.matrix(sign(he), nrow = 1)
+            sigef <- LGB(he, rpt = FALSE, plt = FALSE)
+            for (i in 1:length(he)) {
+                if (sigef[i] == "yes") {
+                  se[i] = 0
+                }
+            }
+            sp <- X %*% se
+            asp <- abs(sp)
+            oo <- max.col(t(asp))
+            ae <- abs(he)
+            sae <- sort(ae)
+            nsmall <- round(length(he)/2)
+            bias <- 2 * sum(sae[1:nsmall])
+            y <- DesY$y
+            ycorr <- DesY$y
+            ycorr[oo] <- ycorr[oo] + (-1 * sign(sp[oo])) * bias
+            detect <- c(rep("no", n))
+            detect[oo] <- "yes"
+            cat("Initial Outlier Report", "\n")
+            cat("Standardized-Gap = ", gap, "Significant at 50th percentile", 
+                "\n")
+            DesYc <- cbind(DesY[, 1:(dim(DesY)[2] - 1)], ycorr)
+            modf <- lm(ycorr ~ (.)^4, x = TRUE, data = DesYc)
+            che <- modf$coef
+            che <- che[!is.na(che)]
+            che <- che[-1]
+            p <- length(che)
+            n <- p + 1
+            cn <- names(che)
+            ccn <- gsub("[^A-Z]", "", cn)
+            names(che) <- ccn
+            ache <- abs(che)
+            s0 <- 1.5 * median(ache)
+            selche <- ache < (2.5 * s0)
+            psec = 1.5 * median(ache[selche])
+            gap <- gapstat(he, psec)
+            if (ncheck == 16) 
+                test2 = (gap > critg16[2])
+            else test2 = (gap > critg32[2])
+            if (test2) {
+                cat("Final Outlier Report", "\n")
+                cat("Standardized-Gap = ", gap, "Significant at 99th percentile", 
+                  "\n")
+                cat("   ", "\n")
+                cat("    Corrrected Data Report  ", "\n")
+                cat("Response  Corrected Response   Detect Outlier", 
+                  "\n")
+                cat(paste(format(DesY$y, width = 8), format(DesYc$ycorr, 
+                  width = 13), "           ", format(detect, 
+                  width = 10), "\n"), sep = "")
+                tce <- LGB(che)
+            }
+            else {
+                cat("Final Outlier Report", "\n")
+                cat("No significant outlier detected in second pass", 
+                  "\n")
+                LGB(he)
+                cat("    ", "\n")
+            }
+        }
+    }
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LGB")
+> ### * LGB
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LGB
+> ### Title: This function uses the LGB Method to detect significant effects
+> ###   in unreplicated fractional factorials.
+> ### Aliases: LGB
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> data(chem)
+> modf<-lm(y~A*B*C*D,data=chem)
+> LGB(coef(modf)[-1],rpt=FALSE)
+> 
+> 
+> ## The function is currently defined as
+> LGB <- function(Beta, alpha=.05,rpt=TRUE, plt=TRUE, pltl=TRUE) {
++ sigLGB<-LGBc(Beta,alpha,rpt,plt,pltl)
 + }
-+ # end of function Gaptest
-+  }
-+  
-+ 
-+ 
-+ cleanEx()
-+ nameEx("LGB")
-+ ### * LGB
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: LGB
-+ ### Title: Lawson, Grimshaw, Burt Test
-+ ### Aliases: LGB
-+ 
-+ ### ** Examples
-+ 
-+ Beta<-c(.06,.25,-.01,.5,0,-.02,0,.14,.03,-.01,.02,.04,.02,.01,.02)
-+ names(Beta)<-c("A","B","C","D","AB","AC","AD","BC","BD","CD","ABC","ABD","ACD","BCD","ABCD")
-+ LGB(Beta,alpha=.05)
-+ 
-+ 
-+ ## The function is currently defined as
-+ LGB<-function(Beta,alpha=.05,rpt=TRUE,plt=TRUE,pltl=TRUE) {
-+ # function to compute the LGB statistic
-+ siglev<-c(.1,.05,.025,.01)
-+ df<-c(7,8,11,15,16, 17, 26, 31, 32, 35, 63, 127)
-+ crittab<-matrix(c(1.265,1.196,1.161,1.122,1.110, 1.106, 1.072, 1.063, 1.060, 1.059, 1.037, 1.023,
-+ 1.534, 1.385, 1.291, 1.201, 1.186, 1.178, 1.115, 1.099, 1.093, 1.091, 1.056, 1.034,
-+ 1.889, 1.606, 1.449, 1.297, 1.274, 1.260, 1.165, 1.140, 1.130, 1.127, 1.074, 1.043,
-+ 2.506, 2.026, 1.74, 1.447, 1.421, 1.377, 1.232, 1.197, 1.185, 1.178, 1.096, 1.058),ncol=4,byrow=FALSE)
-+ # get the critical value
-+ colind<-which(siglev==alpha,arr.ind=TRUE)
-+ 
-+ if (length(colind)==0) {stop("this function works only when alpha= .1, .05, .025 or .01") }
-+ rowind<-which(df==length(Beta),arr.ind=TRUE)
-+ if (length(rowind)==0) {stop("this function works only for coefficent vectors of length 
-+ 7,8,11,15,16,26,31,32,35,63,or 127")}
-+ 
-+ critL<-crittab[rowind,colind]
-+ 
-+ # calculate Beta1, Beta2 and the Rn statistic
-+ acj<-abs(Beta)
-+ ranks<-rank(acj,ties.method="first")
-+ s0<-1.5*median(acj)
-+ p<-(ranks-.5)/length(Beta)
-+ z<-qnorm((p+1)/2)
-+ moda<-lm(acj~-1+z)
-+ beta1<-moda$coef
-+ sel<-acj<2.5*s0
-+ modi<-lm(acj[sel]~-1+z[sel])
-+ beta2<-modi$coef
-+ Rn<-beta1/beta2
-+ # finds prediction limits for values in sorted absolute Beta
-+ pred<-beta2*z
-+ n<-length(acj[sel])
-+ df<-n-1
-+ sig<-sqrt(sum(modi$residuals^2)/df)
-+ se.pred<-sig*(1+1/n+(z^2)/sum(z[sel]^2))^.5
-+ pred.lim<-pred+qt(.975,df)*se.pred
-+ # gets significance indicators
-+ sigi<-c(rep("no",length(Beta)))
-+ sel2<-acj>pred.lim
-+ sigi[sel2]<-"yes"
-+  if (plt) {
-+ plot(z,acj,xlab="Half Normal Scores", ylab="Absoulute Effects")
-+ lines(sort(z),sort(pred),lty=1)
-+          
-+  for (i in 1:length(Beta)) {
-+    if (sigi[i]=="yes") text(z[i],acj[i],names(Beta)[i],pos=1)
-+                            }
-+  if (pltl) {
-+ lines(sort(z),sort(pred.lim),lty=3)
-+            }           
-+           } 
-+  if (rpt) {
-+ cat("Effect Report","\n")
-+ cat("  ","\n")
-+ cat("Label     Half Effect    Sig(.05)","\n")
-+ cat(paste(format(names(Beta), width=8), format(Beta, width=8),
-+  "      ",format(sigi, width=10),"\n"),sep="")
-+ cat("  ","\n")
-+ cat("Lawson, Grimshaw & Burt Rn Statistic = ",Rn,"\n")
-+ cat("95th percentile of Rn = ",critL,"\n")
-+           }
-+ return(sigi)
-+                     }
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("MPV")
-+ ### * MPV
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: MPV
-+ ### Title: mixture process variable experiment with mayonnaise
-+ ### Aliases: MPV
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(MPV)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Naph")
-+ ### * Naph
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Naph
-+ ### Title: Yields of naphthalene black
-+ ### Aliases: Naph
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Naph)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("SPMPV")
-+ ### * SPMPV
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: SPMPV
-+ ### Title: Split-plot mixture process variable experiment with vinyl
-+ ### Aliases: SPMPV
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(SPMPV)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Smotor")
-+ ### * Smotor
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Smotor
-+ ### Title: Single array for starting motor experiment
-+ ### Aliases: Smotor
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Smotor)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Tet")
-+ ### * Tet
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Tet
-+ ### Title: Tetracycline concentration in plasma
-+ ### Aliases: Tet
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Tet)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Treb")
-+ ### * Treb
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Treb
-+ ### Title: Box-Behnken design for trebuchet experiment
-+ ### Aliases: Treb
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(Treb)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("Tukey1df")
-+ ### * Tukey1df
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: Tukey1df
-+ ### Title: Tukey's single degree of freedom test for additivity
-+ ### Aliases: Tukey1df
-+ 
-+ ### ** Examples
-+ 
-+ Dilution<-rep(c(3,4,5),6)
-+ Sample<-rep(c(1,2,3,4,5,6),each=3)
-+  y<-c(1.87506,1.38021,0.60206,1.74036,1.36173,0.90309,1.79934,1.25527,0.95424,2.02119,1.39794,1.000,1.79934,1.20412,0.60206,1.59106,1.25527,0.60206)
-+  virus<-data.frame(y=y, Sample=factor(Sample),Dilution=factor(Dilution))
-+ 
-+ Tukey1df(virus)
-+ 
-+ 
-+ ## The function is currently defined as
-+ Tukey1df<-function(data) {
-+ y<-data[,1]
-+ Afactor<-data[,2]
-+ Bfactor<-data[,3]
-+ tst1<-is.factor(Afactor)
-+ tst2<-is.factor(Bfactor)
-+ tst3<-is.numeric(y)
-+ if (tst1&tst2&tst3) {
-+ a<-nlevels(Afactor)
-+ b<-nlevels(Bfactor)
-+   }  else {stop("The first column of the data frame is the numeric response, the 2nd and 3rd columns should be coded as factors") }
-+ tst4<-max(a,b)>2
-+ tst5<-length(y)==a*b
-+ if (tst4&tst5) {
-+ ybb<-with(data, tapply(y, Bfactor, mean))
-+ yba<-with(data, tapply(y, Afactor, mean))
-+ sbb<-with(data, tapply(y, Bfactor, sum))
-+ sba<-with(data, tapply(y, Afactor, sum))
-+ ybardd<-mean(y)
-+ CT<-(sum(y)^2)/(a*b)
-+ ssA<-sum(sba^2/b)-CT
-+ ssB<-sum(sbb^2/a)-CT
-+ ssE<-sum(y^2)-CT-ssA-ssB
-+ ybdj<-rep(ybb,6)
-+ prody<-y*ybdj
-+ sumprod<-tapply(prody,Afactor,sum)
-+ leftsum<-sum(sumprod*yba)
-+ ssAB<-(a*b*(leftsum-(ssA+ssB+a*b*ybardd^2)*ybardd)^2/(ssA*ssB))
-+ ssR<-ssE-ssAB
-+ F<-ssAB/(ssR/((a-1)*(b-1)-1))
-+ Pval<-1-pf(1,((a-1)*(b-1)-1),F)
-+ cat("Source           df     SS        MS        F     Pr>F","\n")
-+ cat("A            ",paste(format(a-1, width=6)," ", format(round(ssA,4),justify="right"),"  ",format(round(ssA/(a-1),4), justify="right"),"\n"),sep="")
-+ cat("B            ",paste(format(b-1, width=6)," ", format(round(ssB,4),justify="right"),"  ",format(round(ssB/(b-1),4), justify="right"),"\n"),sep="")
-+ cat("Error        ",paste(format((b-1)*(a-1), width=6)," ", format(round(ssE,4),justify="right"),"  ",format(round(ssE/(a-1)*(b-1),4), justify="right"),"\n"),sep="")
-+ cat("NonAdditivity",paste(format(1, width=6)," ", format(round(ssAB,4),justify="right"),"  ",format(round(ssAB,4),justify="right"),"  ",format(round(F,2),justify="right"),"  ",format(round(Pval,4),justify="right"),"\n"),sep="")
-+ cat("Residual     ",paste(format((b-1)*(a-1)-1, width=6)," ", format(round(ssR,4),justify="right"),"  ",format(round(ssR/((a-1)*(b-1)-1),4), justify="right"),"\n"),sep="")
-+    } else {stop("This function only works for unreplicated 2-factor factorials with >2 levels for one of the factors")}
-+ }
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("antifungal")
-+ ### * antifungal
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: antifungal
-+ ### Title: Two-period crossover study of antifungal agent
-+ ### Aliases: antifungal
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(antifungal)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("apple")
-+ ### * apple
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: apple
-+ ### Title: Confounded apple slice browning experiment
-+ ### Aliases: apple
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(apple)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("arso")
-+ ### * arso
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: arso
-+ ### Title: 2^{(7-3)} arsenic removal experiment
-+ ### Aliases: arso
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(arso)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("augm")
-+ ### * augm
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: augm
-+ ### Title: 2^{(7-3)} arsenic removal experiment augmented with mirror image
-+ ### Aliases: augm
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(augm)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("bha")
-+ ### * bha
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: bha
-+ ### Title: mouse liver enzyme experiment
-+ ### Aliases: bha
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(bha)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("bioequiv")
-+ ### * bioequiv
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: bioequiv
-+ ### Title: Extra-period crossover bioequivalence study
-+ ### Aliases: bioequiv
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(bioequiv)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("bioeqv")
-+ ### * bioeqv
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: bioeqv
-+ ### Title: Latin Square bioequivalence experiment
-+ ### Aliases: bioeqv
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(bioeqv)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("blood")
-+ ### * blood
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: blood
-+ ### Title: Variance component study of calcium in blood serum
-+ ### Aliases: blood
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(blood)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("bread")
-+ ### * bread
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: bread
-+ ### Title: Bread rise experiment data from Chapter 2
-+ ### Aliases: bread
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(bread)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("cake")
-+ ### * cake
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: cake
-+ ### Title: Split-Plot response surface for cake baking experiment
-+ ### Aliases: cake
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(cake)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("castf")
-+ ### * castf
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: castf
-+ ### Title: cast fatigue experiment
-+ ### Aliases: castf
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(castf)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("cement")
-+ ### * cement
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: cement
-+ ### Title: CCD design for cement workability experiment
-+ ### Aliases: cement
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(cement)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("chem")
-+ ### * chem
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: chem
-+ ### Title: Chemical process experiment data from Chapter 3
-+ ### Aliases: chem
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(chem)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("chipman")
-+ ### * chipman
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: chipman
-+ ### Title: Williams' crossover design for sprinting experiment
-+ ### Aliases: chipman
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(chipman)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("cont")
-+ ### * cont
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: cont
-+ ### Title: Control factor array and summary statistics for controller
-+ ###   circuit design experiment
-+ ### Aliases: cont
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(cont)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("cpipe")
-+ ### * cpipe
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: cpipe
-+ ### Title: Split-plot response surface for ceramic pipe experiment
-+ ### Aliases: cpipe
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(cpipe)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("culture")
-+ ### * culture
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: culture
-+ ### Title: paecilomyces variotii culture experiment
-+ ### Aliases: culture
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(culture)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("daewr-package")
-+ ### * daewr-package
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: daewr-package
-+ ### Title: Data frames and functions for Design and Analysis of Experiments
-+ ###   with R
-+ ### Aliases: daewr-package daewr
-+ ### Keywords: package
-+ 
-+ ### ** Examples
-+ 
-+ Fcrit(.05,2,15)
-+ Fpower(0.05,2,15,6.428)
-+ BIBsize(6,3)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("dairy")
-+ ### * dairy
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: dairy
-+ ### Title: Repeated measures study with dairy cow diets
-+ ### Aliases: dairy
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(dairy)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("drug")
-+ ### * drug
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: drug
-+ ### Title: Data from rat behavior experiment in Chapter 4
-+ ### Aliases: drug
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(drug)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("eptaxr")
-+ ### * eptaxr
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: eptaxr
-+ ### Title: Single array and raw response for silicon layer growth
-+ ###   experiment
-+ ### Aliases: eptaxr
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(eptaxr)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("eptaxs2")
-+ ### * eptaxs2
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: eptaxs2
-+ ### Title: Control array and variance of response for silicon layer growth
-+ ###   experiment
-+ ### Aliases: eptaxs2
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(eptaxs2)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("eptaxyb")
-+ ### * eptaxyb
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: eptaxyb
-+ ### Title: Control array and mean response for silicon layer growth
-+ ###   experiment
-+ ### Aliases: eptaxyb
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(eptaxyb)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("fullnormal")
-+ ### * fullnormal
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: fullnormal
-+ ### Title: Nornal Plot of Effects
-+ ### Aliases: fullnormal
-+ 
-+ ### ** Examples
-+ 
-+ data(plasma)
-+ sol<-lm(y~A*B*C*D*E,data=plasma)
-+ # get whole plot effects and split plot effects
-+ effects<-coef(sol)
-+ effects<-effects[c(2:32)]
-+ Wpeffects<-effects[c(1:4, 6:11, 16:19, 26)]
-+ Speffects<-effects[c(5,12:15,20:25,27:31)]
-+ #make separate normal plots
-+ fullnormal(Wpeffects,names(Wpeffects),alpha=.10)
-+ fullnormal(Speffects,names(Speffects),alpha=.05)
-+ # make normal plot of all effects
-+ fullnormal(effects,names(effects),alpha=.01,refline=FALSE)
-+ 
-+ 
-+ 
-+ ## The function is currently defined as
-+ fullnormal<-function(effects,labs,alpha=.05,refline="TRUE") {
-+ crit<-LenthPlot(effects,alpha=alpha,plt=FALSE)["ME"]
-+ names<-names(effects)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("LGBc")
+> ### * LGBc
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: LGBc
+> ### Title: This function does the calculations for the LGB Method to detect
+> ###   significant effects in unreplicated fractional factorials.
+> ### Aliases: LGBc
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> data(chem)
+> modf<-lm(y~A*B*C*D,data=chem)
+> sig<-LGBc(coef(modf)[-1],rpt=FALSE)
+> 
+> 
+> ## The function is currently defined as
+> function (Beta, alpha = 0.05, rpt = TRUE, plt = TRUE, pltl = TRUE) 
++ {
++     siglev <- c(0.1, 0.05, 0.025, 0.01)
++     df <- c(7, 8, 11, 15, 16, 17, 26, 31, 32, 35, 63, 127)
++     crittab <- matrix(c(1.265, 1.196, 1.161, 1.122, 1.11, 1.106, 
++         1.072, 1.063, 1.06, 1.059, 1.037, 1.023, 1.534, 1.385, 
++         1.291, 1.201, 1.186, 1.178, 1.115, 1.099, 1.093, 1.091, 
++         1.056, 1.034, 1.889, 1.606, 1.449, 1.297, 1.274, 1.26, 
++         1.165, 1.14, 1.13, 1.127, 1.074, 1.043, 2.506, 2.026, 
++         1.74, 1.447, 1.421, 1.377, 1.232, 1.197, 1.185, 1.178, 
++         1.096, 1.058), ncol = 4, byrow = FALSE)
++     colind <- which(siglev == alpha, arr.ind = TRUE)
++     if (length(colind) == 0) {
++         stop("this function works only when alpha= .1, .05, .025 or .01")
++     }
++     rowind <- which(df == length(Beta), arr.ind = TRUE)
++     if (length(rowind) == 0) {
++         stop("this function works only for coefficent vectors of 
++ 		length 7,8,11,15,16,26,31,32,35,63,or 127")
++     }
++     critL <- crittab[rowind, colind]
++     acj <- abs(Beta)
++     ranks <- rank(acj, ties.method = "first")
++     s0 <- 1.5 * median(acj)
++     p <- (ranks - 0.5)/length(Beta)
++     z <- qnorm((p + 1)/2)
++     moda <- lm(acj ~ -1 + z)
++     beta1 <- moda$coef
++     sel <- acj < 2.5 * s0
++     modi <- lm(acj[sel] ~ -1 + z[sel])
++     beta2 <- modi$coef
++     Rn <- beta1/beta2
++     pred <- beta2 * z
++     n <- length(acj[sel])
++     df <- n - 1
++     sig <- sqrt(sum(modi$residuals^2)/df)
++     se.pred <- sig * (1 + 1/n + (z^2)/sum(z[sel]^2))^0.5
++     pred.lim <- pred + qt(0.975, df) * se.pred
++     sigi <- c(rep("no", length(Beta)))
++     sel2 <- acj > pred.lim
++     sigi[sel2] <- "yes"
++     if (plt) {
++         plot(z, acj, xlab = "Half Normal Scores", ylab = "Absoulute Effects")
++         lines(sort(z), sort(pred), lty = 1)
++         for (i in 1:length(Beta)) {
++             if (sigi[i] == "yes") 
++                 text(z[i], acj[i], names(Beta)[i], pos = 1)
++         }
++         if (pltl) {
++             lines(sort(z), sort(pred.lim), lty = 3)
++         }
++     }
++     if (rpt) {
++         cat("Effect Report", "\n")
++         cat("  ", "\n")
++         cat("Label     Half Effect    Sig(.05)", "\n")
++         cat(paste(format(names(Beta), width = 8), format(Beta, 
++             width = 8), "      ", format(sigi, width = 10), "\n"), 
++             sep = "")
++         cat("  ", "\n")
++         cat("Lawson, Grimshaw & Burt Rn Statistic = ", Rn, "\n")
++         cat("95th percentile of Rn = ", critL, "\n")
++     }
++     return(sigi)
++   }
+function (Beta, alpha = 0.05, rpt = TRUE, plt = TRUE, pltl = TRUE) 
+{
+    siglev <- c(0.1, 0.05, 0.025, 0.01)
+    df <- c(7, 8, 11, 15, 16, 17, 26, 31, 32, 35, 63, 127)
+    crittab <- matrix(c(1.265, 1.196, 1.161, 1.122, 1.11, 1.106, 
+        1.072, 1.063, 1.06, 1.059, 1.037, 1.023, 1.534, 1.385, 
+        1.291, 1.201, 1.186, 1.178, 1.115, 1.099, 1.093, 1.091, 
+        1.056, 1.034, 1.889, 1.606, 1.449, 1.297, 1.274, 1.26, 
+        1.165, 1.14, 1.13, 1.127, 1.074, 1.043, 2.506, 2.026, 
+        1.74, 1.447, 1.421, 1.377, 1.232, 1.197, 1.185, 1.178, 
+        1.096, 1.058), ncol = 4, byrow = FALSE)
+    colind <- which(siglev == alpha, arr.ind = TRUE)
+    if (length(colind) == 0) {
+        stop("this function works only when alpha= .1, .05, .025 or .01")
+    }
+    rowind <- which(df == length(Beta), arr.ind = TRUE)
+    if (length(rowind) == 0) {
+        stop("this function works only for coefficent vectors of \n\t\tlength 7,8,11,15,16,26,31,32,35,63,or 127")
+    }
+    critL <- crittab[rowind, colind]
+    acj <- abs(Beta)
+    ranks <- rank(acj, ties.method = "first")
+    s0 <- 1.5 * median(acj)
+    p <- (ranks - 0.5)/length(Beta)
+    z <- qnorm((p + 1)/2)
+    moda <- lm(acj ~ -1 + z)
+    beta1 <- moda$coef
+    sel <- acj < 2.5 * s0
+    modi <- lm(acj[sel] ~ -1 + z[sel])
+    beta2 <- modi$coef
+    Rn <- beta1/beta2
+    pred <- beta2 * z
+    n <- length(acj[sel])
+    df <- n - 1
+    sig <- sqrt(sum(modi$residuals^2)/df)
+    se.pred <- sig * (1 + 1/n + (z^2)/sum(z[sel]^2))^0.5
+    pred.lim <- pred + qt(0.975, df) * se.pred
+    sigi <- c(rep("no", length(Beta)))
+    sel2 <- acj > pred.lim
+    sigi[sel2] <- "yes"
+    if (plt) {
+        plot(z, acj, xlab = "Half Normal Scores", ylab = "Absoulute Effects")
+        lines(sort(z), sort(pred), lty = 1)
+        for (i in 1:length(Beta)) {
+            if (sigi[i] == "yes") 
+                text(z[i], acj[i], names(Beta)[i], pos = 1)
+        }
+        if (pltl) {
+            lines(sort(z), sort(pred.lim), lty = 3)
+        }
+    }
+    if (rpt) {
+        cat("Effect Report", "\n")
+        cat("  ", "\n")
+        cat("Label     Half Effect    Sig(.05)", "\n")
+        cat(paste(format(names(Beta), width = 8), format(Beta, 
+            width = 8), "      ", format(sigi, width = 10), "\n"), 
+            sep = "")
+        cat("  ", "\n")
+        cat("Lawson, Grimshaw & Burt Rn Statistic = ", Rn, "\n")
+        cat("95th percentile of Rn = ", critL, "\n")
+    }
+    return(sigi)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("MPV")
+> ### * MPV
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: MPV
+> ### Title: mixture process variable experiment with mayonnaise
+> ### Aliases: MPV
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(MPV)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ModelRobust")
+> ### * ModelRobust
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ModelRobust
+> ### Title: Model Robust Factorial Designs
+> ### Aliases: ModelRobust
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> ModelRobust()
+  
+       Model Robust Factorial Designs 
+  
+ Li and Nachtsheim, JQT(2000) p. 345-352 
+  
+                                 g         
+                               Maximum     
+                      m        # of        
+Design Name   runs  factors  interactions  
+---------------------------------------- 
+MR8m4g3        8     4           3         
+MR8m5g2        8     5           2         
+MR8m6g1        8     6           1         
+MR12m5g5       12    5           5         
+MR12m6g5       12    6           5         
+MR12m7g4       12    7           4         
+MR12m8g3       12    8           3         
+MR12m9g2       12    9           2         
+MR16m7g5       16    7           5         
+MR16m8g5       16    8           5         
+MR16m9g5       16    9           5         
+MR16m10g3      16   10           3         
+  
+==> to retrieve a design type ModelRobust('MR8m4g3') etc. 
+> ModelRobust('MR8m4g3')
+   A  B  C  D
+1 -1  1  1 -1
+2  1 -1 -1  1
+3  1  1  1  1
+4 -1 -1 -1 -1
+5  1 -1  1 -1
+6 -1  1 -1 -1
+7 -1  1 -1  1
+8  1 -1  1  1
+> ModelRobust('MR8m4g3', randomize=TRUE)
+   A  B  C  D
+3  1  1  1  1
+8  1 -1  1  1
+4 -1 -1 -1 -1
+5  1 -1  1 -1
+1 -1  1  1 -1
+7 -1  1 -1  1
+2  1 -1 -1  1
+6 -1  1 -1 -1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("Naph")
+> ### * Naph
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Naph
+> ### Title: Yields of naphthalene black
+> ### Aliases: Naph
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Naph)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("OptPB")
+> ### * OptPB
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: OptPB
+> ### Title: Optimum Plackett-Burman Designs
+> ### Aliases: OptPB
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> OptPB(12,8)
+    A  B  C  D  E  F  G  H
+1   1 -1  1 -1 -1 -1  1  1
+2   1  1 -1  1 -1 -1 -1  1
+3  -1  1  1 -1  1 -1 -1 -1
+4   1 -1  1  1 -1  1 -1 -1
+5   1  1 -1  1  1 -1  1 -1
+6   1  1  1 -1  1  1 -1  1
+7  -1  1  1  1 -1  1  1 -1
+8  -1 -1  1  1  1 -1  1  1
+9  -1 -1 -1  1  1  1 -1  1
+10  1 -1 -1 -1  1  1  1 -1
+11 -1  1 -1 -1 -1  1  1  1
+12 -1 -1 -1 -1 -1 -1 -1 -1
+>      
+> 
+> 
+> cleanEx()
+> nameEx("SPMPV")
+> ### * SPMPV
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: SPMPV
+> ### Title: Split-plot mixture process variable experiment with vinyl
+> ### Aliases: SPMPV
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(SPMPV)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Smotor")
+> ### * Smotor
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Smotor
+> ### Title: Single array for starting motor experiment
+> ### Aliases: Smotor
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Smotor)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Tet")
+> ### * Tet
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Tet
+> ### Title: Tetracycline concentration in plasma
+> ### Aliases: Tet
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Tet)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Treb")
+> ### * Treb
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Treb
+> ### Title: Box-Behnken design for trebuchet experiment
+> ### Aliases: Treb
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(Treb)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("Tukey1df")
+> ### * Tukey1df
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: Tukey1df
+> ### Title: This function performs Tukey's single degree of freedom test for
+> ###   interaction in an unreplicated two-factor design
+> ### Aliases: Tukey1df
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> library(daewr)
+> data(virus)
+> Tukey1df(virus)
+Source           df     SS        MS        F     Pr>F 
+A                 5   0.1948    0.039 
+B                 2   3.1664    1.5832 
+Error            10   0.1283    0.0513 
+NonAdditivity     1   0.0069    0.0069    0.51    0.7247 
+Residual          9   0.1214    0.0135 
+> 
+> ## The function is currently defined as
+> function (data) 
++ {
++     y <- data[, 1]
++     Afactor <- data[, 2]
++     Bfactor <- data[, 3]
++     tst1 <- is.factor(Afactor)
++     tst2 <- is.factor(Bfactor)
++     tst3 <- is.numeric(y)
++     if (tst1 & tst2 & tst3) {
++         a <- nlevels(Afactor)
++         b <- nlevels(Bfactor)
++     }
++     else {
++         stop("The first column of the data frame is the numeric response, 
++ 		the 2nd and 3rd columns should be coded as factors")
++     }
++     tst4 <- max(a, b) > 2
++     tst5 <- length(y) == a * b
++     if (tst4 & tst5) {
++         ybb <- with(data, tapply(y, Bfactor, mean))
++         yba <- with(data, tapply(y, Afactor, mean))
++         sbb <- with(data, tapply(y, Bfactor, sum))
++         sba <- with(data, tapply(y, Afactor, sum))
++         ybardd <- mean(y)
++         CT <- (sum(y)^2)/(a * b)
++         ssA <- sum(sba^2/b) - CT
++         ssB <- sum(sbb^2/a) - CT
++         ssE <- sum(y^2) - CT - ssA - ssB
++         ybdj <- rep(ybb, 6)
++         prody <- y * ybdj
++         sumprod <- tapply(prody, Afactor, sum)
++         leftsum <- sum(sumprod * yba)
++         ssAB <- (a * b * (leftsum - (ssA + ssB + a * b * ybardd^2) * 
++             ybardd)^2/(ssA * ssB))
++         ssR <- ssE - ssAB
++         F <- ssAB/(ssR/((a - 1) * (b - 1) - 1))
++         Pval <- 1 - pf(1, ((a - 1) * (b - 1) - 1), F)
++         cat("Source           df     SS        MS        F     Pr>F", 
++             "\n")
++         cat("A            ", paste(format(a - 1, width = 6), 
++             " ", format(round(ssA, 4), justify = "right"), "  ", 
++             format(round(ssA/(a - 1), 4), justify = "right"), 
++             "\n"), sep = "")
++         cat("B            ", paste(format(b - 1, width = 6), 
++             " ", format(round(ssB, 4), justify = "right"), "  ", 
++             format(round(ssB/(b - 1), 4), justify = "right"), 
++             "\n"), sep = "")
++         cat("Error        ", paste(format((b - 1) * (a - 1), 
++             width = 6), " ", format(round(ssE, 4), justify = "right"), 
++             "  ", format(round(ssE/(a - 1) * (b - 1), 4), justify = "right"), 
++             "\n"), sep = "")
++         cat("NonAdditivity", paste(format(1, width = 6), " ", 
++             format(round(ssAB, 4), justify = "right"), "  ", 
++             format(round(ssAB, 4), justify = "right"), "  ", 
++             format(round(F, 2), justify = "right"), "  ", format(round(Pval, 
++                 4), justify = "right"), "\n"), sep = "")
++         cat("Residual     ", paste(format((b - 1) * (a - 1) - 
++             1, width = 6), " ", format(round(ssR, 4), justify = "right"), 
++             "  ", format(round(ssR/((a - 1) * (b - 1) - 1), 4), 
++                 justify = "right"), "\n"), sep = "")
++     }
++     else {
++         stop("This function only works for unreplicated 2-factor 
++ 		factorials with >2 levels for one of the factors")
++     }
++   }
+function (data) 
+{
+    y <- data[, 1]
+    Afactor <- data[, 2]
+    Bfactor <- data[, 3]
+    tst1 <- is.factor(Afactor)
+    tst2 <- is.factor(Bfactor)
+    tst3 <- is.numeric(y)
+    if (tst1 & tst2 & tst3) {
+        a <- nlevels(Afactor)
+        b <- nlevels(Bfactor)
+    }
+    else {
+        stop("The first column of the data frame is the numeric response, \n\t\tthe 2nd and 3rd columns should be coded as factors")
+    }
+    tst4 <- max(a, b) > 2
+    tst5 <- length(y) == a * b
+    if (tst4 & tst5) {
+        ybb <- with(data, tapply(y, Bfactor, mean))
+        yba <- with(data, tapply(y, Afactor, mean))
+        sbb <- with(data, tapply(y, Bfactor, sum))
+        sba <- with(data, tapply(y, Afactor, sum))
+        ybardd <- mean(y)
+        CT <- (sum(y)^2)/(a * b)
+        ssA <- sum(sba^2/b) - CT
+        ssB <- sum(sbb^2/a) - CT
+        ssE <- sum(y^2) - CT - ssA - ssB
+        ybdj <- rep(ybb, 6)
+        prody <- y * ybdj
+        sumprod <- tapply(prody, Afactor, sum)
+        leftsum <- sum(sumprod * yba)
+        ssAB <- (a * b * (leftsum - (ssA + ssB + a * b * ybardd^2) * 
+            ybardd)^2/(ssA * ssB))
+        ssR <- ssE - ssAB
+        F <- ssAB/(ssR/((a - 1) * (b - 1) - 1))
+        Pval <- 1 - pf(1, ((a - 1) * (b - 1) - 1), F)
+        cat("Source           df     SS        MS        F     Pr>F", 
+            "\n")
+        cat("A            ", paste(format(a - 1, width = 6), 
+            " ", format(round(ssA, 4), justify = "right"), "  ", 
+            format(round(ssA/(a - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("B            ", paste(format(b - 1, width = 6), 
+            " ", format(round(ssB, 4), justify = "right"), "  ", 
+            format(round(ssB/(b - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("Error        ", paste(format((b - 1) * (a - 1), 
+            width = 6), " ", format(round(ssE, 4), justify = "right"), 
+            "  ", format(round(ssE/(a - 1) * (b - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("NonAdditivity", paste(format(1, width = 6), " ", 
+            format(round(ssAB, 4), justify = "right"), "  ", 
+            format(round(ssAB, 4), justify = "right"), "  ", 
+            format(round(F, 2), justify = "right"), "  ", format(round(Pval, 
+                4), justify = "right"), "\n"), sep = "")
+        cat("Residual     ", paste(format((b - 1) * (a - 1) - 
+            1, width = 6), " ", format(round(ssR, 4), justify = "right"), 
+            "  ", format(round(ssR/((a - 1) * (b - 1) - 1), 4), 
+                justify = "right"), "\n"), sep = "")
+    }
+    else {
+        stop("This function only works for unreplicated 2-factor \n\t\tfactorials with >2 levels for one of the factors")
+    }
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("antifungal")
+> ### * antifungal
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: antifungal
+> ### Title: Two-period crossover study of antifungal agent
+> ### Aliases: antifungal
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(antifungal)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("apple")
+> ### * apple
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: apple
+> ### Title: Confounded apple slice browning experiment
+> ### Aliases: apple
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(apple)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("arso")
+> ### * arso
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: arso
+> ### Title: 2^{(7-3)} arsenic removal experiment
+> ### Aliases: arso
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(arso)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("augm")
+> ### * augm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: augm
+> ### Title: 2^{(7-3)} arsenic removal experiment augmented with mirror image
+> ### Aliases: augm
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(augm)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("bha")
+> ### * bha
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bha
+> ### Title: mouse liver enzyme experiment
+> ### Aliases: bha
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(bha)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("bioequiv")
+> ### * bioequiv
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bioequiv
+> ### Title: Extra-period crossover bioequivalence study
+> ### Aliases: bioequiv
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(bioequiv)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("bioeqv")
+> ### * bioeqv
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bioeqv
+> ### Title: Latin Square bioequivalence experiment
+> ### Aliases: bioeqv
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(bioeqv)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blood")
+> ### * blood
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blood
+> ### Title: Variance component study of calcium in blood serum
+> ### Aliases: blood
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(blood)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("bread")
+> ### * bread
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bread
+> ### Title: Bread rise experiment data from Chapter 2
+> ### Aliases: bread
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(bread)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("bstep")
+> ### * bstep
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bstep
+> ### Title: This function performs Tukey's single degree of freedom test for
+> ###   interaction in an unreplicated two-factor design
+> ### Aliases: bstep
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> 
+> library(daewr)
+> des <- DefScreen( m = 8 )
+> pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+> trm<-ihstep(pd,des)
+
+Call:
+lm.default(formula = y ~ (.), data = d1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.020 -0.830  0.081  1.030  3.680 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    7.219      0.514   14.05  4.9e-10 ***
+F              3.151      0.566    5.56  5.4e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.12 on 15 degrees of freedom
+Multiple R-squared:  0.674,	Adjusted R-squared:  0.652 
+F-statistic: 30.9 on 1 and 15 DF,  p-value: 5.43e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.834 -1.021 -0.205  0.519  2.838 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      1.035    4.87  0.00031 ***
+F              3.151      0.479    6.58  1.8e-05 ***
+A              0.766      0.479    1.60  0.13355    
+I.A.2.         2.654      1.140    2.33  0.03667 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.79 on 13 degrees of freedom
+Multiple R-squared:  0.798,	Adjusted R-squared:  0.751 
+F-statistic: 17.1 on 3 and 13 DF,  p-value: 8.5e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.848 -0.638  0.317  0.671  2.445 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.928    5.42  0.00015 ***
+F              3.151      0.430    7.33    9e-06 ***
+A              0.766      0.430    1.78  0.09971 .  
+I.A.2.         2.654      1.023    2.60  0.02341 *  
+C             -0.876      0.430   -2.04  0.06414 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.61 on 12 degrees of freedom
+Multiple R-squared:  0.85,	Adjusted R-squared:   0.8 
+F-statistic:   17 on 4 and 12 DF,  p-value: 7.01e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.412 -0.445  0.123  0.780  1.526 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.834    6.03  0.00013 ***
+F              3.151      0.386    8.16  9.9e-06 ***
+A              0.766      0.386    1.98  0.07527 .  
+I.A.2.         2.654      0.919    2.89  0.01616 *  
+C             -0.876      0.386   -2.27  0.04671 *  
+A.D           -0.820      0.417   -1.97  0.07761 .  
+D             -0.384      0.386   -0.99  0.34385    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.44 on 10 degrees of freedom
+Multiple R-squared:  0.899,	Adjusted R-squared:  0.838 
+F-statistic: 14.8 on 6 and 10 DF,  p-value: 0.000186
+
+> trm<-bstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d3f)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.028 -0.829 -0.060  1.142  1.642 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.834    6.04  8.5e-05 ***
+F              3.151      0.386    8.17  5.4e-06 ***
+A              0.766      0.386    1.99    0.073 .  
+I.A.2.         2.654      0.919    2.89    0.015 *  
+C             -0.876      0.386   -2.27    0.044 *  
+A.D           -0.820      0.417   -1.97    0.075 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.44 on 11 degrees of freedom
+Multiple R-squared:  0.889,	Adjusted R-squared:  0.838 
+F-statistic: 17.6 on 5 and 11 DF,  p-value: 6.42e-05
+
+> trm<-bstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d3f)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.848 -0.638  0.317  0.671  2.445 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.928    5.42  0.00015 ***
+F              3.151      0.430    7.33    9e-06 ***
+A              0.766      0.430    1.78  0.09971 .  
+I.A.2.         2.654      1.023    2.60  0.02341 *  
+C             -0.876      0.430   -2.04  0.06414 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.61 on 12 degrees of freedom
+Multiple R-squared:  0.85,	Adjusted R-squared:   0.8 
+F-statistic:   17 on 4 and 12 DF,  p-value: 7.01e-05
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("cake")
+> ### * cake
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: cake
+> ### Title: Split-Plot response surface for cake baking experiment
+> ### Aliases: cake
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(cake)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("cement")
+> ### * cement
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: cement
+> ### Title: CCD design for cement workability experiment
+> ### Aliases: cement
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(cement)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("chem")
+> ### * chem
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: chem
+> ### Title: Chemical process experiment data from Chapter 3
+> ### Aliases: chem
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(chem)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("chipman")
+> ### * chipman
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: chipman
+> ### Title: Williams' crossover design for sprinting experiment
+> ### Aliases: chipman
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(chipman)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("colormap")
+> ### * colormap
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: colormap
+> ### Title: This function makes a colormap of correlations in a design
+> ###   matrix
+> ### Aliases: colormap
+> ### Keywords: hplot
+> 
+> ### ** Examples
+> 
+> # color map of 2^(4-1) design
+> library(FrF2)
+> design <- FrF2(8, 4, randomize = FALSE)
+> colormap(design, mod=3)
+> 
+> # Makes color map for saturated 2^(7-4) design in Figure 6.14 p. 197
+> library(FrF2)
+> design <-FrF2( 8, 7)
+> colormap(design, mod=2)
+> 
+> # Makes colormap of an Alternate Screening Design 
+> library(daewr)
+> ascr<-Altscreen(7)
+> colormap(ascr, mod=2)
+> 
+> # Makes colormap of a Model Robust Design 
+> library(daewr)
+> MR16 <- ModelRobust('MR16m7g5', randomize = FALSE)
+> colormap(MR16, mod=2)
+>           
+> ## The function is currently defined as
+> function(design, mod) {
++ ##################### Inputs ###########################################
++ # design - a data frame containing columns of the numeric factor levels
++ # mod - the model for the color plot of correlations
++ #    1 = Linear model containing only the terms in the data frame
++ #    2 = Linear model plus two factor interactions
++ #    3 = Linear model plus 2 and 3 factor interactions
++ #    4 = Linear model plus 2, 3 and 4 factor interactions
++ ########################################################################
++ y<-runif(nrow(design),0,1)
++ if(mod==1) {test <- model.matrix(lm(y~(.),data=design))}
++ if(mod==2) {test <- model.matrix(lm(y~(.)^2,data=design))}
++ if(mod==3) {test <- model.matrix(lm(y~(.)^3,data=design))}
++ if(mod==4) {test <- model.matrix(lm(y~(.)^4,data=design))}
++ names<-colnames(test)
 + names<-gsub(':','',names)
 + names<-gsub('1','',names)
-+ le<-length(effects)
-+  for (i in 1:le) {
-+      logc<-(abs(effects[i])<=crit)
-+      if (logc) {names[i]<-" "}
-+                   }
-+ qqnorm(effects, ylab="Estimated Effects", xlab="Normal Scores")
-+ x<-qqnorm(effects,plot=FALSE)
-+ zscr<-(x$x)
-+ # Splits effects into positive and negative for labeling
-+ effp<-effects[zscr>0]
-+ zp<-zscr[zscr>0]
-+ namep<-names[zscr>0]
-+ effn<-effects[zscr<0]
-+ zn<-zscr[zscr<0]
-+ namen<-names[zscr<0]
-+ text(zp,effp,namep,pos=1) 
-+ text(zn,effn,namen,pos=3)  
-+ # calculate pse statistic
-+ ahe<-abs(effects)
-+ s0<-1.5*median(ahe)
-+ selhe<-ahe<(2.5*s0)
-+ pse=1.5*median(ahe[selhe])
-+ if (refline) {
-+ # add reference line to plot
-+ abline(0,pse)
++ colnames(test)<-names
++ cmas<-cor(test[,ncol(test):2])
++ cmas<-cmas[c((ncol(cmas)):1), ]
++ rgb.palette <- colorRampPalette(c("white", "black"), space = "rgb")
++ levelplot(cmas, main="Color map of correlations", xlab="", ylab="", col.regions=rgb.palette(120), cuts=100, at=seq(0,1,0.01),scales=list(x=list(rot=90)))
++                           }
+function (design, mod) 
+{
+    y <- runif(nrow(design), 0, 1)
+    if (mod == 1) {
+        test <- model.matrix(lm(y ~ (.), data = design))
+    }
+    if (mod == 2) {
+        test <- model.matrix(lm(y ~ (.)^2, data = design))
+    }
+    if (mod == 3) {
+        test <- model.matrix(lm(y ~ (.)^3, data = design))
+    }
+    if (mod == 4) {
+        test <- model.matrix(lm(y ~ (.)^4, data = design))
+    }
+    names <- colnames(test)
+    names <- gsub(":", "", names)
+    names <- gsub("1", "", names)
+    colnames(test) <- names
+    cmas <- cor(test[, ncol(test):2])
+    cmas <- cmas[c((ncol(cmas)):1), ]
+    rgb.palette <- colorRampPalette(c("white", "black"), space = "rgb")
+    levelplot(cmas, main = "Color map of correlations", xlab = "", 
+        ylab = "", col.regions = rgb.palette(120), cuts = 100, 
+        at = seq(0, 1, 0.01), scales = list(x = list(rot = 90)))
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("cont")
+> ### * cont
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: cont
+> ### Title: Control factor array and summary statistics for controller
+> ###   circuit design experiment
+> ### Aliases: cont
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(cont)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("cpipe")
+> ### * cpipe
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: cpipe
+> ### Title: Split-plot response surface for ceramic pipe experiment
+> ### Aliases: cpipe
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(cpipe)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("culture")
+> ### * culture
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: culture
+> ### Title: paecilomyces variotii culture experiment
+> ### Aliases: culture
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(culture)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("daewr-package")
+> ### * daewr-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: daewr-package
+> ### Title: Data frames and functions for Design and Analysis of Experiments
+> ###   with R
+> ### Aliases: daewr-package daewr
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> Fcrit(.05,2,15)
+[1] 3.6823
+> Fpower1(alpha=.05,nlev=3,nreps=4,Delta=3,sigma=sqrt(2.1))
+     alpha nlev nreps Delta  sigma   power
+[1,]  0.05    3     4     3 1.4491 0.59034
+> BIBsize(6,3)
+Posible BIB design with b= 10  and r= 5  lambda= 2 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("dairy")
+> ### * dairy
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: dairy
+> ### Title: Repeated measures study with dairy cow diets
+> ### Aliases: dairy
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(dairy)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("drug")
+> ### * drug
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: drug
+> ### Title: Data from rat behavior experiment in Chapter 4
+> ### Aliases: drug
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(drug)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("eptaxr")
+> ### * eptaxr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: eptaxr
+> ### Title: Single array and raw response for silicon layer growth
+> ###   experiment
+> ### Aliases: eptaxr
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(eptaxr)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("eptaxs2")
+> ### * eptaxs2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: eptaxs2
+> ### Title: Control array and variance of response for silicon layer growth
+> ###   experiment
+> ### Aliases: eptaxs2
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(eptaxs2)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("eptaxyb")
+> ### * eptaxyb
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: eptaxyb
+> ### Title: Control array and mean response for silicon layer growth
+> ###   experiment
+> ### Aliases: eptaxyb
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(eptaxyb)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fhstep")
+> ### * fhstep
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fhstep
+> ### Title: This function performs Tukey's single degree of freedom test for
+> ###   interaction in an unreplicated two-factor design
+> ### Aliases: fhstep
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> 
+> library(daewr)
+> des <- DefScreen( m = 8 )
+> pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+> trm<-ihstep(pd,des)
+
+Call:
+lm.default(formula = y ~ (.), data = d1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.020 -0.830  0.081  1.030  3.680 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    7.219      0.514   14.05  4.9e-10 ***
+F              3.151      0.566    5.56  5.4e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.12 on 15 degrees of freedom
+Multiple R-squared:  0.674,	Adjusted R-squared:  0.652 
+F-statistic: 30.9 on 1 and 15 DF,  p-value: 5.43e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.834 -1.021 -0.205  0.519  2.838 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      1.035    4.87  0.00031 ***
+F              3.151      0.479    6.58  1.8e-05 ***
+A              0.766      0.479    1.60  0.13355    
+I.A.2.         2.654      1.140    2.33  0.03667 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.79 on 13 degrees of freedom
+Multiple R-squared:  0.798,	Adjusted R-squared:  0.751 
+F-statistic: 17.1 on 3 and 13 DF,  p-value: 8.5e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.848 -0.638  0.317  0.671  2.445 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.928    5.42  0.00015 ***
+F              3.151      0.430    7.33    9e-06 ***
+A              0.766      0.430    1.78  0.09971 .  
+I.A.2.         2.654      1.023    2.60  0.02341 *  
+C             -0.876      0.430   -2.04  0.06414 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.61 on 12 degrees of freedom
+Multiple R-squared:  0.85,	Adjusted R-squared:   0.8 
+F-statistic:   17 on 4 and 12 DF,  p-value: 7.01e-05
+
+> trm<-fhstep(pd,des,trm)
+
+Call:
+lm.default(formula = y ~ (.), data = d2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.412 -0.445  0.123  0.780  1.526 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    5.033      0.834    6.03  0.00013 ***
+F              3.151      0.386    8.16  9.9e-06 ***
+A              0.766      0.386    1.98  0.07527 .  
+I.A.2.         2.654      0.919    2.89  0.01616 *  
+C             -0.876      0.386   -2.27  0.04671 *  
+A.D           -0.820      0.417   -1.97  0.07761 .  
+D             -0.384      0.386   -0.99  0.34385    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.44 on 10 degrees of freedom
+Multiple R-squared:  0.899,	Adjusted R-squared:  0.838 
+F-statistic: 14.8 on 6 and 10 DF,  p-value: 0.000186
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("fullnormal")
+> ### * fullnormal
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: fullnormal
+> ### Title: This function makes a full normal plot of the elements of the
+> ###   vector called effects
+> ### Aliases: fullnormal
+> ### Keywords: hplot
+> 
+> ### ** Examples
+> 
+> # Example Separate Normal plots of whole and split plot effects from an unreplicated split-plot 
+> data(plasma)
+> sol<-lm(y~A*B*C*D*E,data=plasma)
+> summary(sol)
+
+Call:
+lm.default(formula = y ~ A * B * C * D * E, data = plasma)
+
+Residuals:
+ALL 32 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)     40.9812         NA      NA       NA
+A1               5.9125         NA      NA       NA
+B1               2.1125         NA      NA       NA
+C1              -1.6938         NA      NA       NA
+D1              -7.5500         NA      NA       NA
+E1               1.5687         NA      NA       NA
+A1:B1           -2.1062         NA      NA       NA
+A1:C1            1.4875         NA      NA       NA
+B1:C1           -0.4250         NA      NA       NA
+A1:D1            8.2813         NA      NA       NA
+B1:D1           -1.6563         NA      NA       NA
+C1:D1            0.8375         NA      NA       NA
+A1:E1           -2.9500         NA      NA       NA
+B1:E1           -0.1500         NA      NA       NA
+C1:E1           -0.0688         NA      NA       NA
+D1:E1            0.5125         NA      NA       NA
+A1:B1:C1         1.4313         NA      NA       NA
+A1:B1:D1        -1.6500         NA      NA       NA
+A1:C1:D1        -1.1562         NA      NA       NA
+B1:C1:D1         0.6187         NA      NA       NA
+A1:B1:E1         0.0563         NA      NA       NA
+A1:C1:E1        -0.0875         NA      NA       NA
+B1:C1:E1         0.4500         NA      NA       NA
+A1:D1:E1        -0.4062         NA      NA       NA
+B1:D1:E1        -0.0938         NA      NA       NA
+C1:D1:E1         0.1625         NA      NA       NA
+A1:B1:C1:D1      3.4250         NA      NA       NA
+A1:B1:C1:E1     -0.2187         NA      NA       NA
+A1:B1:D1:E1      0.1375         NA      NA       NA
+A1:C1:D1:E1     -0.1312         NA      NA       NA
+B1:C1:D1:E1      0.4437         NA      NA       NA
+A1:B1:C1:D1:E1   0.1250         NA      NA       NA
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:     1,	Adjusted R-squared:   NaN 
+F-statistic:  NaN on 31 and 0 DF,  p-value: NA
+
+> # get whole plot effects and split plot effects
+> effects<-coef(sol)
+> effects<-effects[c(2:32)]
+> Wpeffects<-effects[c(1:4, 6:11, 16:19, 26)]
+> Speffects<-effects[c(5,12:15,20:25,27:31)]
+> 
+> #make separate normal plots
+> library(BsMD)
+> fullnormal(Wpeffects,names(Wpeffects),alpha=.10)
+> fullnormal(Speffects,names(Speffects),alpha=.05)
+> 
+> 
+> ## The function is currently defined as
+> function (effects, labs, alpha = 0.05, refline = "TRUE") 
++ {
++     crit <- LenthPlot(effects, alpha = alpha, plt = FALSE)["ME"]
++     names <- names(effects)
++     names <- gsub(":", "", names)
++     names <- gsub("1", "", names)
++     le <- length(effects)
++     for (i in 1:le) {
++         logc <- (abs(effects[i]) <= crit)
++         if (logc) {
++             names[i] <- " "
++         }
++     }
++     qqnorm(effects, ylab = "Estimated Effects", xlab = "Normal Scores")
++     x <- qqnorm(effects, plot = FALSE)
++     zscr <- (x$x)
++     effp <- effects[zscr > 0]
++     zp <- zscr[zscr > 0]
++     namep <- names[zscr > 0]
++     effn <- effects[zscr < 0]
++     zn <- zscr[zscr < 0]
++     namen <- names[zscr < 0]
++     text(zp, effp, namep, pos = 1)
++     text(zn, effn, namen, pos = 3)
++     ahe <- abs(effects)
++     s0 <- 1.5 * median(ahe)
++     selhe <- ahe < (2.5 * s0)
++     pse = 1.5 * median(ahe[selhe])
++     if (refline) {
++         abline(0, pse)
++     }
 +   }
-+ 
-+ }
-+ 
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("gagerr")
-+ ### * gagerr
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: gagerr
-+ ### Title: Gauge R&R Study
-+ ### Aliases: gagerr
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(gagerr)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("gapstat")
-+ ### * gapstat
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: gapstat
-+ ### Title: Gap Statistic
-+ ### Aliases: gapstat
-+ 
-+ ### ** Examples
-+ 
-+ Beta<-c(.06,.25,-.01,.5,0,-.02,0,.14,.03,-.01,.02,.04,.02,.01,.02)
-+ names(Beta)<-c("A","B","C","D","AB","AC","AD","BC","BD","CD","ABC","ABD","ACD","BCD","ABCD")
-+ gapstat(Beta,.06)
-+ 
-+ ## The function is currently defined as
-+ gapstat<-function(beta,pse) {
-+ # computes the standardized gap score
-+ p<-length(beta)
-+ psehe<-pse
-+ # gets positive coefficients
-+ sel<-beta >= 0
-+ betap<-beta[sel]
-+ # sorts positive elements
-+ betap<-sort(betap)
-+ # gets Beta_s
-+ betas<-betap[1]
-+ #gets negative coefficients
-+ sel<-beta < 0
-+ betan<-beta[sel]
-+ nn<-length(betan)
-+ # sorts negative coefficients
-+ betan<-sort(betan)
-+ #gets Beta_L
-+ betal<-betan[nn]
-+ # gets Z_L and Z_S
-+ zl<-qnorm((nn-.375)/(p+.25))
-+ zs<-qnorm((nn+1-.375)/(p+.25))
-+ # calculates gap statistic
-+ gap<-((betas-betal)/psehe)/(zs-zl)
-+ return(gap)
-+                       }
-+ 
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("gear")
-+ ### * gear
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: gear
-+ ### Title: Unreplicated split-plot fractional-factorial experiment on
-+ ###   geometric distortion of drive gears
-+ ### Aliases: gear
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(gear)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("hardwood")
-+ ### * hardwood
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: hardwood
-+ ### Title: low grade hardwood conjoint study
-+ ### Aliases: hardwood
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(hardwood)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("inject")
-+ ### * inject
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: inject
-+ ### Title: Single array for injection molding experiment
-+ ### Aliases: inject
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(inject)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("mod")
-+ ### * mod
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: mod
-+ ### Title: Mod function
-+ ### Aliases: mod
-+ 
-+ ### ** Examples
-+ 
-+ mod(5,3)
-+ ## The function is currently defined as
-+ mod<-function(a,b)
+function (effects, labs, alpha = 0.05, refline = "TRUE") 
+{
+    crit <- LenthPlot(effects, alpha = alpha, plt = FALSE)["ME"]
+    names <- names(effects)
+    names <- gsub(":", "", names)
+    names <- gsub("1", "", names)
+    le <- length(effects)
+    for (i in 1:le) {
+        logc <- (abs(effects[i]) <= crit)
+        if (logc) {
+            names[i] <- " "
+        }
+    }
+    qqnorm(effects, ylab = "Estimated Effects", xlab = "Normal Scores")
+    x <- qqnorm(effects, plot = FALSE)
+    zscr <- (x$x)
+    effp <- effects[zscr > 0]
+    zp <- zscr[zscr > 0]
+    namep <- names[zscr > 0]
+    effn <- effects[zscr < 0]
+    zn <- zscr[zscr < 0]
+    namen <- names[zscr < 0]
+    text(zp, effp, namep, pos = 1)
+    text(zn, effn, namen, pos = 3)
+    ahe <- abs(effects)
+    s0 <- 1.5 * median(ahe)
+    selhe <- ahe < (2.5 * s0)
+    pse = 1.5 * median(ahe[selhe])
+    if (refline) {
+        abline(0, pse)
+    }
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("gagerr")
+> ### * gagerr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: gagerr
+> ### Title: Gauge R&R Study
+> ### Aliases: gagerr
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(gagerr)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("gapstat")
+> ### * gapstat
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: gapstat
+> ### Title: This function computes the gap statistic which is used to test
+> ###   for an outlier using Daniels method
+> ### Aliases: gapstat
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> 
+> ## The function is currently defined as
+> function (beta, pse) 
++ {
++     p <- length(beta)
++     psehe <- pse
++     sel <- beta >= 0
++     betap <- beta[sel]
++     betap <- sort(betap)
++     betas <- betap[1]
++     sel <- beta < 0
++     betan <- beta[sel]
++     nn <- length(betan)
++     betan <- sort(betan)
++     betal <- betan[nn]
++     zl <- qnorm((nn - 0.375)/(p + 0.25))
++     zs <- qnorm((nn + 1 - 0.375)/(p + 0.25))
++     gap <- ((betas - betal)/psehe)/(zs - zl)
++     return(gap)
++   }
+function (beta, pse) 
+{
+    p <- length(beta)
+    psehe <- pse
+    sel <- beta >= 0
+    betap <- beta[sel]
+    betap <- sort(betap)
+    betas <- betap[1]
+    sel <- beta < 0
+    betan <- beta[sel]
+    nn <- length(betan)
+    betan <- sort(betan)
+    betal <- betan[nn]
+    zl <- qnorm((nn - 0.375)/(p + 0.25))
+    zs <- qnorm((nn + 1 - 0.375)/(p + 0.25))
+    gap <- ((betas - betal)/psehe)/(zs - zl)
+    return(gap)
+}
+> 
+> 
+> 
+> cleanEx()
+> nameEx("gear")
+> ### * gear
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: gear
+> ### Title: Unreplicated split-plot fractional-factorial experiment on
+> ###   geometric distortion of drive gears
+> ### Aliases: gear
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(gear)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("halfnorm")
+> ### * halfnorm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: halfnorm
+> ### Title: This function makes a half normal plot of the elements of the
+> ###   vector called effects
+> ### Aliases: halfnorm
+> ### Keywords: hplot
+> 
+> ### ** Examples
+> 
+> # Example Separate Normal plots of whole and split plot effects from an unreplicated split-plot 
+> data(plasma)
+> sol<-lm(y~A*B*C*D*E,data=plasma)
+> # get whole plot effects and split plot effects
+> effects<-coef(sol)
+> effects<-effects[c(2:32)]
+> Wpeffects<-effects[c(1:4, 6:11, 16:19, 26)]
+> Speffects<-effects[c(5,12:15,20:25,27:31)]
+> 
+> #make separate half normal plots
+> library(BsMD)
+> halfnorm(Wpeffects,names(Wpeffects),alpha=.10)
+zscore= 0.041789 0.12566 0.21043 0.29674 0.38532 0.47704 0.57297 0.67449 0.7835 0.90273 1.0364 1.1918 1.383 1.6449 2.128effp= 0.425 0.61875 0.8375 1.1562 1.4313 1.4875 1.65 1.6563 1.6938 2.1062 2.1125 3.425 5.9125 7.55 8.2813> halfnorm(Speffects,names(Speffects),alpha=.05)
+zscore= 0.039176 0.11777 0.1971 0.27769 0.36013 0.4451 0.53341 0.6261 0.72451 0.83051 0.94678 1.0775 1.2299 1.4178 1.6759 2.1539effp= 0.05625 0.06875 0.0875 0.09375 0.125 0.13125 0.1375 0.15 0.1625 0.21875 0.40625 0.44375 0.45 0.5125 1.5687 2.95>         
+> 
+> 
+> cleanEx()
+> nameEx("hardwood")
+> ### * hardwood
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: hardwood
+> ### Title: low grade hardwood conjoint study
+> ### Aliases: hardwood
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(hardwood)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("ihstep")
+> ### * ihstep
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: ihstep
+> ### Title: This function performs Tukey's single degree of freedom test for
+> ###   interaction in an unreplicated two-factor design
+> ### Aliases: ihstep
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> 
+> library(daewr)
+> des <- DefScreen( m = 8 )
+> pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+> trm<-ihstep(pd,des)
+
+Call:
+lm.default(formula = y ~ (.), data = d1)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-5.020 -0.830  0.081  1.030  3.680 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    7.219      0.514   14.05  4.9e-10 ***
+F              3.151      0.566    5.56  5.4e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.12 on 15 degrees of freedom
+Multiple R-squared:  0.674,	Adjusted R-squared:  0.652 
+F-statistic: 30.9 on 1 and 15 DF,  p-value: 5.43e-05
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("inject")
+> ### * inject
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: inject
+> ### Title: Single array for injection molding experiment
+> ### Aliases: inject
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(inject)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("mod")
+> ### * mod
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: mod
+> ### Title: Mod function
+> ### Aliases: mod
+> ### Keywords: datagen
+> 
+> ### ** Examples
+> 
+> mod(5,3)
+[1] 2
+> ## The function is currently defined as
+> mod<-function(a,b)
 + {a-b*floor(a/b)}
-+ 
-+ 
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("pastry")
-+ ### * pastry
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: pastry
-+ ### Title: Blocked response surface design for pastry dough experiment
-+ ### Aliases: pastry
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(pastry)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("pest")
-+ ### * pest
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: pest
-+ ### Title: Pesticide formulation experiment
-+ ### Aliases: pest
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(pest)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("pesticide")
-+ ### * pesticide
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: pesticide
-+ ### Title: pesticide application experiment
-+ ### Aliases: pesticide
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(pesticide)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("plasma")
-+ ### * plasma
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: plasma
-+ ### Title: Unreplicated split-plot 2^5 experiment on plasma treatment of
-+ ###   paper
-+ ### Aliases: plasma
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(plasma)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("polvdat")
-+ ### * polvdat
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: polvdat
-+ ### Title: Polvoron mixture experiment
-+ ### Aliases: polvdat
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(polvdat)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("polymer")
-+ ### * polymer
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: polymer
-+ ### Title: polymerization strength variability study
-+ ### Aliases: polymer
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(polymer)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("prodstd")
-+ ### * prodstd
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: prodstd
-+ ### Title: Complete control factor array and noise factor array for
-+ ###   connector experiment
-+ ### Aliases: prodstd
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(prodstd)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("qsar")
-+ ### * qsar
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: qsar
-+ ### Title: Library of substituted hydroxyphenylurea compounds
-+ ### Aliases: qsar
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(qsar)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("rcb")
-+ ### * rcb
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: rcb
-+ ### Title: generalized RCB golf driving experiment
-+ ### Aliases: rcb
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(rcb)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("residue")
-+ ### * residue
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: residue
-+ ### Title: Herbicide degradation experiment
-+ ### Aliases: residue
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(residue)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("rubber")
-+ ### * rubber
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: rubber
-+ ### Title: Rubber Elasticity data
-+ ### Aliases: rubber
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(rubber)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("sausage")
-+ ### * sausage
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: sausage
-+ ### Title: Split-plot experiment on sausage casing with RCB in whole plot
-+ ### Aliases: sausage
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(sausage)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("soup")
-+ ### * soup
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: soup
-+ ### Title: dry mix soup experiment
-+ ### Aliases: soup
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(soup)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("soupmx")
-+ ### * soupmx
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: soupmx
-+ ### Title: dry soup mix variance component study
-+ ### Aliases: soupmx
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(soupmx)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("splitPdes")
-+ ### * splitPdes
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: splitPdes
-+ ### Title: Split-plot cookie baking experiment
-+ ### Aliases: splitPdes
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(splitPdes)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("strung")
-+ ### * strung
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: strung
-+ ### Title: Repeated measures study with dairy cow diets
-+ ### Aliases: strung
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(strung)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("strungtile")
-+ ### * strungtile
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: strungtile
-+ ### Title: Strung out control factor array and raw response data for Ina
-+ ###   tile experiment
-+ ### Aliases: strungtile
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(strungtile)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("sugarbeet")
-+ ### * sugarbeet
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: sugarbeet
-+ ### Title: Sugarbeet data from Chapter 2
-+ ### Aliases: sugarbeet
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(sugarbeet)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("taste")
-+ ### * taste
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: taste
-+ ### Title: taste test panel experiment
-+ ### Aliases: taste
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(taste)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("teach")
-+ ### * teach
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: teach
-+ ### Title: Teaching experiment data from Chapter 2
-+ ### Aliases: teach
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(teach)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("tile")
-+ ### * tile
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: tile
-+ ### Title: Control factor array and summary statistics for Ina tile
-+ ###   experiment
-+ ### Aliases: tile
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(tile)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("vci")
-+ ### * vci
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: vci
-+ ### Title: confidence limits for method of moments estimators of variance
-+ ###   components
-+ ### Aliases: vci
-+ 
-+ ### ** Examples
-+ 
-+ vci(.90,.05,.014852,2,.05,.026885,18)
-+ ## The function is currently defined as
-+ vci<-function(confl,c1,ms1,nu1,c2,ms2,nu2){
+> 
+>      
+> 
+> 
+> cleanEx()
+> nameEx("pastry")
+> ### * pastry
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pastry
+> ### Title: Blocked response surface design for pastry dough experiment
+> ### Aliases: pastry
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(pastry)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("pest")
+> ### * pest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pest
+> ### Title: Pesticide formulation experiment
+> ### Aliases: pest
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(pest)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("pesticide")
+> ### * pesticide
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: pesticide
+> ### Title: pesticide application experiment
+> ### Aliases: pesticide
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(pesticide)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("plasma")
+> ### * plasma
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: plasma
+> ### Title: Unreplicated split-plot 2^5 experiment on plasma treatment of
+> ###   paper
+> ### Aliases: plasma
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(plasma)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("polvdat")
+> ### * polvdat
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: polvdat
+> ### Title: Polvoron mixture experiment
+> ### Aliases: polvdat
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(polvdat)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("polymer")
+> ### * polymer
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: polymer
+> ### Title: polymerization strength variability study
+> ### Aliases: polymer
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(polymer)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("prodstd")
+> ### * prodstd
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: prodstd
+> ### Title: Complete control factor array and noise factor array for
+> ###   connector experiment
+> ### Aliases: prodstd
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(prodstd)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("qsar")
+> ### * qsar
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: qsar
+> ### Title: Library of substituted hydroxyphenylurea compounds
+> ### Aliases: qsar
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(qsar)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rcb")
+> ### * rcb
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rcb
+> ### Title: generalized RCB golf driving experiment
+> ### Aliases: rcb
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(rcb)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("residue")
+> ### * residue
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: residue
+> ### Title: Herbicide degradation experiment
+> ### Aliases: residue
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(residue)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("rubber")
+> ### * rubber
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rubber
+> ### Title: Rubber Elasticity data
+> ### Aliases: rubber
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(rubber)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("sausage")
+> ### * sausage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: sausage
+> ### Title: Split-plot experiment on sausage casing with RCB in whole plot
+> ### Aliases: sausage
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(sausage)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("soup")
+> ### * soup
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: soup
+> ### Title: dry mix soup experiment
+> ### Aliases: soup
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(soup)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("soupmx")
+> ### * soupmx
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: soupmx
+> ### Title: dry soup mix variance component study
+> ### Aliases: soupmx
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(soupmx)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("splitPdes")
+> ### * splitPdes
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: splitPdes
+> ### Title: Split-plot cookie baking experiment
+> ### Aliases: splitPdes
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(splitPdes)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("strung")
+> ### * strung
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: strung
+> ### Title: Repeated measures study with dairy cow diets
+> ### Aliases: strung
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(strung)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("strungtile")
+> ### * strungtile
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: strungtile
+> ### Title: Strung out control factor array and raw response data for Ina
+> ###   tile experiment
+> ### Aliases: strungtile
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(strungtile)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("sugarbeet")
+> ### * sugarbeet
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: sugarbeet
+> ### Title: Sugarbeet data from Chapter 2
+> ### Aliases: sugarbeet
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(sugarbeet)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("taste")
+> ### * taste
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: taste
+> ### Title: taste test panel experiment
+> ### Aliases: taste
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(taste)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("teach")
+> ### * teach
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: teach
+> ### Title: Teaching experiment data from Chapter 2
+> ### Aliases: teach
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(teach)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("tile")
+> ### * tile
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: tile
+> ### Title: Control factor array and summary statistics for Ina tile
+> ###   experiment
+> ### Aliases: tile
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(tile)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vci")
+> ### * vci
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vci
+> ### Title: confidence limits for method of moments estimators of variance
+> ###   components
+> ### Aliases: vci
+> ### Keywords: htest
+> 
+> ### ** Examples
+> 
+> vci(.90,.05,.014852,2,.05,.026885,18)
+delta= -0.00060165  Lower Limit= -0.0015798  Upper Limit= 0.0057175 
+> ## The function is currently defined as
+> vci<-function(confl,c1,ms1,nu1,c2,ms2,nu2){
 +   delta<-c1*ms1-c2*ms2
 +   alpha<-1-confl
 +   Falpha1<-qf(confl,nu1,10000000)
@@ -1674,69 +4393,72 @@ Posible BIB design with b= 10  and r= 5  lambda= 2
 +   U<-delta+sqrt(VU)
 +   cat("delta=",delta," Lower Limit=",L," Upper Limit=",U,"\n")
 + }
-+ 
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("virus")
-+ ### * virus
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: virus
-+ ### Title: Assay of Viral Contamination experiment data from Chapter 3
-+ ### Aliases: virus
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(virus)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("volt")
-+ ### * volt
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: volt
-+ ### Title: Volt meter experiment data from Chapter 3
-+ ### Aliases: volt
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(volt)
-+ 
-+ 
-+ 
-+ cleanEx()
-+ nameEx("web")
-+ ### * web
-+ 
-+ flush(stderr()); flush(stdout())
-+ 
-+ ### Name: web
-+ ### Title: Web page design experiment data from Chapter 3
-+ ### Aliases: web
-+ ### Keywords: datasets
-+ 
-+ ### ** Examples
-+ 
-+ data(web)
-+ 
-+ 
-+ 
-+ ### * <FOOTER>
-+ ###
-+ cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-+ grDevices::dev.off()
-+ ###
-+ ### Local variables: ***
-+ ### mode: outline-minor ***
-+ ### outline-regexp: "\\(> \\)?### [*]+" ***
-+ ### End: ***
-+ quit('no')
-+ 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("virus")
+> ### * virus
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: virus
+> ### Title: Assay of Viral Contamination experiment data from Chapter 3
+> ### Aliases: virus
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(virus)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("volt")
+> ### * volt
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: volt
+> ### Title: Volt meter experiment data from Chapter 3
+> ### Aliases: volt
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(volt)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("web")
+> ### * web
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: web
+> ### Title: Web page design experiment data from Chapter 3
+> ### Aliases: web
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(web)
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  1.72 0.09 1.86 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

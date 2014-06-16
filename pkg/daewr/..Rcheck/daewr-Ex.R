@@ -4,7 +4,25 @@ options(warn = 1)
 options(pager = "console")
 library('daewr')
 
-assign(".oldSearch", search(), pos = 'CheckExEnv')
+base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+cleanEx()
+nameEx("Altscreen")
+### * Altscreen
+
+flush(stderr()); flush(stdout())
+
+### Name: Altscreen
+### Title: Alternate 16 run screening designs
+### Aliases: Altscreen
+### Keywords: datagen
+
+### ** Examples
+
+Altscreen(6)
+Altscreen(6, randomize=TRUE)
+     
+
+
 cleanEx()
 nameEx("Apo")
 ### * Apo
@@ -31,11 +49,11 @@ flush(stderr()); flush(stdout())
 ### Name: BIBsize
 ### Title: Balanced incomplete blocksize
 ### Aliases: BIBsize
+### Keywords: datagen
 
 ### ** Examples
 
 BIBsize(6,3)
-
 ## The function is currently defined as
 BIBsize<-function(t,k)
 {
@@ -65,10 +83,12 @@ BIBsize<-function(t,k)
        b<-b+1
       #cat("b=",b, "r=",r)
         }
+
+    #cat("lambda=",lambda)
+    }
+  cat("Posible BIB design with b=",b," and r=",r," lambda=",lambda,"\n") 
 }
-
-
-
+       
 
 
 cleanEx()
@@ -157,6 +177,194 @@ data(COdata)
 
 
 cleanEx()
+nameEx("DefScreen")
+### * DefScreen
+
+flush(stderr()); flush(stdout())
+
+### Name: DefScreen
+### Title: Definitive Screening Designs
+### Aliases: DefScreen
+### Keywords: datagen
+
+### ** Examples
+
+DefScreen(m=8,c=2)
+DefScreen(12)
+DefScreen(m=4,c=4, randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw1s1")
+### * EEw1s1
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw1s1
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw1s1
+### Keywords: datagen
+
+### ** Examples
+
+EEw1s1()
+EEw1s1('EE8R4WP')
+EEw1s1('EE8R4WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw1s2")
+### * EEw1s2
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw1s2
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw1s2
+### Keywords: datagen
+
+### ** Examples
+
+EEw1s2( )
+EEw1s2('EE12R4WP')
+EEw1s2('EE12R4WP', randomize=TRUE)
+EEw1s2('EE12R6WP')
+EEw1s2('EE12R6WP', randomize=TRUE)
+EEw1s2('EE14R7WP')
+EEw1s2('EE14R7WP', randomize=TRUE)
+EEw1s2('EE15R5WP')
+EEw1s2('EE15R5WP', randomize=TRUE)
+EEw1s2('EE16R4WP')
+EEw1s2('EE16R4WP', randomize=TRUE)
+EEw1s2('EE18R6WP')
+EEw1s2('EE18R6WP', randomize=TRUE)
+EEw1s2('EE20R4WP')
+EEw1s2('EE20R4WP', randomize=TRUE)
+EEw1s2('EE20R5WP')
+EEw1s2('EE20R5WP', randomize=TRUE)
+EEw1s2('EE21R7WP')
+EEw1s2('EE21R7WP', randomize=TRUE)
+EEw1s2('EE24R4WP')
+EEw1s2('EE24R4WP', randomize=TRUE)
+EEw1s2('EE24R6WP')
+EEw1s2('EE24R6WP', randomize=TRUE)
+EEw1s2('EE25R5WP')
+EEw1s2('EE25R5WP', randomize=TRUE)
+EEw1s2('EE28R7WP')
+EEw1s2('EE28R7WP', randomize=TRUE)
+EEw1s2('EE30R6WP')
+EEw1s2('EE30R6WP', randomize=TRUE)
+EEw1s2('EE30R5WP')
+EEw1s2('EE30R5WP', randomize=TRUE)
+EEw1s2('EE35R7WP')
+EEw1s2('EE35R7WP', randomize=TRUE)
+EEw1s2('EE36R6WP')
+EEw1s2('EE36R6WP', randomize=TRUE)
+EEw1s2('EE42R7WP')
+EEw1s2('EE42R7WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw1s3")
+### * EEw1s3
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw1s3
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw1s3
+### Keywords: datagen
+
+### ** Examples
+
+EEw1s3()
+EEw1s3('EE16R4WP')
+EEw1s3('EE16R4WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw2s1")
+### * EEw2s1
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw2s1
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw2s1
+### Keywords: datagen
+
+### ** Examples
+
+EEw2s1()
+EEw2s1('EE21R7WP')
+EEw1s1('EE21R7WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw2s2")
+### * EEw2s2
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw2s2
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw2s2
+### Keywords: datagen
+
+### ** Examples
+
+EEw2s2()
+EEw2s2('EE21R7WP')
+EEw1s2('EE21R7WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw2s3")
+### * EEw2s3
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw2s3
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw2s3
+### Keywords: datagen
+
+### ** Examples
+
+EEw2s3()
+EEw2s3('EE24R8WP')
+EEw1s3('EE24R8WP', randomize=TRUE)
+     
+
+
+cleanEx()
+nameEx("EEw3")
+### * EEw3
+
+flush(stderr()); flush(stdout())
+
+### Name: EEw3
+### Title: D-efficient Estimation Equivalent Response Surface Designs
+### Aliases: EEw3
+### Keywords: datagen
+
+### ** Examples
+
+EEw3()
+EEw3('EE22R11WP')
+EEw3('EE22R11WP', randomize=TRUE)
+EEw3('EE48R12WP')
+EEw3('EE48R12WP', randomize=TRUE)
+     
+
+
+cleanEx()
 nameEx("Fcrit")
 ### * Fcrit
 
@@ -165,6 +373,7 @@ flush(stderr()); flush(stdout())
 ### Name: Fcrit
 ### Title: F-Distribution critical values
 ### Aliases: Fcrit
+### Keywords: datagen
 
 ### ** Examples
 
@@ -194,210 +403,248 @@ function(alpha,nu1,nu2,nc) 1-pf(Fcrit(alpha,nu1,nu2),nu1,nu2,nc)
 
 
 cleanEx()
+nameEx("Fpower1")
+### * Fpower1
+
+flush(stderr()); flush(stdout())
+
+### Name: Fpower1
+### Title: F-Distribution Power Calculation
+### Aliases: Fpower1
+### Keywords: datagen
+
+### ** Examples
+
+Fpower1(alpha=.05,nlev=3,nreps=4,Delta=3,sigma=sqrt(2.1))
+
+
+rmin <-2 #smallest number of replicates considered
+rmax <-6 # largest number of replicates considered
+alpha <- rep(0.05, rmax - rmin +1) 
+sigma <-rep(sqrt(2.1), rmax - rmin +1)
+nreps <-c(rmin:rmax)
+nlev <- rep(3,rmax - rmin +1)
+nreps <- rmin:rmax
+Delta <- rep(3,rmax - rmin +1)
+power <- Fpower1(alpha,nlev,nreps,Delta,sigma)
+data.frame(r=nreps,Power=power)
+
+
+## The function is currently defined as
+Fpower1<-function(alpha=NULL, nlev=NULL,nreps=NULL, Delta=NULL, sigma=NULL)
+{
+##### Power Calculation for one way ANOVA ###########
+# Argument list
+# alpha the significance level of the test
+# nlev the number of levels of the factor 
+# nreps the number of replicates in each level of the factor
+# Delta the size of a practical difference in two cell means
+# sigma the standard deviation of the experimental error
+#####################################################
+if (is.null(alpha)|is.null(nlev)|is.null(nreps)|is.null(Delta)|is.null(sigma))
+  stop("you must supply alpha, nlev, nreps, Delta and sigma")
+css<-(Delta^2)/2
+nc<- (nreps*css)/(sigma^2)
+df1<-nlev-1
+df2<-(nreps-1)*nlev
+power <- 1-pf(Fcrit(alpha,df1,df2),df1,df2,nc)
+return(power)
+}
+
+
+
+cleanEx()
+nameEx("Fpower2")
+### * Fpower2
+
+flush(stderr()); flush(stdout())
+
+### Name: Fpower2
+### Title: F-Distribution Power Calculation
+### Aliases: Fpower2
+### Keywords: datagen
+
+### ** Examples
+
+power <- Fpower2(.05, nlev = c(4,4), nreps=2, Delta= 1, sigma=.32)
+
+rmin <- 2 # smallest number of replicates
+rmax <- 4 # largest number of replicates
+alpha <- .05
+sigma <- .32
+Delta <- 1.0
+nlev <- c(4,4)
+nreps <- c(rmin:rmax)
+result <- Fpower2(alpha, nlev, nreps, Delta, sigma)
+options(digits = 5)
+result
+
+
+## The function is currently defined as
+Fpower2<-function(alpha=NULL, nlev=NULL,nreps=NULL, Delta=NULL, sigma=NULL)
+{
+##### Power Calculation for two way ANOVA ###########
+# Argument list
+# alpha the significance level of the test.
+# nlev vector containing the number of levels of the factors. 
+# nreps the number of replicates in each combination of factor levels.
+# Delta the size of a practical difference in two marginal factor level means.
+# sigma the standard deviation of the experimental error.
+############################################################
+if (is.null(alpha)|is.null(nlev)|is.null(nreps)|is.null(Delta)|is.null(sigma))
+  stop("you must supply alpha, nlev, nreps, Delta and sigma")
+if(length(nlev)<2)
+  stop ("nlev must be a two component vecto containing levels of the 1st and 2nd factors")
+a <- nlev[1]
+b <- nlev[2]
+cssb <- (Delta^2)/2
+ncb <- a*(nreps*cssb)/(sigma^2)
+cssa<-(Delta^2)/2
+nca<- b*(nreps*cssa)/(sigma^2)
+dfa<- a-1
+dfb<- b-1
+df2<-(nreps-1)*b*a
+powera <- 1-pf(Fcrit(alpha,dfa,df2),dfa,df2,nca)
+powerb <- 1-pf(Fcrit(alpha,dfb,df2),dfa,df2,nca)
+result <-cbind(nreps,df2,powera,powerb)
+}
+
+
+
+cleanEx()
 nameEx("Gaptest")
 ### * Gaptest
 
 flush(stderr()); flush(stdout())
 
 ### Name: Gaptest
-### Title: Automated Daniel Method
+### Title: This function uses Daniel's Method to find an outlier in an
+###   unreplicated 2^{(k-p)} design.
 ### Aliases: Gaptest
+### Keywords: htest
 
 ### ** Examples
 
-# Lawson Gatlin Example
-library(FrF2)
-lawg<-FrF2(16,11,generators=c("ABC","BCD","ACD","ABD","ABCD","AB","AC"),randomize=FALSE)
-y<-c(31,48,43,32,54,52,60,34,47,43,30,26,67,49,80,41)
-lawg<-cbind(lawg,y)
-Gaptest(lawg)
-
-# eight run example
-library(FrF2)
-des<-FrF2(8,6,generators=c("AB","AC","BC"),randomize=FALSE)
-y<-c(1.299,1.601,1.359,1.461,1.338,1.486,1.330,1.470)
-Des8<-cbind(des,y)
-Gaptest(Des8)
-#tes<-lm(y~(.)^3,data=Des8)
-#summary(tes)
-#c<-tes$coef
-#cn<-names(c)
-#ccn<-gsub("[^A-Z]","",cn)
-
-
+# Example from Box(1991)
+data(BoxM)
+Gaptest(BoxM)
 
 
 ## The function is currently defined as
-Gaptest<-function(DesY) {
-# function to compute gap statistic
-ncheck<-dim(DesY)
-ncheck<-ncheck[1]
- tcnd=TRUE
- if (ncheck==8) {tcnd=FALSE}
- if (ncheck==16) {tcnd=FALSE}
- if (ncheck==32) {tcnd=FALSE}
- if (tcnd) {stop("This function only works for 8, 16, or 32 run designs","\n")
-    } else {
-if (ncheck==8) ncheck=16
-#####################################
-# 50th and 99th percentiles of the gap statistic ##
-critg16<-c(1.7884,5.1009)
-critg32<-c(1.7297,5.8758)
-
-### First Pass through the data ####
-
-###### Step 1  #######
-#fit model to saturated design
-modf<-lm(y~(.)^4,x=TRUE,data=DesY)
-
-
-#extract the regression coefficients
-nbeta<-dim(DesY)
-nbeta<-nbeta[1]
-he<-modf$coef
-# This extracts the coefficients that are not NA
-selcol<-which(!is.na(he))
-he<-he[selcol]
-he<-he[-1]
-#number of coefficients
-p<-length(he)
-#number of runs
-n<-p+1
-# This trims unnecessary characters from coefficient names
-cn1<-names(he)
-ccn1<-gsub("[^A-Z]","",cn1)
-names(he)<-ccn1
-
-##### End of Step 1 ########
-
-###### Steps 2 and 3  #######
-#calculate the pse statistic
-ahe<-abs(he)
-s0<-1.5*median(ahe)
-selhe<-ahe<(2.5*s0)
-pse=1.5*median(ahe[selhe])
-#library(BsMD)
-#pse<-LenthPlot(modf,plt=FALSE)
-#pse<-pse[2]
-#calculate the gap statistic
-gap<-gapstat(he,pse)
-# checks to see if gap statistic exceeds 50th percentile
-if (ncheck==16) {test=(gap>critg16[1])
- } else  {test=(gap>critg32[1])}
-##### End Step 2 and 3  #####
-
-if (test) {
-##### Step 4  #####
-#extract the model X matrix
-X<-modf$x
-# This selects columns of the X matrix that correspond to non-missing
-# coefficients
-X<-X[,selcol]
-X<-X[,-1]
-#gets signs of regression coefficients
-se<-as.matrix(sign(he),nrow=1)
-# find signigicant effects using LGB
-sigef<-LGB(he,rpt=FALSE,plt=FALSE)
-# make signs of significant effects zero
- for (i in 1:length(he)) {
-     if (sigef[i]=="yes")   {se[i]=0 }
-                         }
-#gets sum of products of signed effects and rows of X matrix
-sp<-X
-
-#finds index of largest sum of products as index of potential outlier
-asp<-abs(sp)
-oo<-max.col(t(asp))
-
-### End Step 4 ####
-
-###### Step 5  ######
-
-# calculates the bias
- # first get absolute regression coefficients
-ae<-abs(he)
- # next sort absolute effects
-sae<-sort(ae)
- #get the number of effects in smallest half
-nsmall<-round(length(he)/2)
- # sum the smallest half absolute effects to get bias
-bias<-2*sum(sae[1:nsmall])
-
-##### Step 6 ######
- # gets corrected response vector
-y<-DesY$y
-ycorr<-DesY$y
-ycorr[oo]<-ycorr[oo]+(-1*sign(sp[oo]))*bias
- # makes vector of indicators for outlier
-detect<-c(rep("no",n))
-detect[oo]<-"yes"
-cat("Initial Outlier Report","\n")
-cat("Standardized-Gap = ",gap, "Significant at 50th percentile","\n")
-### End of first pass throught the data #######
-
-### Second Pass throught the data ###########
-### Step 1 ####
-# augment DesY with corrected data
-DesYc<-cbind(DesY[,1:(dim(DesY)[2]-1)],ycorr)
-# fit saturated model to corrected data
-modf<-lm(ycorr~(.)^4,x=TRUE,data=DesYc)
-
-#extract the regression coefficients
-che<-modf$coef
-# This extracts the coefficients that are not NA
-che<-che[!is.na(che)]
-che<-che[-1]
-#number of coefficients
-p<-length(che)
-#number of runs
-n<-p+1
-# This trims unnecessary characters from coefficient names
-cn<-names(che)
-ccn<-gsub("[^A-Z]","",cn)
-names(che)<-ccn
-### End of Step 1 ####
-
-###### Steps 2 and 3  #######
-#calculate the pse statistic
-ache<-abs(che)
-s0<-1.5*median(ache)
-selche<-ache<(2.5*s0)
-psec=1.5*median(ache[selche])
-
-#psec<-LenthPlot(modf,plt=FALSE)
-#psec<-psec[2]
-#calculate the gap statistic
-gap<-gapstat(he,psec)
-# checks to see if gap statistic exceeds 99th percentile
-if (ncheck==16) test2=(gap>critg16[2]) else  test2=(gap>critg32[2])
-##### End Step 2 and 3  #####
-
-if (test2) {
-cat("Final Outlier Report","\n")
-cat("Standardized-Gap = ",gap, "Significant at 99th percentile","\n")
-cat("   ","\n")
-cat("    Corrrected Data Report  ","\n")
-cat("Response  Corrected Response   Detect Outlier","\n")
-cat(paste(format(DesY$y, width=8), format(DesYc$ycorr, width=13),
-"           ", format(detect, width=10),"\n"),sep="")
-
-# use LGB to test significance of effects calculated from corrected data
-
-tce<-LGB(che)
-  } else {
-cat("Final Outlier Report","\n")
-cat("No significant outlier detected in second pass","\n" )
-# use LGB to test significance of effects calculated from corrected data
-LGB(he)
-cat("    ","\n")
-         }
-
-### End of second pass through the data #####
+function (DesY) 
+{
+    ncheck <- dim(DesY)
+    ncheck <- ncheck[1]
+    tcnd = TRUE
+    if (ncheck == 8) {
+        tcnd = FALSE
+    }
+    if (ncheck == 16) {
+        tcnd = FALSE
+    }
+    if (ncheck == 32) {
+        tcnd = FALSE
+    }
+    if (tcnd) {
+        stop("This function only works for 8, 16, or 32 run designs", 
+            "\n")
+    }
+    else {
+        if (ncheck == 8) 
+            ncheck = 16
+        critg16 <- c(1.7884, 5.1009)
+        critg32 <- c(1.7297, 5.8758)
+        modf <- lm(y ~ (.)^4, x = TRUE, data = DesY)
+        nbeta <- dim(DesY)
+        nbeta <- nbeta[1]
+        he <- modf$coef
+        selcol <- which(!is.na(he))
+        he <- he[selcol]
+        he <- he[-1]
+        p <- length(he)
+        n <- p + 1
+        cn1 <- names(he)
+        ccn1 <- gsub("[^A-Z]", "", cn1)
+        names(he) <- ccn1
+        ahe <- abs(he)
+        s0 <- 1.5 * median(ahe)
+        selhe <- ahe < (2.5 * s0)
+        pse = 1.5 * median(ahe[selhe])
+        gap <- gapstat(he, pse)
+        if (ncheck == 16) {
+            test = (gap > critg16[1])
+        }
+        else {
+            test = (gap > critg32[1])
+        }
+        if (test) {
+            X <- modf$x
+            X <- X[, selcol]
+            X <- X[, -1]
+            se <- as.matrix(sign(he), nrow = 1)
+            sigef <- LGB(he, rpt = FALSE, plt = FALSE)
+            for (i in 1:length(he)) {
+                if (sigef[i] == "yes") {
+                  se[i] = 0
+                }
+            }
+            sp <- X %*% se
+            asp <- abs(sp)
+            oo <- max.col(t(asp))
+            ae <- abs(he)
+            sae <- sort(ae)
+            nsmall <- round(length(he)/2)
+            bias <- 2 * sum(sae[1:nsmall])
+            y <- DesY$y
+            ycorr <- DesY$y
+            ycorr[oo] <- ycorr[oo] + (-1 * sign(sp[oo])) * bias
+            detect <- c(rep("no", n))
+            detect[oo] <- "yes"
+            cat("Initial Outlier Report", "\n")
+            cat("Standardized-Gap = ", gap, "Significant at 50th percentile", 
+                "\n")
+            DesYc <- cbind(DesY[, 1:(dim(DesY)[2] - 1)], ycorr)
+            modf <- lm(ycorr ~ (.)^4, x = TRUE, data = DesYc)
+            che <- modf$coef
+            che <- che[!is.na(che)]
+            che <- che[-1]
+            p <- length(che)
+            n <- p + 1
+            cn <- names(che)
+            ccn <- gsub("[^A-Z]", "", cn)
+            names(che) <- ccn
+            ache <- abs(che)
+            s0 <- 1.5 * median(ache)
+            selche <- ache < (2.5 * s0)
+            psec = 1.5 * median(ache[selche])
+            gap <- gapstat(he, psec)
+            if (ncheck == 16) 
+                test2 = (gap > critg16[2])
+            else test2 = (gap > critg32[2])
+            if (test2) {
+                cat("Final Outlier Report", "\n")
+                cat("Standardized-Gap = ", gap, "Significant at 99th percentile", 
+                  "\n")
+                cat("   ", "\n")
+                cat("    Corrrected Data Report  ", "\n")
+                cat("Response  Corrected Response   Detect Outlier", 
+                  "\n")
+                cat(paste(format(DesY$y, width = 8), format(DesYc$ycorr, 
+                  width = 13), "           ", format(detect, 
+                  width = 10), "\n"), sep = "")
+                tce <- LGB(che)
+            }
+            else {
+                cat("Final Outlier Report", "\n")
+                cat("No significant outlier detected in second pass", 
+                  "\n")
+                LGB(he)
+                cat("    ", "\n")
+            }
+        }
+    }
   }
-}
-# end of function Gaptest
- }
- 
+
 
 
 cleanEx()
@@ -407,82 +654,110 @@ nameEx("LGB")
 flush(stderr()); flush(stdout())
 
 ### Name: LGB
-### Title: Lawson, Grimshaw, Burt Test
+### Title: This function uses the LGB Method to detect significant effects
+###   in unreplicated fractional factorials.
 ### Aliases: LGB
+### Keywords: htest
 
 ### ** Examples
 
-Beta<-c(.06,.25,-.01,.5,0,-.02,0,.14,.03,-.01,.02,.04,.02,.01,.02)
-names(Beta)<-c("A","B","C","D","AB","AC","AD","BC","BD","CD","ABC","ABD","ACD","BCD","ABCD")
-LGB(Beta,alpha=.05)
+data(chem)
+modf<-lm(y~A*B*C*D,data=chem)
+LGB(coef(modf)[-1],rpt=FALSE)
 
 
 ## The function is currently defined as
-LGB<-function(Beta,alpha=.05,rpt=TRUE,plt=TRUE,pltl=TRUE) {
-# function to compute the LGB statistic
-siglev<-c(.1,.05,.025,.01)
-df<-c(7,8,11,15,16, 17, 26, 31, 32, 35, 63, 127)
-crittab<-matrix(c(1.265,1.196,1.161,1.122,1.110, 1.106, 1.072, 1.063, 1.060, 1.059, 1.037, 1.023,
-1.534, 1.385, 1.291, 1.201, 1.186, 1.178, 1.115, 1.099, 1.093, 1.091, 1.056, 1.034,
-1.889, 1.606, 1.449, 1.297, 1.274, 1.260, 1.165, 1.140, 1.130, 1.127, 1.074, 1.043,
-2.506, 2.026, 1.74, 1.447, 1.421, 1.377, 1.232, 1.197, 1.185, 1.178, 1.096, 1.058),ncol=4,byrow=FALSE)
-# get the critical value
-colind<-which(siglev==alpha,arr.ind=TRUE)
+LGB <- function(Beta, alpha=.05,rpt=TRUE, plt=TRUE, pltl=TRUE) {
+sigLGB<-LGBc(Beta,alpha,rpt,plt,pltl)
+}
 
-if (length(colind)==0) {stop("this function works only when alpha= .1, .05, .025 or .01") }
-rowind<-which(df==length(Beta),arr.ind=TRUE)
-if (length(rowind)==0) {stop("this function works only for coefficent vectors of length 
-7,8,11,15,16,26,31,32,35,63,or 127")}
 
-critL<-crittab[rowind,colind]
 
-# calculate Beta1, Beta2 and the Rn statistic
-acj<-abs(Beta)
-ranks<-rank(acj,ties.method="first")
-s0<-1.5*median(acj)
-p<-(ranks-.5)/length(Beta)
-z<-qnorm((p+1)/2)
-moda<-lm(acj~-1+z)
-beta1<-moda$coef
-sel<-acj<2.5*s0
-modi<-lm(acj[sel]~-1+z[sel])
-beta2<-modi$coef
-Rn<-beta1/beta2
-# finds prediction limits for values in sorted absolute Beta
-pred<-beta2*z
-n<-length(acj[sel])
-df<-n-1
-sig<-sqrt(sum(modi$residuals^2)/df)
-se.pred<-sig*(1+1/n+(z^2)/sum(z[sel]^2))^.5
-pred.lim<-pred+qt(.975,df)*se.pred
-# gets significance indicators
-sigi<-c(rep("no",length(Beta)))
-sel2<-acj>pred.lim
-sigi[sel2]<-"yes"
- if (plt) {
-plot(z,acj,xlab="Half Normal Scores", ylab="Absoulute Effects")
-lines(sort(z),sort(pred),lty=1)
-         
- for (i in 1:length(Beta)) {
-   if (sigi[i]=="yes") text(z[i],acj[i],names(Beta)[i],pos=1)
-                           }
- if (pltl) {
-lines(sort(z),sort(pred.lim),lty=3)
-           }           
-          } 
- if (rpt) {
-cat("Effect Report","\n")
-cat("  ","\n")
-cat("Label     Half Effect    Sig(.05)","\n")
-cat(paste(format(names(Beta), width=8), format(Beta, width=8),
- "      ",format(sigi, width=10),"\n"),sep="")
-cat("  ","\n")
-cat("Lawson, Grimshaw & Burt Rn Statistic = ",Rn,"\n")
-cat("95th percentile of Rn = ",critL,"\n")
-          }
-return(sigi)
-                    }
+cleanEx()
+nameEx("LGBc")
+### * LGBc
 
+flush(stderr()); flush(stdout())
+
+### Name: LGBc
+### Title: This function does the calculations for the LGB Method to detect
+###   significant effects in unreplicated fractional factorials.
+### Aliases: LGBc
+### Keywords: htest
+
+### ** Examples
+
+data(chem)
+modf<-lm(y~A*B*C*D,data=chem)
+sig<-LGBc(coef(modf)[-1],rpt=FALSE)
+
+
+## The function is currently defined as
+function (Beta, alpha = 0.05, rpt = TRUE, plt = TRUE, pltl = TRUE) 
+{
+    siglev <- c(0.1, 0.05, 0.025, 0.01)
+    df <- c(7, 8, 11, 15, 16, 17, 26, 31, 32, 35, 63, 127)
+    crittab <- matrix(c(1.265, 1.196, 1.161, 1.122, 1.11, 1.106, 
+        1.072, 1.063, 1.06, 1.059, 1.037, 1.023, 1.534, 1.385, 
+        1.291, 1.201, 1.186, 1.178, 1.115, 1.099, 1.093, 1.091, 
+        1.056, 1.034, 1.889, 1.606, 1.449, 1.297, 1.274, 1.26, 
+        1.165, 1.14, 1.13, 1.127, 1.074, 1.043, 2.506, 2.026, 
+        1.74, 1.447, 1.421, 1.377, 1.232, 1.197, 1.185, 1.178, 
+        1.096, 1.058), ncol = 4, byrow = FALSE)
+    colind <- which(siglev == alpha, arr.ind = TRUE)
+    if (length(colind) == 0) {
+        stop("this function works only when alpha= .1, .05, .025 or .01")
+    }
+    rowind <- which(df == length(Beta), arr.ind = TRUE)
+    if (length(rowind) == 0) {
+        stop("this function works only for coefficent vectors of 
+		length 7,8,11,15,16,26,31,32,35,63,or 127")
+    }
+    critL <- crittab[rowind, colind]
+    acj <- abs(Beta)
+    ranks <- rank(acj, ties.method = "first")
+    s0 <- 1.5 * median(acj)
+    p <- (ranks - 0.5)/length(Beta)
+    z <- qnorm((p + 1)/2)
+    moda <- lm(acj ~ -1 + z)
+    beta1 <- moda$coef
+    sel <- acj < 2.5 * s0
+    modi <- lm(acj[sel] ~ -1 + z[sel])
+    beta2 <- modi$coef
+    Rn <- beta1/beta2
+    pred <- beta2 * z
+    n <- length(acj[sel])
+    df <- n - 1
+    sig <- sqrt(sum(modi$residuals^2)/df)
+    se.pred <- sig * (1 + 1/n + (z^2)/sum(z[sel]^2))^0.5
+    pred.lim <- pred + qt(0.975, df) * se.pred
+    sigi <- c(rep("no", length(Beta)))
+    sel2 <- acj > pred.lim
+    sigi[sel2] <- "yes"
+    if (plt) {
+        plot(z, acj, xlab = "Half Normal Scores", ylab = "Absoulute Effects")
+        lines(sort(z), sort(pred), lty = 1)
+        for (i in 1:length(Beta)) {
+            if (sigi[i] == "yes") 
+                text(z[i], acj[i], names(Beta)[i], pos = 1)
+        }
+        if (pltl) {
+            lines(sort(z), sort(pred.lim), lty = 3)
+        }
+    }
+    if (rpt) {
+        cat("Effect Report", "\n")
+        cat("  ", "\n")
+        cat("Label     Half Effect    Sig(.05)", "\n")
+        cat(paste(format(names(Beta), width = 8), format(Beta, 
+            width = 8), "      ", format(sigi, width = 10), "\n"), 
+            sep = "")
+        cat("  ", "\n")
+        cat("Lawson, Grimshaw & Burt Rn Statistic = ", Rn, "\n")
+        cat("95th percentile of Rn = ", critL, "\n")
+    }
+    return(sigi)
+  }
 
 
 
@@ -504,6 +779,25 @@ data(MPV)
 
 
 cleanEx()
+nameEx("ModelRobust")
+### * ModelRobust
+
+flush(stderr()); flush(stdout())
+
+### Name: ModelRobust
+### Title: Model Robust Factorial Designs
+### Aliases: ModelRobust
+### Keywords: datagen
+
+### ** Examples
+
+ModelRobust()
+ModelRobust('MR8m4g3')
+ModelRobust('MR8m4g3', randomize=TRUE)
+     
+
+
+cleanEx()
 nameEx("Naph")
 ### * Naph
 
@@ -518,6 +812,23 @@ flush(stderr()); flush(stdout())
 
 data(Naph)
 
+
+
+cleanEx()
+nameEx("OptPB")
+### * OptPB
+
+flush(stderr()); flush(stdout())
+
+### Name: OptPB
+### Title: Optimum Plackett-Burman Designs
+### Aliases: OptPB
+### Keywords: datagen
+
+### ** Examples
+
+OptPB(12,8)
+     
 
 
 cleanEx()
@@ -595,60 +906,84 @@ nameEx("Tukey1df")
 flush(stderr()); flush(stdout())
 
 ### Name: Tukey1df
-### Title: Tukey's single degree of freedom test for additivity
+### Title: This function performs Tukey's single degree of freedom test for
+###   interaction in an unreplicated two-factor design
 ### Aliases: Tukey1df
+### Keywords: htest
 
 ### ** Examples
 
-Dilution<-rep(c(3,4,5),6)
-Sample<-rep(c(1,2,3,4,5,6),each=3)
- y<-c(1.87506,1.38021,0.60206,1.74036,1.36173,0.90309,1.79934,1.25527,0.95424,2.02119,1.39794,1.000,1.79934,1.20412,0.60206,1.59106,1.25527,0.60206)
- virus<-data.frame(y=y, Sample=factor(Sample),Dilution=factor(Dilution))
-
+library(daewr)
+data(virus)
 Tukey1df(virus)
 
-
 ## The function is currently defined as
-Tukey1df<-function(data) {
-y<-data[,1]
-Afactor<-data[,2]
-Bfactor<-data[,3]
-tst1<-is.factor(Afactor)
-tst2<-is.factor(Bfactor)
-tst3<-is.numeric(y)
-if (tst1&tst2&tst3) {
-a<-nlevels(Afactor)
-b<-nlevels(Bfactor)
-  }  else {stop("The first column of the data frame is the numeric response, the 2nd and 3rd columns should be coded as factors") }
-tst4<-max(a,b)>2
-tst5<-length(y)==a*b
-if (tst4&tst5) {
-ybb<-with(data, tapply(y, Bfactor, mean))
-yba<-with(data, tapply(y, Afactor, mean))
-sbb<-with(data, tapply(y, Bfactor, sum))
-sba<-with(data, tapply(y, Afactor, sum))
-ybardd<-mean(y)
-CT<-(sum(y)^2)/(a*b)
-ssA<-sum(sba^2/b)-CT
-ssB<-sum(sbb^2/a)-CT
-ssE<-sum(y^2)-CT-ssA-ssB
-ybdj<-rep(ybb,6)
-prody<-y*ybdj
-sumprod<-tapply(prody,Afactor,sum)
-leftsum<-sum(sumprod*yba)
-ssAB<-(a*b*(leftsum-(ssA+ssB+a*b*ybardd^2)*ybardd)^2/(ssA*ssB))
-ssR<-ssE-ssAB
-F<-ssAB/(ssR/((a-1)*(b-1)-1))
-Pval<-1-pf(1,((a-1)*(b-1)-1),F)
-cat("Source           df     SS        MS        F     Pr>F","\n")
-cat("A            ",paste(format(a-1, width=6)," ", format(round(ssA,4),justify="right"),"  ",format(round(ssA/(a-1),4), justify="right"),"\n"),sep="")
-cat("B            ",paste(format(b-1, width=6)," ", format(round(ssB,4),justify="right"),"  ",format(round(ssB/(b-1),4), justify="right"),"\n"),sep="")
-cat("Error        ",paste(format((b-1)*(a-1), width=6)," ", format(round(ssE,4),justify="right"),"  ",format(round(ssE/(a-1)*(b-1),4), justify="right"),"\n"),sep="")
-cat("NonAdditivity",paste(format(1, width=6)," ", format(round(ssAB,4),justify="right"),"  ",format(round(ssAB,4),justify="right"),"  ",format(round(F,2),justify="right"),"  ",format(round(Pval,4),justify="right"),"\n"),sep="")
-cat("Residual     ",paste(format((b-1)*(a-1)-1, width=6)," ", format(round(ssR,4),justify="right"),"  ",format(round(ssR/((a-1)*(b-1)-1),4), justify="right"),"\n"),sep="")
-   } else {stop("This function only works for unreplicated 2-factor factorials with >2 levels for one of the factors")}
-}
-
+function (data) 
+{
+    y <- data[, 1]
+    Afactor <- data[, 2]
+    Bfactor <- data[, 3]
+    tst1 <- is.factor(Afactor)
+    tst2 <- is.factor(Bfactor)
+    tst3 <- is.numeric(y)
+    if (tst1 & tst2 & tst3) {
+        a <- nlevels(Afactor)
+        b <- nlevels(Bfactor)
+    }
+    else {
+        stop("The first column of the data frame is the numeric response, 
+		the 2nd and 3rd columns should be coded as factors")
+    }
+    tst4 <- max(a, b) > 2
+    tst5 <- length(y) == a * b
+    if (tst4 & tst5) {
+        ybb <- with(data, tapply(y, Bfactor, mean))
+        yba <- with(data, tapply(y, Afactor, mean))
+        sbb <- with(data, tapply(y, Bfactor, sum))
+        sba <- with(data, tapply(y, Afactor, sum))
+        ybardd <- mean(y)
+        CT <- (sum(y)^2)/(a * b)
+        ssA <- sum(sba^2/b) - CT
+        ssB <- sum(sbb^2/a) - CT
+        ssE <- sum(y^2) - CT - ssA - ssB
+        ybdj <- rep(ybb, 6)
+        prody <- y * ybdj
+        sumprod <- tapply(prody, Afactor, sum)
+        leftsum <- sum(sumprod * yba)
+        ssAB <- (a * b * (leftsum - (ssA + ssB + a * b * ybardd^2) * 
+            ybardd)^2/(ssA * ssB))
+        ssR <- ssE - ssAB
+        F <- ssAB/(ssR/((a - 1) * (b - 1) - 1))
+        Pval <- 1 - pf(1, ((a - 1) * (b - 1) - 1), F)
+        cat("Source           df     SS        MS        F     Pr>F", 
+            "\n")
+        cat("A            ", paste(format(a - 1, width = 6), 
+            " ", format(round(ssA, 4), justify = "right"), "  ", 
+            format(round(ssA/(a - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("B            ", paste(format(b - 1, width = 6), 
+            " ", format(round(ssB, 4), justify = "right"), "  ", 
+            format(round(ssB/(b - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("Error        ", paste(format((b - 1) * (a - 1), 
+            width = 6), " ", format(round(ssE, 4), justify = "right"), 
+            "  ", format(round(ssE/(a - 1) * (b - 1), 4), justify = "right"), 
+            "\n"), sep = "")
+        cat("NonAdditivity", paste(format(1, width = 6), " ", 
+            format(round(ssAB, 4), justify = "right"), "  ", 
+            format(round(ssAB, 4), justify = "right"), "  ", 
+            format(round(F, 2), justify = "right"), "  ", format(round(Pval, 
+                4), justify = "right"), "\n"), sep = "")
+        cat("Residual     ", paste(format((b - 1) * (a - 1) - 
+            1, width = 6), " ", format(round(ssR, 4), justify = "right"), 
+            "  ", format(round(ssR/((a - 1) * (b - 1) - 1), 4), 
+                justify = "right"), "\n"), sep = "")
+    }
+    else {
+        stop("This function only works for unreplicated 2-factor 
+		factorials with >2 levels for one of the factors")
+    }
+  }
 
 
 
@@ -806,6 +1141,33 @@ data(bread)
 
 
 cleanEx()
+nameEx("bstep")
+### * bstep
+
+flush(stderr()); flush(stdout())
+
+### Name: bstep
+### Title: This function performs Tukey's single degree of freedom test for
+###   interaction in an unreplicated two-factor design
+### Aliases: bstep
+### Keywords: htest
+
+### ** Examples
+
+
+library(daewr)
+des <- DefScreen( m = 8 )
+pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+trm<-ihstep(pd,des)
+trm<-fhstep(pd,des,trm)
+trm<-fhstep(pd,des,trm)
+trm<-fhstep(pd,des,trm)
+trm<-bstep(pd,des,trm)
+trm<-bstep(pd,des,trm)
+
+
+
+cleanEx()
 nameEx("cake")
 ### * cake
 
@@ -819,23 +1181,6 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 data(cake)
-
-
-
-cleanEx()
-nameEx("castf")
-### * castf
-
-flush(stderr()); flush(stdout())
-
-### Name: castf
-### Title: cast fatigue experiment
-### Aliases: castf
-### Keywords: datasets
-
-### ** Examples
-
-data(castf)
 
 
 
@@ -887,6 +1232,67 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 data(chipman)
+
+
+
+cleanEx()
+nameEx("colormap")
+### * colormap
+
+flush(stderr()); flush(stdout())
+
+### Name: colormap
+### Title: This function makes a colormap of correlations in a design
+###   matrix
+### Aliases: colormap
+### Keywords: hplot
+
+### ** Examples
+
+# color map of 2^(4-1) design
+library(FrF2)
+design <- FrF2(8, 4, randomize = FALSE)
+colormap(design, mod=3)
+
+# Makes color map for saturated 2^(7-4) design in Figure 6.14 p. 197
+library(FrF2)
+design <-FrF2( 8, 7)
+colormap(design, mod=2)
+
+# Makes colormap of an Alternate Screening Design 
+library(daewr)
+ascr<-Altscreen(7)
+colormap(ascr, mod=2)
+
+# Makes colormap of a Model Robust Design 
+library(daewr)
+MR16 <- ModelRobust('MR16m7g5', randomize = FALSE)
+colormap(MR16, mod=2)
+          
+## The function is currently defined as
+function(design, mod) {
+##################### Inputs ###########################################
+# design - a data frame containing columns of the numeric factor levels
+# mod - the model for the color plot of correlations
+#    1 = Linear model containing only the terms in the data frame
+#    2 = Linear model plus two factor interactions
+#    3 = Linear model plus 2 and 3 factor interactions
+#    4 = Linear model plus 2, 3 and 4 factor interactions
+########################################################################
+y<-runif(nrow(design),0,1)
+if(mod==1) {test <- model.matrix(lm(y~(.),data=design))}
+if(mod==2) {test <- model.matrix(lm(y~(.)^2,data=design))}
+if(mod==3) {test <- model.matrix(lm(y~(.)^3,data=design))}
+if(mod==4) {test <- model.matrix(lm(y~(.)^4,data=design))}
+names<-colnames(test)
+names<-gsub(':','',names)
+names<-gsub('1','',names)
+colnames(test)<-names
+cmas<-cor(test[,ncol(test):2])
+cmas<-cmas[c((ncol(cmas)):1), ]
+rgb.palette <- colorRampPalette(c("white", "black"), space = "rgb")
+levelplot(cmas, main="Color map of correlations", xlab="", ylab="", col.regions=rgb.palette(120), cuts=100, at=seq(0,1,0.01),scales=list(x=list(rot=90)))
+                          }
 
 
 
@@ -957,7 +1363,7 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 Fcrit(.05,2,15)
-Fpower(0.05,2,15,6.428)
+Fpower1(alpha=.05,nlev=3,nreps=4,Delta=3,sigma=sqrt(2.1))
 BIBsize(6,3)
 
 
@@ -1051,68 +1457,94 @@ data(eptaxyb)
 
 
 cleanEx()
+nameEx("fhstep")
+### * fhstep
+
+flush(stderr()); flush(stdout())
+
+### Name: fhstep
+### Title: This function performs Tukey's single degree of freedom test for
+###   interaction in an unreplicated two-factor design
+### Aliases: fhstep
+### Keywords: htest
+
+### ** Examples
+
+
+library(daewr)
+des <- DefScreen( m = 8 )
+pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+trm<-ihstep(pd,des)
+trm<-fhstep(pd,des,trm)
+trm<-fhstep(pd,des,trm)
+trm<-fhstep(pd,des,trm)
+
+
+
+
+cleanEx()
 nameEx("fullnormal")
 ### * fullnormal
 
 flush(stderr()); flush(stdout())
 
 ### Name: fullnormal
-### Title: Nornal Plot of Effects
+### Title: This function makes a full normal plot of the elements of the
+###   vector called effects
 ### Aliases: fullnormal
+### Keywords: hplot
 
 ### ** Examples
 
+# Example Separate Normal plots of whole and split plot effects from an unreplicated split-plot 
 data(plasma)
 sol<-lm(y~A*B*C*D*E,data=plasma)
+summary(sol)
 # get whole plot effects and split plot effects
 effects<-coef(sol)
 effects<-effects[c(2:32)]
 Wpeffects<-effects[c(1:4, 6:11, 16:19, 26)]
 Speffects<-effects[c(5,12:15,20:25,27:31)]
+
 #make separate normal plots
+library(BsMD)
 fullnormal(Wpeffects,names(Wpeffects),alpha=.10)
 fullnormal(Speffects,names(Speffects),alpha=.05)
-# make normal plot of all effects
-fullnormal(effects,names(effects),alpha=.01,refline=FALSE)
-
 
 
 ## The function is currently defined as
-fullnormal<-function(effects,labs,alpha=.05,refline="TRUE") {
-crit<-LenthPlot(effects,alpha=alpha,plt=FALSE)["ME"]
-names<-names(effects)
-names<-gsub(':','',names)
-names<-gsub('1','',names)
-le<-length(effects)
- for (i in 1:le) {
-     logc<-(abs(effects[i])<=crit)
-     if (logc) {names[i]<-" "}
-                  }
-qqnorm(effects, ylab="Estimated Effects", xlab="Normal Scores")
-x<-qqnorm(effects,plot=FALSE)
-zscr<-(x$x)
-# Splits effects into positive and negative for labeling
-effp<-effects[zscr>0]
-zp<-zscr[zscr>0]
-namep<-names[zscr>0]
-effn<-effects[zscr<0]
-zn<-zscr[zscr<0]
-namen<-names[zscr<0]
-text(zp,effp,namep,pos=1) 
-text(zn,effn,namen,pos=3)  
-# calculate pse statistic
-ahe<-abs(effects)
-s0<-1.5*median(ahe)
-selhe<-ahe<(2.5*s0)
-pse=1.5*median(ahe[selhe])
-if (refline) {
-# add reference line to plot
-abline(0,pse)
+function (effects, labs, alpha = 0.05, refline = "TRUE") 
+{
+    crit <- LenthPlot(effects, alpha = alpha, plt = FALSE)["ME"]
+    names <- names(effects)
+    names <- gsub(":", "", names)
+    names <- gsub("1", "", names)
+    le <- length(effects)
+    for (i in 1:le) {
+        logc <- (abs(effects[i]) <= crit)
+        if (logc) {
+            names[i] <- " "
+        }
+    }
+    qqnorm(effects, ylab = "Estimated Effects", xlab = "Normal Scores")
+    x <- qqnorm(effects, plot = FALSE)
+    zscr <- (x$x)
+    effp <- effects[zscr > 0]
+    zp <- zscr[zscr > 0]
+    namep <- names[zscr > 0]
+    effn <- effects[zscr < 0]
+    zn <- zscr[zscr < 0]
+    namen <- names[zscr < 0]
+    text(zp, effp, namep, pos = 1)
+    text(zn, effn, namen, pos = 3)
+    ahe <- abs(effects)
+    s0 <- 1.5 * median(ahe)
+    selhe <- ahe < (2.5 * s0)
+    pse = 1.5 * median(ahe[selhe])
+    if (refline) {
+        abline(0, pse)
+    }
   }
-
-}
-
-
 
 
 
@@ -1140,44 +1572,33 @@ nameEx("gapstat")
 flush(stderr()); flush(stdout())
 
 ### Name: gapstat
-### Title: Gap Statistic
+### Title: This function computes the gap statistic which is used to test
+###   for an outlier using Daniels method
 ### Aliases: gapstat
+### Keywords: htest
 
 ### ** Examples
 
-Beta<-c(.06,.25,-.01,.5,0,-.02,0,.14,.03,-.01,.02,.04,.02,.01,.02)
-names(Beta)<-c("A","B","C","D","AB","AC","AD","BC","BD","CD","ABC","ABD","ACD","BCD","ABCD")
-gapstat(Beta,.06)
 
 ## The function is currently defined as
-gapstat<-function(beta,pse) {
-# computes the standardized gap score
-p<-length(beta)
-psehe<-pse
-# gets positive coefficients
-sel<-beta >= 0
-betap<-beta[sel]
-# sorts positive elements
-betap<-sort(betap)
-# gets Beta_s
-betas<-betap[1]
-#gets negative coefficients
-sel<-beta < 0
-betan<-beta[sel]
-nn<-length(betan)
-# sorts negative coefficients
-betan<-sort(betan)
-#gets Beta_L
-betal<-betan[nn]
-# gets Z_L and Z_S
-zl<-qnorm((nn-.375)/(p+.25))
-zs<-qnorm((nn+1-.375)/(p+.25))
-# calculates gap statistic
-gap<-((betas-betal)/psehe)/(zs-zl)
-return(gap)
-                      }
-
-
+function (beta, pse) 
+{
+    p <- length(beta)
+    psehe <- pse
+    sel <- beta >= 0
+    betap <- beta[sel]
+    betap <- sort(betap)
+    betas <- betap[1]
+    sel <- beta < 0
+    betan <- beta[sel]
+    nn <- length(betan)
+    betan <- sort(betan)
+    betal <- betan[nn]
+    zl <- qnorm((nn - 0.375)/(p + 0.25))
+    zs <- qnorm((nn + 1 - 0.375)/(p + 0.25))
+    gap <- ((betas - betal)/psehe)/(zs - zl)
+    return(gap)
+  }
 
 
 
@@ -1200,6 +1621,36 @@ data(gear)
 
 
 cleanEx()
+nameEx("halfnorm")
+### * halfnorm
+
+flush(stderr()); flush(stdout())
+
+### Name: halfnorm
+### Title: This function makes a half normal plot of the elements of the
+###   vector called effects
+### Aliases: halfnorm
+### Keywords: hplot
+
+### ** Examples
+
+# Example Separate Normal plots of whole and split plot effects from an unreplicated split-plot 
+data(plasma)
+sol<-lm(y~A*B*C*D*E,data=plasma)
+# get whole plot effects and split plot effects
+effects<-coef(sol)
+effects<-effects[c(2:32)]
+Wpeffects<-effects[c(1:4, 6:11, 16:19, 26)]
+Speffects<-effects[c(5,12:15,20:25,27:31)]
+
+#make separate half normal plots
+library(BsMD)
+halfnorm(Wpeffects,names(Wpeffects),alpha=.10)
+halfnorm(Speffects,names(Speffects),alpha=.05)
+        
+
+
+cleanEx()
 nameEx("hardwood")
 ### * hardwood
 
@@ -1213,6 +1664,29 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 data(hardwood)
+
+
+
+cleanEx()
+nameEx("ihstep")
+### * ihstep
+
+flush(stderr()); flush(stdout())
+
+### Name: ihstep
+### Title: This function performs Tukey's single degree of freedom test for
+###   interaction in an unreplicated two-factor design
+### Aliases: ihstep
+### Keywords: htest
+
+### ** Examples
+
+
+library(daewr)
+des <- DefScreen( m = 8 )
+pd<-c(5.35,4.4,12.91,3.79,4.15,14.05,11.4,4.29,3.56,11.4,10.09,5.9,9.54,4.53,3.919,8.1,5.35)
+trm<-ihstep(pd,des)
+
 
 
 
@@ -1242,6 +1716,7 @@ flush(stderr()); flush(stdout())
 ### Name: mod
 ### Title: Mod function
 ### Aliases: mod
+### Keywords: datagen
 
 ### ** Examples
 
@@ -1250,9 +1725,7 @@ mod(5,3)
 mod<-function(a,b)
 {a-b*floor(a/b)}
 
-
-
-
+     
 
 
 cleanEx()
@@ -1626,6 +2099,7 @@ flush(stderr()); flush(stdout())
 ### Title: confidence limits for method of moments estimators of variance
 ###   components
 ### Aliases: vci
+### Keywords: htest
 
 ### ** Examples
 
@@ -1710,7 +2184,8 @@ data(web)
 
 ### * <FOOTER>
 ###
-cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
+options(digits = 7L)
+base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
 grDevices::dev.off()
 ###
 ### Local variables: ***

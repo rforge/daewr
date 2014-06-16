@@ -1,3 +1,4 @@
+Altscreen               Alternate 16 run screening designs
 Apo                     apolipoprotein survey varaince component study
 BIBsize                 Balanced incomplete blocksize
 BPmonitor               blood pressure monitor experiment
@@ -6,20 +7,46 @@ Bff                     Confounded block fractional mouse growth
                         experiment
 BoxM                    Box and Meyer's unreplicated 2^4 from Chapter 3
 COdata                  CO emmisions experiment data from Chapter 3
+DefScreen               Definitive Screening Designs
+EEw1s1                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw1s2                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw1s3                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw2s1                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw2s2                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw2s3                  D-efficient Estimation Equivalent Response
+                        Surface Designs
+EEw3                    D-efficient Estimation Equivalent Response
+                        Surface Designs
 Fcrit                   F-Distribution critical values
 Fpower                  F-Distribution Power Calculation
-Gaptest                 Automated Daniel Method
-LGB                     Lawson, Grimshaw, Burt Test
+Fpower1                 F-Distribution Power Calculation
+Fpower2                 F-Distribution Power Calculation
+Gaptest                 This function uses Daniel's Method to find an
+                        outlier in an unreplicated 2^{(k-p)} design.
+LGB                     This function uses the LGB Method to detect
+                        significant effects in unreplicated fractional
+                        factorials.
+LGBc                    This function does the calculations for the LGB
+                        Method to detect significant effects in
+                        unreplicated fractional factorials.
 MPV                     mixture process variable experiment with
                         mayonnaise
+ModelRobust             Model Robust Factorial Designs
 Naph                    Yields of naphthalene black
+OptPB                   Optimum Plackett-Burman Designs
 SPMPV                   Split-plot mixture process variable experiment
                         with vinyl
 Smotor                  Single array for starting motor experiment
 Tet                     Tetracycline concentration in plasma
 Treb                    Box-Behnken design for trebuchet experiment
-Tukey1df                Tukey's single degree of freedom test for
-                        additivity
+Tukey1df                This function performs Tukey's single degree of
+                        freedom test for interaction in an unreplicated
+                        two-factor design
 antifungal              Two-period crossover study of antifungal agent
 apple                   Confounded apple slice browning experiment
 arso                    2^{(7-3)} arsenic removal experiment
@@ -31,13 +58,17 @@ bioeqv                  Latin Square bioequivalence experiment
 blood                   Variance component study of calcium in blood
                         serum
 bread                   Bread rise experiment data from Chapter 2
+bstep                   This function performs Tukey's single degree of
+                        freedom test for interaction in an unreplicated
+                        two-factor design
 cake                    Split-Plot response surface for cake baking
                         experiment
-castf                   cast fatigue experiment
 cement                  CCD design for cement workability experiment
 chem                    Chemical process experiment data from Chapter 3
 chipman                 Williams' crossover design for sprinting
                         experiment
+colormap                This function makes a colormap of correlations
+                        in a design matrix
 cont                    Control factor array and summary statistics for
                         controller circuit design experiment
 cpipe                   Split-plot response surface for ceramic pipe
@@ -53,13 +84,24 @@ eptaxs2                 Control array and variance of response for
                         silicon layer growth experiment
 eptaxyb                 Control array and mean response for silicon
                         layer growth experiment
-fullnormal              Nornal Plot of Effects
+fhstep                  This function performs Tukey's single degree of
+                        freedom test for interaction in an unreplicated
+                        two-factor design
+fullnormal              This function makes a full normal plot of the
+                        elements of the vector called effects
 gagerr                  Gauge R&R Study
-gapstat                 Gap Statistic
+gapstat                 This function computes the gap statistic which
+                        is used to test for an outlier using Daniels
+                        method
 gear                    Unreplicated split-plot fractional-factorial
                         experiment on geometric distortion of drive
                         gears
+halfnorm                This function makes a half normal plot of the
+                        elements of the vector called effects
 hardwood                low grade hardwood conjoint study
+ihstep                  This function performs Tukey's single degree of
+                        freedom test for interaction in an unreplicated
+                        two-factor design
 inject                  Single array for injection molding experiment
 mod                     Mod function
 pastry                  Blocked response surface design for pastry
