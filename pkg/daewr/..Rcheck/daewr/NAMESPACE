@@ -6,7 +6,7 @@
 export(Fcrit,
        Fpower,
        Fpower1,
-           Fpower2,
+       Fpower2,
 	   Gaptest,
 	   gapstat,
 	   LGB,
@@ -33,3 +33,4 @@ export(Fcrit,
 	   bstep,
            colormap
 	   )
+import(BsMD, FrF2, lattice)

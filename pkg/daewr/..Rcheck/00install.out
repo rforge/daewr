@@ -4,6 +4,7 @@
 *** moving datasets to lazyload DB
 ** preparing package for lazy loading
 Warning: package 'FrF2' was built under R version 3.0.3
+Warning: replacing previous import by 'FrF2::DanielPlot' when loading 'daewr'
   
 Catalog of D-efficient Estimation Equivalent RS 
   Designs for (1 wp factor and  2 sp factors)   
@@ -72,6 +73,8 @@ EE66R11WP     11                   6
 ** testing if installed package can be loaded
 *** arch - i386
 Warning: package 'FrF2' was built under R version 3.0.3
+Warning: replacing previous import by 'FrF2::DanielPlot' when loading 'daewr'
 *** arch - x64
 Warning: package 'FrF2' was built under R version 3.0.3
+Warning: replacing previous import by 'FrF2::DanielPlot' when loading 'daewr'
 * DONE (daewr)
