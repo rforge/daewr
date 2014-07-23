@@ -72,8 +72,8 @@ colnames(test)<-names
 cmas<-cor(test[,ncol(test):2])
 cmas<-cmas[c((ncol(cmas)):1), ]
 rgb.palette <- colorRampPalette(c("white", "black"), space = "rgb")
-levelplot(cmas, main="Color map of correlations", xlab="", ylab="", col.regions=rgb.palette(120), cuts=100, at=seq(0,1,0.01),scales=list(x=list(rot=90)))
-                          }
+levelplot(cmas, main="Color map of correlations", xlab="", ylab="", col.regions=rgb.palette(120), 
+cuts=100, at=seq(0,1,0.01),scales=list(x=list(rot=90)))                          }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
