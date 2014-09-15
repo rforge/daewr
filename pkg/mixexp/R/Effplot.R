@@ -521,7 +521,7 @@ yaxismin<-min(ymin)
   plabs<-c("x1","x2","x3","x4","x5","x6","x7","x8","x9","x10","x11","x12")
   xvec<-c(xaxismin,xaxismax)
   yvec<-c(yaxismin,yaxismax)
-  plot(xvec,yvec,type="n",ylab="Predicted Response",xlab="Deviation form centroid",main=mTitle)
+  plot(xvec,yvec,type="n",ylab="Predicted Response",xlab="Deviation from centroid",main=mTitle)
   for (i in 1:nfac) {
   xvec<-PX[(sel[,i]==1),(2*i-1)]
   yvec<-PX[(sel[,i]==1),(2*i)]
