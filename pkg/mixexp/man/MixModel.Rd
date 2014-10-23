@@ -33,6 +33,7 @@ MixModel(pest,"y",mixvars,2)
 
 # example from Myers and Montgomery(2002), special cubic model
 library(mixexp)
+
 etch<-SCD(3)
 etch<-Fillv(3,etch)
 etch<-rbind(etch[1:7, ],etch[1:3, ],etch[7, ], etch[etch$x1==2/3, ],etch[etch$x2==2/3, ],etch[etch$x3==2/3, ])
