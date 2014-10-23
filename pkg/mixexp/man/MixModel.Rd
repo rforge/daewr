@@ -25,7 +25,13 @@ MixModel(frame, response, mixcomps=NULL,model,procvars=NULL)
 \author{ John S. Lawson \email{lawson@byu.edu}}
 
 \examples{
-# example 1 from Myers and Montgomery(2002), special cubic model
+# example from Lawson(2014), quadratic model
+library(daewr)
+data(pest)
+mixvars<-c("x1","x2","x3")
+MixModel(pest,"y",mixvars,2)
+
+# example from Myers and Montgomery(2002), special cubic model
 library(mixexp)
 etch<-SCD(3)
 etch<-Fillv(3,etch)
@@ -42,6 +48,12 @@ mixvars<-c("x1","x2","x3")
 procvars<-c("z1","z2")
 data(MPV)
 MixModel(MPV,"y",mixvars,5,procvars)
+
+# example of Kowalski, Cornell and Vining's new model for mixture-process experiments
+library(mixexp)
+data(Burn)
+MixModel(Burn,"BR7.0",c("u1","u2",'u3'),6,"z")
+
           }
 \keyword {regression}
  
