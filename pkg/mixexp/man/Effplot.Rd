@@ -85,7 +85,7 @@ Effplot(des,3)
 
 
 # Polvoron Example from Lawson
-des<-Xvert(x1=c(0,.8),x2=c(.10,.95),x3=c(.05,.50),ndm=1)
+des<-Xvert(3,uc=c(.8,.95,.50),lc=c(0,.10,.05),ndm=1,plot=FALSE)
 dat<-as.matrix(des)
 # remove the edge centroid at the top
 dat<-dat[c(1:6,8:11), ]

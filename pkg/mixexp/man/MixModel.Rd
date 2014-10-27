@@ -19,6 +19,7 @@ MixModel(frame, response, mixcomps=NULL,model,procvars=NULL)
   \item{procvars}{a character vector of column names of the process variables in frame to be 
                   included in the model. Leave this out if there are no process variables in 
                   frame}
+          }        
 \references{
 1. Lawson, J. and Wilden, C., "Mixture Experiments in R, using mixexp", Journal of Statistical Software, 2015
            }  
@@ -33,7 +34,6 @@ MixModel(pest,"y",mixvars,2)
 
 # example from Myers and Montgomery(2002), special cubic model
 library(mixexp)
-
 etch<-SCD(3)
 etch<-Fillv(3,etch)
 etch<-rbind(etch[1:7, ],etch[1:3, ],etch[7, ], etch[etch$x1==2/3, ],etch[etch$x2==2/3, ],etch[etch$x3==2/3, ])
@@ -56,5 +56,5 @@ data(Burn)
 MixModel(Burn,"BR7.0",c("u1","u2",'u3'),6,"z")
 
           }
-\keyword {regression}
+\keyword{regression}
  

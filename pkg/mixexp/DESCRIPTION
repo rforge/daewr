@@ -7,5 +7,5 @@ Author: John Lawson <lawson@byu.edu> and Cameron Willden <ccwillden@gmail.com>, 
 Maintainer: John Lawson <lawson@byu.edu>
 Description: This package contains functions for creating designs for mixture experiments, making ternary contour plots, and making mixture effect plots.
 License: GPL-2
-Depends: gdata, lattice, grid
+Depends: gdata, lattice, grid, daewr
 LazyLoad: yes
