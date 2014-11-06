@@ -1,9 +1,13 @@
 MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
+  # Sets initial variance covariance matrix of coefficients
+  
   # Get number of mixture components and process variables
   n.mxcmpts<-length(mixcomps)
   n.prvars<-length(procvars)
   if(n.mxcmpts == 1) stop("There must be at least 2 mixture components")
   if(length(mixcomps) == 0) stop("No mixture variable names supplied")
+  
+  
   # Fits Scheffe Linear Model 
   Linmod<-NULL
   if (model == 1) {
@@ -14,9 +18,17 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
       
     }
     Linmod<-lm(mixmod, data=frame)
+    
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(Linmod)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     # Re-labels coefficients in the output
     for (i in 2:n.mxcmpts) {
       Linmod$coefficients[i]<-Linmod$coefficients[1]+Linmod$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(Linmod$coefficients)[1]<-mixcomps[1]
     ModelF<-Linmod
@@ -38,9 +50,16 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
     } 
     
     Quadmod<-lm(mixmod, data=frame)
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(Quadmod)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     # Re-labels coefficients in the output
     for (i in 2:n.mxcmpts) {
       Quadmod$coefficients[i]<-Quadmod$coefficients[1]+Quadmod$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(Quadmod$coefficients)[1]<-mixcomps[1]
     ModelF<-Quadmod    
@@ -76,9 +95,16 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
     }
     print(mixmod)
     Cubicmod<-lm(mixmod, data=frame)
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(Cubicmod)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     # Re-labels coefficients in the output
     for (i in 2:n.mxcmpts) {
       Cubicmod$coefficients[i]<-Cubicmod$coefficients[1]+Cubicmod$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(Cubicmod$coefficients)[1]<-mixcomps[1]
     ModelF<-Cubicmod   
@@ -107,9 +133,15 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
       }
     }
     SpecCmod<-lm(mixmod, data=frame)
-    # Re-labels coefficients in the output
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(SpecCmod)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     for (i in 2:n.mxcmpts) {
       SpecCmod$coefficients[i]<-SpecCmod$coefficients[1]+SpecCmod$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(SpecCmod$coefficients)[1]<-mixcomps[1]
     ModelF<-SpecCmod    
@@ -165,9 +197,16 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
       }  
     }
     Mixproc5<-lm(mixmod, data=frame)
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(Mixproc5)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     # Re-labels coefficients in the output
     for (i in 2:n.mxcmpts) {
       Mixproc5$coefficients[i]<-Mixproc5$coefficients[1]+Mixproc5$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(Mixproc5$coefficients)[1]<-mixcomps[1]
     ModelF<-Mixproc5   
@@ -201,23 +240,54 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
         }
       } }
     
-    # Adds Quadratic terms in process variables
-    for (i in 1:n.prvars){
-      mixmod<-paste(mixmod,"+","I(",procvars[i],"^2)")
-    }
+    #  # Adds Quadratic terms in process variables
+    #  for (i in 1:n.prvars){
+    #    mixmod<-paste(mixmod,"+","I(",procvars[i],"^2)")
+    #  }
     
     Mixproc6<-lm(mixmod, data=frame)
+    # Sets initial variance covariance matrix of coefficients
+    Vcovm <-vcov(Mixproc6)
+    # Gets correct coefficients and standard errors for no-intercept model
+    vc1 <- Vcovm[1,1]
     # Re-labels coefficients in the output
     for (i in 2:n.mxcmpts) {
       Mixproc6$coefficients[i]<-Mixproc6$coefficients[1]+Mixproc6$coefficients[i]
+      vcc <- Vcovm[i,i]
+      vc1c <- Vcovm[1,i]
+      Vcovm[i,i] <- vc1 + vcc +2*vc1c
     }
     names(Mixproc6$coefficients)[1]<-mixcomps[1]
     ModelF<-Mixproc6  
   }
   
-  
+  # Prints summary of fitted model
   print(mixmod)
   
-  summary(ModelF)
+  coef<-ModelF$coefficients
+  stder<-sqrt(diag(Vcovm))
+  tval<-coef/stder
+  dft<-ModelF$df.residual
+  probt<-2*(1-pt(abs(tval),dft))
+  
+  resp<-ModelF$residuals+ModelF$fitted.values
+  sst<-t(resp)%*%resp-(sum(resp)^2)/length(resp)
+  sse<-t(ModelF$residuals)%*%ModelF$residuals
+  Rsquare<-(sst-sse)/sst
+  
+  result<-data.frame(coefficients=coef, Std.err=stder, Prob=probt)
+  cat("    ", "\n")
+  print(result)
+  cat("    ", "\n")
+  cat("Residual standard error: ",sqrt(sse/dft), " on ", dft, "degrees of freedom","\n")
+  cat("Multiple R-squared: ", Rsquare)
+  # Return the model so that it can be used by ModelPlot and ModelEff
+  ModelF
   
 }
+
+
+
+
+
+

@@ -1,4 +1,5 @@
-Xvert = function(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE)  
+Xvert = function(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE,
+                 cornerlabs = c("x1","x2","x3"), axislabs = c("x1","x2","x3"),pseudo=TRUE) 
 {
   # checks for the number of factors
   if (nfac>12){
@@ -95,12 +96,10 @@ Xvert = function(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0
   des<-crvtave(ndm,conmx)
   des<-data.frame(des)
   
+  
   if (nfac==3 & plot) {
-    if (nlc>0) {
-      DesignPoints(des=des)
-    }
-    else { DesignPoints(des,x1lower=lc[1],x1upper=uc[1],x2lower=lc[2],x2upper=uc[2],x3lower=lc[3],x3upper=uc[3]) }
-  }
+    DesignPoints(des[ ,1:3],x1lower=lc[1],x1upper=uc[1],x2lower=lc[2],x2upper=uc[2],x3lower=lc[3],x3upper=uc[3],cornerlabs=cornerlabs,axislabs=axislabs,pseudo=pseudo) }
+  #  }
   return(des)
 }
 ####End Function #################################

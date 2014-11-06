@@ -4,7 +4,8 @@
 \description{This function calls the function crvtave to create an extreme vertices design in a constrained mixture space. 
 If there are only three factors the function DesignPoints is called to plot the results. }
 \usage{ 
-Xvert(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE) 
+Xvert(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE,
+                 cornerlabs = c("x1","x2","x3"), axislabs = c("x1","x2","x3"),pseudo=TRUE)  
 }
 \arguments{
   \item{nfac}{an integer representing the number of mixture variables in the design. Maximum nfac=12}
@@ -16,6 +17,9 @@ Xvert(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE)
   \item{coef}{an nlc by nfac matrix containing the coefficients of the components of the linear constraints}  
   \item{ndm}{an integer representing the highest order of centroids requested. An overall centroid is always included, 0 indicates no other centroids will be created, 1 indicates edge centroids are requested, etc.} 
   \item{plot}{a logical variable indicating whether a plot of the design is desired when there are only 3 components. Default is TRUE}
+  \item{cornerlabs}{ This is a vector of text labels for the x1, x2 and x3 vertices.}
+  \item{axislabs}{ This is a vector of text labels for the x1, x2 and x3 axis. }
+  \item{pseudo}{logical variable, when TRUE plot in pseudo component space when there are lower constraints. }
 }
 
 \references{
@@ -39,7 +43,7 @@ exvert<-Xvert(4,uc=c(.188,.128,.438,.438),lc=c(.124,.064,.374,.374),ndm=2)
 
 # Example from Piepel 1988
 coef<-matrix(c(.85,.9,1,.7,0,1),ncol=3,byrow=TRUE)
-des<-Xvert(3,lc=c(.1,.1,0),uc=c(.5,.7,.7),nlc=2,lb=c(.9,.4),ub=c(.95,0),coef,ndm=1)
+des<-Xvert(3,lc=c(.1,.1,0),uc=c(.5,.7,.7),nlc=2,lb=c(.9,.4),ub=c(.95,0),coef,ndm=1,plot=FALSE)
 
 }
 \keyword{datagen}

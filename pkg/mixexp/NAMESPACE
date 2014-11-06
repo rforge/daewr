@@ -1,17 +1,18 @@
 useDynLib(mixexp)
 import(gdata, lattice, grid)
 export(crvtave,
-           cubic,
-           Eflags,
-	   Nrows,
-	   Vertcen,
-	   SCD,
-	   SLD,
-	   MixturePlot,
-     MixModel,
-	   ModelPlot,
-	   DesignPoints,
-	   Xvert,
-	   Effplot,
-	   Fillv
+       cubic,
+       Eflags,
+	     Nrows,
+	     Vertcen,
+	     SCD,
+	     SLD,
+	     MixturePlot,
+       MixModel,
+	     ModelPlot,
+	     DesignPoints,
+	     Xvert,
+	     Effplot,
+       ModelEff,
+	     Fillv
        )
