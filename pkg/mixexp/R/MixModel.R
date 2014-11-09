@@ -275,7 +275,7 @@ MixModel <- function(frame, response, mixcomps=NULL,model,procvars=NULL)  {
   sse<-t(ModelF$residuals)%*%ModelF$residuals
   Rsquare<-(sst-sse)/sst
   
-  result<-data.frame(coefficients=coef, Std.err=stder, Prob=probt)
+  result<-data.frame(coefficients=coef, Std.err=stder, t.value=tval,Prob=probt)
   cat("    ", "\n")
   print(result)
   cat("    ", "\n")

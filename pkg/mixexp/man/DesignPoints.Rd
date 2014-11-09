@@ -5,7 +5,7 @@
 \usage{ 
 DesignPoints(des = NULL,nmxcmp=3, x = NULL, y = NULL, z = NULL, x1lower = 0, 
                          x1upper = 0, x2lower = 0, x2upper = 0, x3lower = 0, x3upper = 0,
-                         cornerlabs = c("x1","x2","x3"),
+                         cornerlabs = c("x3","x2","x1"),
                          axislabs=c("x1","x2","x3"),pseudo=FALSE)
 }
 \arguments{

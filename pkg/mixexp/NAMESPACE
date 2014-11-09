@@ -12,7 +12,7 @@ export(crvtave,
 	     ModelPlot,
 	     DesignPoints,
 	     Xvert,
-	     Effplot,
+	     EffPlot,
        ModelEff,
 	     Fillv
        )
