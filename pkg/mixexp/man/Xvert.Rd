@@ -5,7 +5,8 @@
 If there are only three factors the function DesignPoints is called to plot the results. }
 \usage{ 
 Xvert(nfac=3,uc=c(0,0),lc=c(0,0),nlc=0,lb=c(0,0),ub=c(0,0),coef,ndm=0,plot=TRUE,
-                 cornerlabs = c("x1","x2","x3"), axislabs = c("x1","x2","x3"),pseudo=TRUE)  
+                 cornerlabs = c("x1","x2","x3"), axislabs = c("x1","x2","x3"),
+                 pseudo=TRUE)  
 }
 \arguments{
   \item{nfac}{an integer representing the number of mixture variables in the design. Maximum nfac=12}
