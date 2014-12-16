@@ -33,5 +33,9 @@ export(Fcrit,
 	     bstep,
        colormap
 	   )
-import(BsMD, FrF2, lattice)
 importFrom(FrF2,DanielPlot)
+importFrom(FrF2, IAPlot)
+importFrom(FrF2, MEPlot)
+importFrom(FrF2, pb)
+importFrom(FrF2, FrF2)
+import(BsMD, lattice)
