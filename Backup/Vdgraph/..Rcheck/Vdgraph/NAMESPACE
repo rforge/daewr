@@ -1,5 +1,0 @@
-useDynLib(Vdgraph)
-
-export(Vdgraph,
-      Compare2Vdg
-       )
