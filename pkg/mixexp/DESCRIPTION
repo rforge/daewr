@@ -1,9 +1,13 @@
 Package: mixexp
 Type: Package
 Title: Design and analysis of mixture experiments
-Version: 1.1.9
-Date: 2014-12-12
-Author: John Lawson <lawson@byu.edu> and Cameron Willden <ccwillden@gmail.com>, with contributions from Greg Piepel
+Version: 1.2.1
+Date: 2014-3-3
+Author: John Lawson <lawson@byu.edu>, Cameron Willden <ccwillden@gmail.com> with contributions from Greg Piepel
+Authors@R: as.person(c( 
+             "John Lawson <lawson@byu.edu> [aut,cre]",
+             "Cameron Willden <ccwillden@gmail.com> [aut]", 
+             "Greg Piepel <greg.piepel@pnnl.gov> [ctb]"))
 Maintainer: John Lawson <lawson@byu.edu>
 Description: Functions for creating designs for mixture experiments, making ternary contour plots, and making mixture effect plots.
 License: GPL-2
