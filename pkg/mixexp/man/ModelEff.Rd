@@ -71,8 +71,10 @@ ModelEff(nfac=3,mod=2,nproc=0,dir=2,ufunc=testQ2,lc=c(0,0,0),uc=c(1,1,1))
 #### Kowalski Cornell and Vining Simplified model on data from Gallant et. al. (2008)
 data(Burn)
 testBNM<-MixModel(Burn,"y",mixcomps=c("Course","Fine","Binder"),model=6,procvars=c("z"))
-ModelEff(nfac=3,mod=6,nproc=1,dir=1,ufunc=testBNM,dimensions = list(NULL), pvslice=c(1),lc=c(.403,.166,.130),uc=c(.704,.412,.210))
-ModelEff(nfac=3,mod=6,nproc=1,dir=1,ufunc=testBNM,dimensions = list(NULL), pvslice=c(-1),lc=c(.403,.166,.130),uc=c(.704,.412,.210))
+ModelEff(nfac=3,mod=6,nproc=1,dir=1,ufunc=testBNM,dimensions = list(NULL), pvslice=c(1),
+lc=c(.403,.166,.130),uc=c(.704,.412,.210))
+ModelEff(nfac=3,mod=6,nproc=1,dir=1,ufunc=testBNM,dimensions = list(NULL), pvslice=c(-1),
+lc=c(.403,.166,.130),uc=c(.704,.412,.210))
 
 
 
