@@ -11,9 +11,6 @@ Description: Functions for creating designs for mixture experiments, making tern
 License: GPL-2
 LazyLoad: yes
 LazyData: yes
-Author: John Lawson [aut, cre], 
-  Cameron Willden [aut],
-  Greg Piepel [ctb]
-  Maintainer: John Lawson <lawson@byu.edu>
+Maintainer: John Lawson <lawson@byu.edu>
 Depends: gdata, lattice, grid, daewr
 
