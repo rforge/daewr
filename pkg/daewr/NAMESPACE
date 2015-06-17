@@ -3,6 +3,14 @@
 
 # Export all names
 #exportPattern(".")
+import(lattice)
+importFrom(FrF2,DanielPlot)
+importFrom(FrF2, IAPlot)
+importFrom(FrF2, MEPlot)
+importFrom(FrF2, pb)
+importFrom(FrF2, FrF2)
+importFrom(BsMD, BsProb)
+importFrom(BsMD, LenthPlot)
 export(Fcrit,
        Fpower,
        Fpower1,
@@ -33,11 +41,3 @@ export(Fcrit,
 	     bstep,
        colormap
 	   )
-import(lattice)
-importFrom(FrF2,DanielPlot)
-importFrom(FrF2, IAPlot)
-importFrom(FrF2, MEPlot)
-importFrom(FrF2, pb)
-importFrom(FrF2, FrF2)
-importFrom(BsMD, BsProb)
-importFrom(BsMD, LenthPlot)
