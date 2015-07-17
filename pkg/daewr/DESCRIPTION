@@ -7,6 +7,6 @@ Author: John Lawson
 Maintainer: John Lawson <lawson@byu.edu>
 Description: Contains Data frames and functions used in the book "Design and Analysis of Experiments with R".
 License: GPL-2 
-Imports: lattice, FrF2, BsMD, graphics, grdevices, stats
+Imports: lattice, FrF2, BsMD, graphics, grDevices, stats
 LazyLoad: yes
 LazyData: yes
