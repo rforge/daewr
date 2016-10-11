@@ -1,8 +1,8 @@
 Package: daewr
 Type: Package
 Title: Design and Analysis of Experiments with R
-Version: 1.1-6
-Date: 2015-7-16
+Version: 1.1-7
+Date: 2016-10-11
 Author: John Lawson
 Maintainer: John Lawson <lawson@byu.edu>
 Description: Contains Data frames and functions used in the book "Design and Analysis of Experiments with R".

@@ -1,7 +1,4 @@
 import("lattice")
-import("graphics")
-import("grDevices")
-import("stats")
 importFrom("FrF2","DanielPlot")
 importFrom("FrF2", "IAPlot")
 importFrom("FrF2", "MEPlot")
