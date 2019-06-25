@@ -1,5 +1,5 @@
 importFrom("utils", "menu")
-importFrom("stats", "pbeta", "sd")
+importFrom("stats", "pbeta", "sd", "dbinom", "pbinom", "pnorm", "qbeta", "qnorm")
 export(AADouble,
        AAMultiple,
        AASingle,
