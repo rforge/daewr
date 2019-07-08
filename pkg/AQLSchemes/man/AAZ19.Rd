@@ -9,8 +9,8 @@ This function recalls Normal, Tightened and Reduced Plans including the sample s
 AAZ19(type,stype,INSL,LOTS,AQL)
 }
 \arguments{
-  \item{type}{type is the plan type 'Normal', 'Tightened', or 'Reduced'.}
-  \item{stype}{stype is "known" or "unknown"}
+  \item{type}{type is the plan type 'Normal', 'Tightened', or 'Reduced', Normal is Default.}
+  \item{stype}{stype is "known" or "unknown", unknown is Default}
   \item{INSL}{INSL is 1-5}
   \item{LOTS}{LOTS is 1-16}
   \item{AQL}{AQL is 1-11}
