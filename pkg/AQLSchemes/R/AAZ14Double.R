@@ -1,4 +1,6 @@
 AAZ14Double<-function(PLAN,INSL,LOTS,AQL){
+  note<-c("MIL-STD-105E ANSI/ASQ Z1.4")
+  print(note)
   # Get the inspection level
   dINSL <- menu(c("S-1", "S-2", "S-3", "S-4",
                   "I", "II", "III"), title = "\nWhat is the Inspection Level?")
@@ -328,7 +330,7 @@ letters<-c("A","A","A","A","A","A","B",
      #plan<-data.frame(n=ss,c=ac,r=re)
      if(ac==c(0,0) && re==c(0,0)) {
        print("No double sampling plan exists. Use the corresponding single sampling plan")
-     } else {plan<-data.frame(n=ss,c=ac,r=re) 
+     } else {plan<-data.frame(n=ss,c=ac,r=re)
      return(plan)}
 
 }

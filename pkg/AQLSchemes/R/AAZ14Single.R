@@ -2,6 +2,8 @@ AAZ14Single<-function(PLAN,INSL,LOTS,AQL){
 # Get Plan
 #  dPLAN <- menu(c("Normal", "Tightened", "Reduced"), title = "\nWhat type Inspection Plan?")
 #  PLAN
+note<-c("MIL-STD-105E ANSI/ASQ Z1.4")
+print(note)
   # Get the inspection level
   dINSL <- menu(c("S-1", "S-2", "S-3", "S-4",
                   "I", "II", "III"), title = "\nWhat is the Inspection Level?")

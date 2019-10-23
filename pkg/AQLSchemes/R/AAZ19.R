@@ -1,4 +1,6 @@
 AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
+  note<-c("MIL-STD-414 ANSI/ASQ Z1.9")
+  print(note)
   dINSL <- menu(c("S-3", "S-4","I", "II", "III"), title = "\nWhat is the Inspection Level?")
   INSL
   # Get the lot size
@@ -39,9 +41,9 @@ AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
   colnames(SSCodeLetters)<-InspLev
   # get the code letter
   Codeletter<-SSCodeLetters[dLOTS,dINSL]
-  
+
   while(stype=="unknown") {
-    
+
   #Create Matrix of M values for Normal and Tightened Sampling standard deviation unknown
   temp<-array(c(0.077,0.077,0.077,0.077,0.077,0.186,0.228,0.250,0.253,0.243,0.225,0.218,0.202,0.204,
                 0.005,0.005,0.005,0.005,0.179,0.311,0.356,0.378,0.373,0.355,0.326,0.315,0.292,0.294,
@@ -140,7 +142,7 @@ cat("Maximum proportion non-conforming M = ", M)
 
 stype="done" }
 while(stype=="known") {
-  
+
   #Create Matrix of M values for Normal and Tightened Sampling standard deviation known  ****
   temp<-array(c(0.114,0.114,0.114,0.114,0.114,0.114,0.161,0.230,0.226,0.217,0.211,0.207,0.193,0.196,
                 0.290,0.290,0.290,0.290,0.290,0.290,0.296,0.321,0.330,0.326,0.308,0.296,0.283,0.285,
@@ -210,7 +212,7 @@ while(stype=="known") {
   aqlt<-array(c("0.10","0.15","0.25",
                 "0.40","0.65","1.0","1.5","2.5","4.0","6.5","10"),
               dim=c(11,1))
-  
+
   #get M
   if (type=="Normal")
   {M<-ANSIASQZ19M[Codeletter,dAQL+1]/100 }
@@ -234,8 +236,8 @@ while(stype=="known") {
   cat("Acceptability constant k = ",k,'\n')
   cat("Sample size  n = ", S,'\n')
   cat("Maximum proportion non-conforming M = ", M)
-  
-  
-stype="done" }       
+
+
+stype="done" }
 }
 
