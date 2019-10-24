@@ -27,6 +27,8 @@ AASingle(type)
 ##  sampling plan from the ANSI/ASQ Z1.4 Standard.
 ##library(AQLSchemes)
 ##planS<-AASingle('Normal')
+##[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+##
 ##What is the Inspection Level?
 #
 ## 1: S-1

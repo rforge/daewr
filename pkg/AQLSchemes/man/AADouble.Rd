@@ -25,6 +25,8 @@ AADouble(type)
 ## This example illustrates the use of the AADouble function to retrieve the normal
 ##  sampling plan from the ANSI/ASQ Z1.4 Standard.
 ##planD<-AADouble('Normal')
+##[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+##
 ## What is the Inspection Level?
 #
 ##   1: S-1

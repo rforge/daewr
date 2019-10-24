@@ -2,11 +2,10 @@
 \alias{AQLSchemes-package}
 \docType{package}
 \title{
-This package contains functions to recall ANSI/ASQ Z1.4 and ISO2859-1 Single and Double Attribute Sampling Plans, and the ANSI/ASQ Z1.9 and ISO3951-1 
-Variable Sampling Plans from Published Tables, 
+This package contains functions to recall MIL-STD-105E-ANSI/ASQ Z1.4, and the MIL-STD-414-ANSI/ASQ Z1.9  
+Variable Sampling Plans from the Public Domain Published Tables 
 }
-\description{The \pkg{AAQLSchemes} package provides a functions to recall ANSI/ASQ Z1.4, ANSI Z1.9, ISO2859-1, and ISO3951-1 Sampling Plans from Published Tables.
-Written permission to utilize the ANSI/ASQ Z1.4 and Z1.9 tables in this way was granted on 8/28/2018.
+\description{The \pkg{AAQLSchemes} package provides a functions to recall MIL-STD-105E-ANSI/ASQ Z1.4, MIL-STD-414-ANSI Z1.9
 }
 
 \details{

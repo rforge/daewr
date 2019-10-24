@@ -18,6 +18,8 @@ AAZ19(type,stype,INSL,LOTS,AQL)
 \examples{
 ## create normal sampling plan
 # AAZ19('Normal',stype='unknown')
+#[1] "MIL-STD-414 ANSI/ASQ Z1.9"
+#
 # What is the Inspection Level? 
 #
 # 1: S-3
