@@ -2,10 +2,10 @@
 \alias{AQLSchemes-package}
 \docType{package}
 \title{
-This package contains functions to recall MIL-STD-105E-ANSI/ASQ Z1.4, and the MIL-STD-414-ANSI/ASQ Z1.9  
+This package contains functions to recall MIL-STD-105E - ANSI/ASQ Z1.4, and the MIL-STD-414 - ANSI/ASQ Z1.9  
 Variable Sampling Plans from the Public Domain Published Tables 
 }
-\description{The \pkg{AAQLSchemes} package provides a functions to recall MIL-STD-105E-ANSI/ASQ Z1.4, MIL-STD-414-ANSI Z1.9
+\description{The \pkg{AAQLSchemes} package provides a functions to recall MIL-STD-105E - ANSI/ASQ Z1.4 - ISO2859-1 and MIL-STD-414 - ANSI Z1.9 - ISO3951-1 Sampling Plans from Published Tables.
 }
 
 \details{
@@ -31,6 +31,10 @@ AAZ14Multiple           Recalls and prints Sampling Plans
 AAZ14Single             Recalls and prints Sampling Plans
 AAZ19                   Recalls and Prints Z19 Sampling Plans
 EPn                     Calulates the estimated proprtion non-conforming
+MPn                     Calculates the maximum allowable proportion non-conforming
+OCASNZ4S                Calculates the OC values for an attribute single sampling plan
+OCASNZ4D                Calculates the OC and ASN values for an attribute double sampling plan
+OCASNZ4M                Calculates the OC and ASN values for an attribute multiple sampling plan
 }
 }
 \author{

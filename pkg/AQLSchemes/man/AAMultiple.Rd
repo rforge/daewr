@@ -1,6 +1,6 @@
 \name{AAMultiple}
 \alias{AAMultiple}
-\title{ This function recalls ANSI/ASQ Z1.4 Multiple Sampling Plans from the published tables.
+\title{ This function recalls MIL-STD-105E - ANSI/ASQ Z1.4 Multiple Sampling Plans from the published tables.
 }
 \description{
 This function calls the function AAZ14Multiple function that queries the user for the inspection level, lotsize,
@@ -25,6 +25,8 @@ AAMultiple(type)
 ## This example illustrates the use of the AAMultiple function to retrieve the normal 
 ##  sampling plan from the ANSI/ASQ Z1.4 Standard.
 ##planM<-AAMultiple('Normal')
+##[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+##
 ## What is the Inspection Level?
 #
 ##   1: S-1

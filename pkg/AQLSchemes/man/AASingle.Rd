@@ -1,6 +1,6 @@
 \name{AASingle}
 \alias{AASingle}
-\title{ This function recalls ANSI/ASQ Z1.4 Single Sampling Plans from the published tables.
+\title{ This function recalls MIL-STD-105E - ANSI/ASQ Z1.4 Single Sampling Plans from the published tables.
 }
 \description{
 This function calls the function AAZ14Single function that queries the user for the , inspection level, lotsize,

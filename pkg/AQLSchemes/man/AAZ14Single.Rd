@@ -1,6 +1,6 @@
 \name{AAZ14Single}
 \alias{AAZ14Single}
-\title{ This function queries the user for the specs and recalls ANSI/ASQ Z1.4 Double Sampling Plans from the published tables.  
+\title{ This function queries the user for the specs and recalls MIL-STD - ANSI/ASQ Z1.4 Double Sampling Plans from the published tables.  
 }
 \description{
 This function is called by the function AASingle function.

@@ -1,6 +1,6 @@
 \name{AAZ14Double}
 \alias{AAZ14Double}
-\title{ This function queries the user for the specs and recalls ANSI/ASQ Z1.4 Double Sampling Plans from the published tables.  
+\title{ This function queries the user for the specs and recalls MIL-STD-105E - ANSI/ASQ Z1.4 Double Sampling Plans from the published tables.  
 }
 \description{
 This function is called by the function AADouble function. 

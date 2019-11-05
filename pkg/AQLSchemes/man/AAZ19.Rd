@@ -1,6 +1,6 @@
 \name{AAZ19}
 \alias{AAZ19}
-\title{ This function queries the user for the specs and recalls ANSI/ASQ Z1.9 Variable Sampling Plans from the published tables.
+\title{ This function queries the user for the specs and recalls MIL-STD-105E - ANSI/ASQ Z1.9 Variable Sampling Plans from the published tables.
 }
 \description{
 This function recalls Normal, Tightened and Reduced Plans including the sample size n, and maximum prportion nonconforming allowable M.

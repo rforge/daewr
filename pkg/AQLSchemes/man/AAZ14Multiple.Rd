@@ -1,6 +1,6 @@
 \name{AAZ14Multiple}
 \alias{AAZ14Multiple}
-\title{ This function queries the user for the specs and recalls ANSI/ASQ Z1.4 Multiple Sampling Plans from the published tables.  
+\title{ This function queries the user for the specs and recalls MIL-STD-105E - ANSI/ASQ Z1.4 Multiple Sampling Plans from the published tables.  
 }
 \description{
 This function is called by the function AAMultiple function. 
