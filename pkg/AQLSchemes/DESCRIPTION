@@ -2,7 +2,7 @@ Package: AQLSchemes
 Type: Package
 Title: MIL-STD-105e-ANSI/ASQ Z1.4  Single, Double and Multiple Sampling Schemes for Attribute Sampling and MIL-STD-414-ANSI/ASQ Z1.9 Schemes for Variable Sampling
 Version: 1.5.5
-Date: 2019-05-10
+Date: 2019-11-6
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
 Description: Functions for recalling MIL-STD-105E-ANSI/ASQ Z1.4 Single, Double and Multiple Attribute plans and  and  MIL-STD-414-ANSI/ASQ Z1.9 Variable Sampling plans from copies of the published tables. 
