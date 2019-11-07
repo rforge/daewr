@@ -323,8 +323,6 @@ letters<-c("A","A","A","A","A","A","B",
      S<-ANSIASQDoubleReducedss[codelet, dAQL]
      ss<-c(S,S)
    }
-     # Print Results
-     #print("Sample size"); print(ss)
      #print("Acceptance no."); print(ac)
      #print("Rejection no.");print(re)
      #plan<-data.frame(n=ss,c=ac,r=re)
@@ -333,7 +331,7 @@ letters<-c("A","A","A","A","A","A","B",
       #re<-c(0,0)
       #}
       note1<-"No double sampling plan exists, Use the corresponding single sampling plan"
-     if(ss[1]==0){ 
+     if(ss[1]==0){
        note1
       }
      else {plan<-data.frame(n=ss,c=ac,r=re)
