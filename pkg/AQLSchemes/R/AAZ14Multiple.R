@@ -848,3 +848,4 @@ AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
   } else if(S>0) {plan<-data.frame(n=ss,c=ac,r=re)
   return(plan)
 }
+}
