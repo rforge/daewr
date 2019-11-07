@@ -847,9 +847,4 @@ AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
   } else if(S==-2) {note2
   } else if(S>0) {plan<-data.frame(n=ss,c=ac,r=re)
   return(plan)
-  #print("Sample size"); print(ss)
-  #print("Acceptance no."); print(ac)
-  #print("Rejection no.");print(re)
-  }
-  #if(ac[1]==-1) {print("Acceptance no.=-1, means acceptance is not permitted for this sample size")}
 }
