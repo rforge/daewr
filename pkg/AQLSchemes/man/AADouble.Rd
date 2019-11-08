@@ -67,6 +67,7 @@ AADouble(type)
 1. The Statistics Subcommittee of the Accredited Standards Committee Z1 on Quality Environment Dependability and Statistics "American National Standard Sampling Procedures and Tables for Inspection by Attributes"
 American Society for Quality, Milwaukee, Wisconsin, 2008.
 }
+
 \note{ This function calls the function AAZ14Double to get the specifications and recall and print the plan.}
 \author{ John S. Lawson \email{lawson@byu.edu}}
 
