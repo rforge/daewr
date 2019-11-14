@@ -1,2 +1,0 @@
-%\VignetteIndexEntry{AQLSchemes package}
-%\VignetteEngine{R.rsp::asis}
