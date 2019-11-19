@@ -1,13 +1,15 @@
 ---
 title: "AQL Based Acceptance Sampling Schemes"
-output:  rmarkdown::html_vignette
+output:  
+  pdf_document: default
 fig_width: 10 
 fig_height: 4
 vignette: >
-  %\VignetteIndexEntry{AQL Based Acceptance Sampling Schemes}
-  %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
+<!-- rmarkdown::html_vignette 
+%\VignetteIndexEntry{AQL Based Acceptance Sampling Schemes}
+  %\VignetteEngine{knitr::rmarkdown}--> 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -31,7 +33,27 @@ The ANSI/ASQ Z1.4 and Z1.9 standards are recommended for in-house or U.S. domest
 
 The R package $\verb!AQLSchemes!$ automates the process of retrieving particular sampling plans, and the programming features in R and availability of the complimentary $\verb!AcceptanceSampling!$ package make it easy to compute and graph OC, ASN, and AOC curves for comparing more than one plan on the same graph. Comparing several of these curves on the same graph can be easily done using the graphical capabilities of R These graphs clarify the advantages of the ANSI/ASQ AQL Schemes over a custom-developed sampling plans. 
 
-For example, the near OC equivalence of the ANSI/ASQ Z1.4 plans and the ANSI/ASQ Z1.9 plan can be visualized by plotting the OC curves on the same graph as shown in Figure 1 above. ANSI/ASQ Z1.4 single sampling plan normal-level II inspection plan for lots of size 3201-10,000 with an AQL of 1.5 \% is n=200 with an acceptance number of c=7. The double sampling plan for the same situation requires n$_1$=125, n$_2$=125, c$_1$=3, r$_1$=7, and c$_2$=8, r$_2$=9. The multiple sampling plan for this situation is n$_i$=50 for $i=1,7$, c$_1$=0, c$_2$=1, c$_3$=3, c$_4$=5, c$_5$=7, c$_6$=10, c$_7$=13, r$_1$=4, r$_2$=6, r$_3$=8, r$_4$=10, r$_5$=11, r$_6$=12, and r$_7$=14. Finally, the ANSI/ASQ Z1.9 variables sampling plan for this situation is n=75, and $k$=1.84097 or M=0.0317. See the documentation for $\verb!AASingle()!$, $\verb!AADouble()!$, $\verb!AAMultiple()!$ and $\verb!AAZ19()!$ functions for details on how to retrieve these plans from the $\verb!AQLSchemes!$ package. In Figure 1, the OC and ASN (average sample number) curves for the ANSI/ASQ single sampling is labeled S, the double sampling plan is labeled D, the multiple sampling plan is labeled M, and the ANSI/ASQ variable sampling plan is labeled V.  Points on the OC curves and ASN curves can be obtained for each of these plans using the $\verb!AQLSchemes::OCASNZ4S()!$, $\verb!AQLSchemes::OCASNZ4D()!$, $\verb!AQLSchemes::OCASNZ4M()!$, and the $\verb!AcceptanceSampling::OCvar()!$ functions and are plotted on the same graph using the R $\verb!plot()!$  function as shown in the block of code below.
+For example, the near OC equivalence of the ANSI/ASQ Z1.4 plans and the ANSI/ASQ Z1.9 plan can be visualized by plotting the OC curves on the same graph as shown in Figure 1. ANSI/ASQ Z1.4 single sampling plan normal-level II inspection plan for lots of size 3201-10,000 with an AQL of 1.5 \% is n=200 with an acceptance number of c=7. The double sampling plan for the same situation requires 
+
+Sample  | Sample Size   | Cum. Samp. Size    | Acc. Number| Rej.  Number |
+--------|---------------|--------------------|------------|--------------|
+  1     |     125       |   125              |   3        |   7          |
+  2     |     125       |   250              |   8        |   9          |
+
+
+The multiple sampling plan for this situation is
+
+Sample  | Sample Size   | Cum. Samp. Size    | Acc. Number| Rej.  Number |
+--------|---------------|--------------------|------------|--------------|
+  1     |     50        |    50              |   0        |   4          |
+  2     |     50        |   150              |   1        |   6          |
+  3     |     50        |   200              |   3        |   8          |
+  4     |     50        |   250              |   5        |  10          |
+  5     |     50        |   300              |   7        |  11          |
+  6     |     50        |   350              |  10        |  12          |
+  7     |     50        |   400              |  13        |  14          |
+
+Finally, the ANSI/ASQ Z1.9 variables sampling plan for this situation is n=75, and $k$=1.84097 or M=0.0317. See the documentation for $\verb!AQLSchemes::AASingle()!$, $\verb!AQLSchemes::AADouble()!$, $\verb!AQLSchemes::AAMultiple()!$ and $\verb!AQLSchemes::AAZ19()!$ functions for details on how to retrieve these plans from the $\verb!AQLSchemes!$ package. In Figure 1, the OC and ASN (average sample number) curves for the ANSI/ASQ single sampling is labeled S, the double sampling plan is labeled D, the multiple sampling plan is labeled M, and the ANSI/ASQ variable sampling plan is labeled V.  Points on the OC curves and ASN curves can be obtained for each of these plans using the $\verb!AQLSchemes::OCASNZ4S()!$, $\verb!AQLSchemes::OCASNZ4D()!$, $\verb!AQLSchemes::OCASNZ4M()!$, and the $\verb!AcceptanceSampling::OCvar()!$ functions and are plotted on the same graph using the R $\verb!plot()!$  function as shown in the block of code below.
 
 
 
@@ -43,19 +65,19 @@ par(mfcol=c(1,2))
 # and ASN curves for Attibute single(S), double(D), and multiple(M) sampling plans 
 # the Variable sampling plan and store these ponts in the vectors
 # OCASNS$OC, OCASNS$ASN, OCASND$OC, OCASND$ASN, OCASNM$OC, OCASNM$ASN, OCV and ASNV
-# The next statement creates data frame like the one created by the AASingle function
+# The next statement creates data frame like the output of the AASingle() function
 SPlan<-data.frame(n=c(200),c=c(7),r=c(8))
 # The next statement creates the coordinates of the x-axis for OC and ASN curves
 Pnc<-seq(0,.08,.005)
 # The AQLSchemes function OCASNZ4S() creates creates the y-axis coordinates for
 # the OC and ASN curves
 OCASNS<-OCASNZ4S(SPlan,Pnc)
-# Next statement creates data frame like the one created by the AADouble function
+# Next statement creates data frame like the output of the AADouble() function
 DPlan<-data.frame(n=c(125,125),c=c(3,8), r=c(7,9))
 # The AQLSchemes function OCASNZ4D() creates creates the y-axis coordinates for
 # the OC and ASN curves
 OCASND<-OCASNZ4D(DPlan,Pnc)
-# Next statement creates data frame like the one created by the AAMultiple function
+# Next statement creates data frame like the output of the AAMultiple() function
 MPlan<-data.frame(n=c(50,50,50,50,50,50,50),c=c(0,1,3,5,7,10,13),r=c(4,6,8,10,11,12,14))
 # The AQLSchemes function OCASNZ4M() creates creates the y-axis coordinates for
 # the OC and ASN curves
@@ -149,6 +171,7 @@ plot(ocCs,type='l',main="Figure 3")
 lines(pd,PS,type='l',lty=2,col=2)
 lines(c(.04,.05),c(.95,.95),lty=1, col=1)
 lines(c(.04,.05),c(.89,.89),lty=2, col=2)
+points(c(.019296,.045884),c(.95,.10))
 text(.07,.95,'Custom Single', col=1)
 text(.07,.89,'Scheme', col=2)
 ```
