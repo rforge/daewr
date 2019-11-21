@@ -109,12 +109,6 @@ print(note)
   rownames(ANSIASQSingleReducedss)<-codes
   colnames(ANSIASQSingleReducedss)<-AQL
 
-#  setwd("C:/Users/John Lawson/Documents/Sampling/SamplingSchemes")
-#  temp = read.csv("SingleReducedSS.csv", sep=",",header=FALSE)
-#  ANSIASQSingleReducedss<- as.matrix(temp)
-#  rownames(ANSIASQSingleReducedss)<-codes
-#  colnames(ANSIASQSingleReducedss)<-AQL
-
   # Create Matrix of Single Sampling acceptance numbers for Normal Inspection
   c1<-rep(0,16)
   c2<-c1

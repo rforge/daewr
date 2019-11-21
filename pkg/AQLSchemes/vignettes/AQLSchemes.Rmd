@@ -15,7 +15,7 @@ vignette: >
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The R package $\verb!AQLSchemes!$ has functions for retrieving individual sampling plans from the MIL-STD-105E - ANSI/ASQ Z1.4 Standard and the MIL-STD-414 - ANSI/ASQ Z1.9 Standard. The ISO 2859-1 Single and Double sampling plans are also equivalent to the  MIL-STD-105E, and the ISO 3951-1 plans are equivalent to the MIL-STD-414. The functions are interactive and query the user for the inspection level, lot size, and AQL. The  $\verb!AASingle()!$, $\verb!AADouble()!$, and $\verb!AAMultiple()!$ functions recall sampling plans from the ANSI/ASQ Z1.4 Standard, and produce a data frame with columns for the sample size (n), the acceptance number (c) and rejection numbers (r). The $\verb!AAZ19()!$ function recalls plans from the ANSI/ASQ Z1.9 Standard and prints the sample size (n), Acceptability constant (k) and the maximum proportion nonconforming (M). The documentation for these functions gives examples. The central table entries in ANSI/ASQ Z1.4 - ISO 2859-1 are the same as the MIL-STD-105E, and the central table entries for ANSI/ASQ Z1.9 - ISO 3951-1 are the same as MIL-STD-414. The MIL-STD tables are in the public domain.
+The R package $\verb!AQLSchemes!$ has functions for retrieving individual sampling plans from the MIL-STD-105E - ANSI/ASQ Z1.4 Standard and the MIL-STD-414 - ANSI/ASQ Z1.9 Standard. The ISO 2859-1 Single and Double sampling plans are also equivalent to the  MIL-STD-105E, and the ISO 3951-1 plans are equivalent to the MIL-STD-414. The functions are interactive and query the user for the inspection level, lot size, and AQL. The  $\verb!AASingle()!$, $\verb!AADouble()!$, and $\verb!AAMultiple()!$ functions recall sampling plans from the ANSI/ASQ Z1.4 Standard, and produce a data frame with columns for the sample size (n), the acceptance number (c) and rejection numbers (r). The $\verb!AAZ19()!$ function recalls plans from the ANSI/ASQ Z1.9 Standard and prints the sample size (n), Acceptability constant (k) and the maximum proportion nonconforming (M). This vignette gives examples of the function calls and interactive dialog used by $\verb!AASingle()!$, $\verb!AADouble()!$, $\verb!AAMultiple()!$, and $\verb!AAZ19()!$ to retrieve the sampling plans. The central table entries in ANSI/ASQ Z1.4 - ISO 2859-1 are the same as the MIL-STD-105E, and the central table entries for ANSI/ASQ Z1.9 - ISO 3951-1 are the same as MIL-STD-414. The MIL-STD tables are in the public domain.
 
 This package was originally written for Stat 462 (Quality Control)[(Click to see Description here:)](https://jlawson.byu.edu/docs/files/CQPAedgeforGrads.pdf) taught in the Statistics Department at Brigham Young University. 
 
@@ -27,35 +27,190 @@ The open source software R and the $\verb!AQLSchemes!$ package makes computer re
 
 The ANSI/ASQ Z1.4 Standard is the American national standard for AQL-based Attribute Acceptance Sampling plans. They are derived from MIL-STD-105E, which is no longer supported by the U.S. Department of Defense. ANSI/ASQ Z1.4 is a scheme of sampling plans that includes normal, tightened, and reduced plans and associated switching rules for single, double, and multiple sampling. The switching rules provide maximum protection for consumer and supplier for a given sample size, and they must be used if the standard is to be properly applied. 
 
-The civilian standard for AQL based Variable sampling plans is ANSI/ASQ Z1.9, which is similar to the MIL-STD-414. It is also a scheme of sampling plans including normal, tightened, and reduced sampling.   ANSI/ASQ Z1.9 matches the OC performance of the attribute plans in ANSI/ASQ Z1.4. Therefore, it is possible to switch back and forth between an attribute plan in ANSI/ASQ Z1.4 and a variables plan from ANSI/ASQ Z1.9 and keep essentially the same operating characteristic (for schemes with the same lot size, inspection level, and AQL).  
+The civilian standard for AQL based Variable sampling plans is ANSI/ASQ Z1.9, which is similar to the MIL-STD-414. It is also a scheme of sampling plans including normal, tightened, and reduced sampling. ANSI/ASQ Z1.9 matches the OC performance of the attribute plans in ANSI/ASQ Z1.4. Therefore, it is possible to switch back and forth between an attribute plan in ANSI/ASQ Z1.4 and a variables plan from ANSI/ASQ Z1.9 and keep essentially the same operating characteristic (for schemes with the same lot size, inspection level, and AQL).  
 
 The ANSI/ASQ Z1.4 and Z1.9 standards are recommended for in-house or U.S. domestic trade partners. The ASQ Quality Engineer and Quality Process Analyst Certifications require knowledge of ANSI/ASQ Z1.4. and Z1.9.  However, the training materials and certification exams focus on the mechanics of looking up a specific plan in the tables for the published standard based on the lot size, inspection level, and AQL; and in the mechanics of manually calculating specific points on the OC Curve or ASN Curve for a particular plan. These exercises do not help those preparing for the exam to understand the overall benefits of the ANSI/ASQ Standards over custom derived sampling plans that can be obtained from commercial software products such as Minitab\textsuperscript{\textcopyright} or StatGraphics\textsuperscript{\textcopyright}, or open source software such as the $\verb!AcceptanceSampling!$ Package in R.  
 
-The R package $\verb!AQLSchemes!$ automates the process of retrieving particular sampling plans, and the programming features in R and availability of the complimentary $\verb!AcceptanceSampling!$ package make it easy to compute and graph OC, ASN, and AOC curves for comparing more than one plan on the same graph. Comparing several of these curves on the same graph can be easily done using the graphical capabilities of R These graphs clarify the advantages of the ANSI/ASQ AQL Schemes over a custom-developed sampling plans. 
+The R package $\verb!AQLSchemes!$ automates the process of retrieving particular sampling plans, and the programming features in R and availability of the complimentary $\verb!AcceptanceSampling!$ package make it easy to compute and graph OC, ASN, and AOC curves for comparing more than one plan on the same graph. Comparing several of these curves on the same graph can be easily done using the graphical capabilities of R. These graphs clarify the advantages of an ANSI/ASQ AQL scheme over a custom-developed sampling plan. For example, the near OC equivalence of the ANSI/ASQ Z1.4 plans and the ANSI/ASQ Z1.9 plan can be visualized by plotting the OC curves on the same graph as shown in Figure 1. 
 
-For example, the near OC equivalence of the ANSI/ASQ Z1.4 plans and the ANSI/ASQ Z1.9 plan can be visualized by plotting the OC curves on the same graph as shown in Figure 1. ANSI/ASQ Z1.4 single sampling plan normal-level II inspection plan for lots of size 3201-10,000 with an AQL of 1.5 \% is n=200 with an acceptance number of c=7. The double sampling plan for the same situation requires 
+ANSI/ASQ Z1.4 single sampling plan normal-level II inspection plan for lots of size 3201-10,000 with an AQL of 1.5 \% is n=200 with an acceptance number of c=7. The R code below illustrates how this plan can be retrieved using the $\verb!AASingle()!$ function. This code  shows the function call and the interactive dialog to produce the result. The output of the function call is a data frame with one row and three columns which is stored in the object $\verb!plans!$, and then retrieved at the end of the dialog. 
 
-Sample  | Sample Size   | Cum. Samp. Size    | Acc. Number| Rej.  Number |
---------|---------------|--------------------|------------|--------------|
-  1     |     125       |   125              |   3        |   7          |
-  2     |     125       |   250              |   8        |   9          |
+```{r eval=FALSE}
+> library(AQLSchemes)
+> plans<-AASingle('Normal')
+[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+
+What is the Inspection Level? 
+
+1: S-1
+2: S-2
+3: S-3
+4: S-4
+5: I
+6: II
+7: III
+
+Selection: 6
+
+What is the Lot Size? 
+
+ 1: 2-8                2: 9-15               3: 16-25           
+ 4: 26-50              5: 51-90              6: 91-150          
+ 7: 151-280            8: 281-500            9: 501-1200        
+10: 1201-3200         11: 3201-10,000       12: 10,001-35,000   
+13: 35,001-150,000    14: 150,001-500,000   15: 500,001 and over
 
 
-The multiple sampling plan for this situation is
+Selection: 11
 
-Sample  | Sample Size   | Cum. Samp. Size    | Acc. Number| Rej.  Number |
---------|---------------|--------------------|------------|--------------|
-  1     |     50        |    50              |   0        |   4          |
-  2     |     50        |   150              |   1        |   6          |
-  3     |     50        |   200              |   3        |   8          |
-  4     |     50        |   250              |   5        |  10          |
-  5     |     50        |   300              |   7        |  11          |
-  6     |     50        |   350              |  10        |  12          |
-  7     |     50        |   400              |  13        |  14          |
+What is the AQL in percent nonconforming per 100 items? 
 
-Finally, the ANSI/ASQ Z1.9 variables sampling plan for this situation is n=75, and $k$=1.84097 or M=0.0317. See the documentation for $\verb!AQLSchemes::AASingle()!$, $\verb!AQLSchemes::AADouble()!$, $\verb!AQLSchemes::AAMultiple()!$ and $\verb!AQLSchemes::AAZ19()!$ functions for details on how to retrieve these plans from the $\verb!AQLSchemes!$ package. In Figure 1, the OC and ASN (average sample number) curves for the ANSI/ASQ single sampling is labeled S, the double sampling plan is labeled D, the multiple sampling plan is labeled M, and the ANSI/ASQ variable sampling plan is labeled V.  Points on the OC curves and ASN curves can be obtained for each of these plans using the $\verb!AQLSchemes::OCASNZ4S()!$, $\verb!AQLSchemes::OCASNZ4D()!$, $\verb!AQLSchemes::OCASNZ4M()!$, and the $\verb!AcceptanceSampling::OCvar()!$ functions and are plotted on the same graph using the R $\verb!plot()!$  function as shown in the block of code below.
+ 1: 0.010   2: 0.015   3: 0.025   4: 0.040   5: 0.065   6: 0.10 
+ 7: 0.15    8: 0.25    9: 0.40   10: 0.65   11: 1.0    12: 1.5  
+13: 2.5    14: 4.0    15: 6.5    16: 10     17: 15     18: 25   
+19: 40     20: 65     21: 100    22: 150    23: 250    24: 400  
+25: 650    26: 1000   
+
+Selection: 12
+> plans
+    n c r
+1 200 7 8
+```
+
+The ANSI/ASQ Z1.4 double sampling plan for the same situation can be recalled with the $\verb!AADouble()!$ function as shown in the function call and interactive dialog shown below. Again the output of this function is a data frame with two rows and three columns that is stored in the object $\verb!pland!$ and then retrieved at the end of the dialog.
+```{r eval=FALSE}
+> library(AQLSchemes)
+> pland<-AADouble('Normal')
+[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+
+What is the Inspection Level? 
+
+1: S-1
+2: S-2
+3: S-3
+4: S-4
+5: I
+6: II
+7: III
+
+Selection: 6
+
+What is the Lot Size? 
+
+ 1: 2-8                2: 9-15               3: 16-25           
+ 4: 26-50              5: 51-90              6: 91-150          
+ 7: 151-280            8: 281-500            9: 501-1200        
+10: 1201-3200         11: 3201-10,000       12: 10,001-35,000   
+13: 35,001-150,000    14: 150,001-500,000   15: 500,001 and over
 
 
+Selection: 11
+
+What is the AQL in percent nonconforming per 100 items? 
+
+ 1: 0.010   2: 0.015   3: 0.025   4: 0.040   5: 0.065   6: 0.10 
+ 7: 0.15    8: 0.25    9: 0.40   10: 0.65   11: 1.0    12: 1.5  
+13: 2.5    14: 4.0    15: 6.5    16: 10     17: 15     18: 25   
+19: 40     20: 65     21: 100    22: 150    23: 250    24: 400  
+25: 650    26: 1000   
+
+Selection: 12
+> pland
+         n c r
+first  125 3 7
+second 125 8 9
+```
+
+The ANSI/ASQ Z1.4 Multiple sampling plan for the same situation is recalled using the $\verb!AADouble()!$ function as shown in the function call and interactive dialog shown below. The resulting data frame with seven rows and three columns is stored in $\verb!planm!$ and retrieved at the end of the dialog.
+```{r eval=FALSE}
+> library(AQLSchemes)
+> planm<-Multiple('Normal')
+[1] "MIL-STD-105E ANSI/ASQ Z1.4"
+
+What is the Inspection Level? 
+
+1: S-1
+2: S-2
+3: S-3
+4: S-4
+5: I
+6: II
+7: III
+
+Selection: 6
+
+What is the Lot Size? 
+
+ 1: 2-8                2: 9-15               3: 16-25           
+ 4: 26-50              5: 51-90              6: 91-150          
+ 7: 151-280            8: 281-500            9: 501-1200        
+10: 1201-3200         11: 3201-10,000       12: 10,001-35,000   
+13: 35,001-150,000    14: 150,001-500,000   15: 500,001 and over
+
+
+Selection: 11
+What is the AQL in percent nonconforming per 100 items? 
+
+ 1: 0.010   2: 0.015   3: 0.025   4: 0.040   5: 0.065   6: 0.10 
+ 7: 0.15    8: 0.25    9: 0.40   10: 0.65   11: 1.0    12: 1.5  
+13: 2.5    14: 4.0    15: 6.5    16: 10     17: 15     18: 25   
+19: 40     20: 65     21: 100    22: 150    23: 250    24: 400  
+25: 650    26: 1000   
+
+Selection: 12
+>planm
+         n  c  r
+first   50  0  4
+second  50  1  6
+third   50  3  8
+fourth  50  5 10
+fifth   50  7 11
+sixth   50 10 12
+seventh 50 13 14
+```
+
+
+Finally, the ANSI/ASQ Z1.9 variables sampling plan for this situation
+can be retrieved with the $\verb!AAZ19()!$ function as shown in the function call below.
+```{r eval=FALSE}
+> library(AQLSchemes)
+> AAZ19('Normal')
+[1] "MIL-STD-414 ANSI/ASQ Z1.9"
+
+What is the Inspection Level? 
+
+1: S-3
+2: S-4
+3: I
+4: II
+5: III
+
+Selection: 4
+
+What is the Lot Size? 
+
+ 1: 2-8                2: 9-15               3: 16-25           
+ 4: 26-50              5: 51-90              6: 91-150          
+ 7: 151-280            8: 281-400            9: 401-500         
+10: 501-1200          11: 1201-3200         12: 3201-10,000     
+13: 10,001-35,000     14: 35,001-150,000    15: 150,001-500,000 
+16: 500,001 and over  
+
+Selection: 12
+
+What is the AQL in percent nonconforming per 100 items? 
+
+ 1: 0.10   2: 0.15   3: 0.25   4: 0.40   5: 0.65   6: 1.0    7: 1.5 
+ 8: 2.5    9: 4.0   10: 6.5   11: 10    
+
+Selection: 7
+Sample size  n =  75 
+Acceptability constant k =  1.84097 
+Maximum proportion non-conforming M =  0.0317
+```
+
+
+In Figure 1, the OC and ASN (average sample number) curves for the ANSI/ASQ single sampling is labeled S, the double sampling plan is labeled D, the multiple sampling plan is labeled M, and the ANSI/ASQ variable sampling plan is labeled V.  Points on the OC curves and ASN curves can be obtained for each of these plans using the $\verb!AQLSchemes::OCASNZ4S()!$, $\verb!AQLSchemes::OCASNZ4D()!$, $\verb!AQLSchemes::OCASNZ4M()!$, and the $\verb!AcceptanceSampling::OCvar()!$ functions. The OC and ASN functions for each plan are plotted on the same graph using the R $\verb!plot()!$  function as shown in the block of code below. In this block of code, data frames the same as those produced by the $\verb!AASingle()!$ function, the $\verb!AADouble()!$ function and the $\verb!AAMultiple()!$ function were created with assigment statements to avoid repeating the interactive dialogs shown above.
 
 ```{r fig1, fig.height = 4, fig.width = 7}
 library(AQLSchemes)
@@ -66,22 +221,22 @@ par(mfcol=c(1,2))
 # the Variable sampling plan and store these ponts in the vectors
 # OCASNS$OC, OCASNS$ASN, OCASND$OC, OCASND$ASN, OCASNM$OC, OCASNM$ASN, OCV and ASNV
 # The next statement creates data frame like the output of the AASingle() function
-SPlan<-data.frame(n=c(200),c=c(7),r=c(8))
+plans<-data.frame(n=c(200),c=c(7),r=c(8))
 # The next statement creates the coordinates of the x-axis for OC and ASN curves
 Pnc<-seq(0,.08,.005)
 # The AQLSchemes function OCASNZ4S() creates creates the y-axis coordinates for
-# the OC and ASN curves
-OCASNS<-OCASNZ4S(SPlan,Pnc)
+# the OC and ASN curves in a data frame stored in OCASNS
+OCASNS<-OCASNZ4S(plans,Pnc)
 # Next statement creates data frame like the output of the AADouble() function
-DPlan<-data.frame(n=c(125,125),c=c(3,8), r=c(7,9))
+pland<-data.frame(n=c(125,125),c=c(3,8), r=c(7,9))
 # The AQLSchemes function OCASNZ4D() creates creates the y-axis coordinates for
-# the OC and ASN curves
-OCASND<-OCASNZ4D(DPlan,Pnc)
+# the OC and ASN curves in a data frame stored in OCASND
+OCASND<-OCASNZ4D(pland,Pnc)
 # Next statement creates data frame like the output of the AAMultiple() function
-MPlan<-data.frame(n=c(50,50,50,50,50,50,50),c=c(0,1,3,5,7,10,13),r=c(4,6,8,10,11,12,14))
+planm<-data.frame(n=c(50,50,50,50,50,50,50),c=c(0,1,3,5,7,10,13),r=c(4,6,8,10,11,12,14))
 # The AQLSchemes function OCASNZ4M() creates creates the y-axis coordinates for
-# the OC and ASN curves
-OCASNM<-OCASNZ4M(MPlan,Pnc)
+# the OC and ASN curves in a data frame stored in OCASNM
+OCASNM<-OCASNZ4M(planm,Pnc)
 # Next statement creates the y-axis coordinates for the variables sampling plan
 # using the OCvar() function in the AcceptanceSampling package
 V<-OCvar(n=75,k=1.84097,s.type="unknown",pd=Pnc)
@@ -148,7 +303,8 @@ PT=pbinom(5,size=200,prob=seq(0,.1,.001),lower.tail=TRUE)
 a=(2-PN^4)/((1.0000000000001-PN)*(1.0000000000001-PN^4))
 b=(1.0000000000001-PT^5)/((1.0000000000001-PT)*(PT^5))
 PS<-(a*PN+b*PT)/(a+b)
-plot(pd,PS,type='l',lty=1,xlim=c(0,.1),xlab='Probability of nonconforming',ylab="OC",main="Figure 2")
+plot(pd,PS,type='l',lty=1,xlim=c(0,.1),xlab='Probability of nonconforming',
+     ylab="OC",main="Figure 2")
 lines(pd,PN,type='l',lty=2,col=2)
 lines(pd,PT,type='l',lty=2,col=3)
 lines(c(.04,.05),c(.95,.95),lty=1, col=1)
@@ -160,7 +316,7 @@ text(.07,.83,'Tightened',col=3)
 ```
 
 
-The comparison of the OC curves is shown in Figure 2. There it can be seen that the scheme has a steeper OC curve that offers as much protection to the customer as the tightened plan, yet the shoulder on scheme  OC curve offers as much protection for the producer as the normal plan. The producer risk point for the scheme OC curve is (AQL=.019296, 1-$\alpha$=0.95), and the customer risk point is (LTPD=.045884, $\beta$=.10). A custom made single sampling plan with an OC curve that passes through these two points can be obtained using the $\verb!AcceptanceSampling::find.plan()!$ function in the R package $\verb!AcceptanceSampling!$. A comparison of the scheme OC curve to the OC curve for the custom single sampling plan shown in Figure 3. 
+The comparison of the OC curves is shown in Figure 2. There it can be seen that the scheme has a steeper OC curve that offers as much protection to the customer as the tightened plan, yet the shoulder on scheme  OC curve offers as much protection for the producer (who supplies lots with the percent nonconforming at or below the AQL) as the normal plan. The producer risk point for the scheme OC curve is (AQL=.019296, 1-$\alpha$=0.95), and the customer risk point is (LTPD=.045884, $\beta$=.10). A custom made single sampling plan with an OC curve that passes through these two points can be obtained using the $\verb!AcceptanceSampling::find.plan()!$ function in the R package $\verb!AcceptanceSampling!$. A comparison of the scheme OC curve to the OC curve for the custom single sampling plan shown in Figure 3. 
 
 ```{r fig3, fig.height = 4.5, fig.width = 4.5}
 library(AcceptanceSampling)

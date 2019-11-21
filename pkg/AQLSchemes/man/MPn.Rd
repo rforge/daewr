@@ -5,6 +5,9 @@
 \usage{
 MPn(k,n,stype)
 }
+\value{
+returns a single number (the maximum allowable proportion nonconforming)
+}
 \arguments{
   \item{k}{k is the acceptance constant for the variables sampling plan.}
   \item{stype}{ stype is 'known' or 'unknown' depending on whether the standard deviation is known. The default is 'unknown'.}

@@ -690,7 +690,6 @@ AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
        0,0,0,0,1,2,3,5,7,11,11,11,11,11,11,11,11,11,11,11,0,0,0,0,0,0,
        0,0,0,1,1,3,4,7,10,14,14,14,14,14,14,14,14,14,14,14,0,0,0,0,0,0,
        0,0,1,1,2,4,6,9,13,18,18,18,18,18,18,18,18,18,18,18,0,0,0,0,0,0)
-  #################### I made check tables up to here############################
   AAMultipleReducedac<-array(t,  dim=c(26,7,16), dimnames=list(c("0.010","0.015","0.025","0.040","0.065","0.10","0.15","0.25","0.40","0.65","1.0","1.5","2.5","4.0","6.5",
                                                                  "10","15","25","40","65","100","150","250","400","650","1000"),
                                                                c("first","second","third","fourth","fifth","sixth","seventh"),
@@ -817,11 +816,6 @@ AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
   # Get Code letter from SSCodeLetters
   codelet<-SSCodeLetters[dLOTS,dINSL]
   if(PLAN == 1) {
-#    print(PLAN)
-#    print(dINSL)
-#    print(dLOTS)
-#    print(codelet)
-#    print(dAQL)
     ac<-AAMultipleNormalac[dAQL, ,codelet]
     re<-AAMultipleNormalre[dAQL, ,codelet]
     S<-AAMultipleNormalss[codelet, dAQL]
