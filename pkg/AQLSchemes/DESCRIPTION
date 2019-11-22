@@ -1,12 +1,12 @@
 Package: AQLSchemes
 Type: Package
-Title: Functions for Retrieving AQL based Acceptance Sampling Schemes
-Version: 1.6-1
-Date: 2019-11-21
+Title: Retrieving AQL Based Acceptance Sampling Schemes
+Version: 1.6-2
+Date: 2019-11-22
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
-Description: This package includes functions for recalling MIL-STD-105E-ANSI/ASQ Z1.4 single, double and multiple attribute plans and  and  MIL-STD-414-ANSI/ASQ Z1.9 variable sampling plans
- from copies of the published tables. It also includes functions for computing the OC and ASN coordinates for the attribute plans it recalls, and functions for computing the estimated proportion 
+Description: Functions for recalling MIL-STD-105E-ANSI/ASQ Z1.4 single, double and multiple attribute plans <https://archive.org/details/MIL-STD-105E_1> and  and  MIL-STD-414-ANSI/ASQ Z1.9 variable sampling plans
+<https://archive.org/details/MIL-STD-414> from copies of the published tables. Also includes functions for computing the OC and ASN coordinates for the attribute plans it recalls, and functions for computing the estimated proportion 
  nonconforming and the maximum allowable proportion nonconforming for variable sampling plans.  
 License: GPL-2 
 LazyLoad: yes
