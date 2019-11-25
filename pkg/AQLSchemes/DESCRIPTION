@@ -5,9 +5,9 @@ Version: 1.6-3
 Date: 2019-11-22
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
-Description: The package includes functions for recalling single, double, and multiple attribute
+Description: Functions are included for recalling single, double, and multiple attribute
  sampling plans from the Military Standard (MIL-STD-105E)-American National Standards Institute/American
- Society for Quality (ANSI/ASQ Z1.4) tables and variable sampling plans from Military Standard
+ Society for Quality (ANSI/ASQ Z1.4) tables and for retrieving variable sampling plans from Military Standard
  (MIL-STD-414)-American National Standards Institute/American Society for Quality (ANSI/ASQ Z1.9)
  tables. The sources for these tables are listed in the URL: field. Also included are functions
  for computing the OC and ASN coordinates for the attribute plans it recalls, and functions for
