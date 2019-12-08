@@ -1,5 +1,4 @@
 AAMultiple <- function(type="Normal") {
-  message1<-"type must be equal to 'Normal' 'Reduced' or 'Tightened'"
   if(type == "Normal"){
     iplan <- 1
   } else if (type == "Tightened"){
@@ -9,8 +8,8 @@ AAMultiple <- function(type="Normal") {
   } else {
     iplan<-4
   }
-  if(iplan==4) {print(message1)} else
+  if(iplan==4) {stop("type must be equal to 'Normal' 'Reduced' or 'Tightened'" )} else
   {plan<-AAZ14Multiple(PLAN=iplan,INSL=1,LOTS=1,AQL=1)
   return(plan)}
-  
+
 }

@@ -1,6 +1,5 @@
 AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
-  note<-c("MIL-STD-105E ANSI/ASQ Z1.4")
-  print(note)
+  message("MIL-STD-105E ANSI/ASQ Z1.4")
   # Get the inspection level
   dINSL <- menu(c("S-1", "S-2", "S-3", "S-4",
                   "I", "II", "III"), title = "\nWhat is the Inspection Level?")
@@ -834,11 +833,8 @@ AAZ14Multiple<-function(PLAN,INSL,LOTS,AQL){
     ss<-c(S,S,S,S,S,S,S)
     names(ss)<-c("first","second","third","fourth","fifth","sixth","seventh")
   }
-  # Print Results
-  note1<-"No multiple sampling exists. Use the corresponding single sampling plan"
-  note2<-"No multiple sampling exists. Use the corresponding double sampling plan"
-  if(S==-1) {note1
-  } else if(S==-2) {note2
+  if(S==-1) {warning("No multiple sampling exists. Use the corresponding single sampling plan")
+  } else if(S==-2) {warning("No multiple sampling exists. Use the corresponding double sampling plan")
   } else if(S>0) {plan<-data.frame(n=ss,c=ac,r=re)
   return(plan)
 }

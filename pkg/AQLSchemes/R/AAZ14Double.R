@@ -1,6 +1,5 @@
 AAZ14Double<-function(PLAN,INSL,LOTS,AQL){
-  note<-c("MIL-STD-105E ANSI/ASQ Z1.4")
-  print(note)
+  message("MIL-STD-105E ANSI/ASQ Z1.4")
   # Get the inspection level
   dINSL <- menu(c("S-1", "S-2", "S-3", "S-4",
                   "I", "II", "III"), title = "\nWhat is the Inspection Level?")
@@ -301,11 +300,6 @@ letters<-c("A","A","A","A","A","A","B",
 # Get Code letter from SSCodeLetters
    codelet<-SSCodeLetters[dLOTS,dINSL]
    if(PLAN == 1) {
-#   print(PLAN)
-#   print(dINSL)
-#   print(dLOTS)
-#   print(codelet)
-#   print(dAQL)
      ac<-AADoubleNormalac[ ,codelet,dAQL]
      re<-AADoubleNormalre[ ,codelet,dAQL]
      S<-ANSIASQDoubleNormalss[codelet, dAQL]
@@ -323,9 +317,8 @@ letters<-c("A","A","A","A","A","A","B",
      S<-ANSIASQDoubleReducedss[codelet, dAQL]
      ss<-c(S,S)
    }
-      note1<-"No double sampling plan exists, Use the corresponding single sampling plan"
      if(ss[1]==0){
-       note1
+       warning("No multiple sampling exists. Use the corresponding single sampling plan")
       }
      else {plan<-data.frame(n=ss,c=ac,r=re)
       return(plan)}
