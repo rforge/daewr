@@ -47,7 +47,6 @@ EPn<-function( sample=c(1), sided="one", stype="unknown", LSL=-1, USL=-1, sigma=
     if(sided=="two") {P<-P+P2} else
     {P<-max(P1,P2)}
     format(P,digits=8)
-    options(scipen=999)
     case<-3
                   }
 
@@ -81,7 +80,6 @@ while (case==2)           {
   else
   {P<-max(P1,P2)}
   format(P,digits=8)
-  options(scipen=999)
   case<-3
                           }
 

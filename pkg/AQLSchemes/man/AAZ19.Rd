@@ -9,7 +9,7 @@ This function recalls Normal, Tightened and Reduced Plans including the sample s
 AAZ19(type,stype,INSL,LOTS,AQL)
 }
 \value{
-prints the  3 lines (sample size (n), acceptability constant (k), and the maximum proportion nonconforming allowable (M)) to the console.
+returns a vector of length 3 containing the sample size (n), acceptability constant (k), and the maximum proportion nonconforming allowable (M)).
 }
 \arguments{
   \item{type}{type is the plan type 'Normal', 'Tightened', or 'Reduced', Normal is Default.}
