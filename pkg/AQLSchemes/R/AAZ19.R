@@ -1,6 +1,5 @@
 AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
-  note<-c("MIL-STD-414 ANSI/ASQ Z1.9")
-  print(note)
+  message("MIL-STD-414 ANSI/ASQ Z1.9")
   dINSL <- menu(c("S-3", "S-4","I", "II", "III"), title = "\nWhat is the Inspection Level?")
   INSL
   # Get the lot size
@@ -135,11 +134,9 @@ AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
 Codeletter
 BBM<-qbeta(M,(S-2)/2,(S-2)/2)
 k<-(-1)*((BBM/.5)-1)/(sqrt(S)/(S-1))
-cat("Sample size  n = ", S,'\n')
-cat("Acceptability constant k = ",k,'\n')
-cat("Maximum proportion non-conforming M = ", M)
-
-
+result<-c(S,k,M)
+names(result)<-c("n","k","M")
+return(result)
 stype="done" }
 while(stype=="known") {
 
@@ -233,11 +230,9 @@ while(stype=="known") {
   options(scipen=999)}
   Codeletter
   k<-sqrt((S-1)/S)*qnorm(M,0,1,lower.tail=F)
-  cat("Acceptability constant k = ",k,'\n')
-  cat("Sample size  n = ", S,'\n')
-  cat("Maximum proportion non-conforming M = ", M)
-
-
+  result<-c(S,k,M)
+  names(result)<-c("n","k","M")
+  return(result)
 stype="done" }
 }
 
