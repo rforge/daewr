@@ -1,6 +1,6 @@
 AAZ14Single<-function(PLAN,INSL,LOTS,AQL){
 message("MIL-STD-105E ANSI/ASQ Z1.4")
-message("If the sample size exceeds the lot size carry out 100% inspection")
+message("If the sample size exceeds the lot size, carry out 100% inspection")
 # Get Plan
 #  dPLAN <- menu(c("Normal", "Tightened", "Reduced"), title = "\nWhat type Inspection Plan?")
 #  PLAN
