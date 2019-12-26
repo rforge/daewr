@@ -1,7 +1,7 @@
 Package: AQLSchemes
 Type: Package
 Title: Retrieving Acceptance Sampling Schemes
-Version: 1.6-4
+Version: 1.6-5
 Date: 2019-11-22
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>

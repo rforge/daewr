@@ -1,5 +1,5 @@
 AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
-  message("MIL-STD-414 ANSI/ASQ Z1.9")
+  message("ANSI/ASQ Z1.9 converted from MIL-STD-414 using Gasciogne Method")
   dINSL <- menu(c("S-3", "S-4","I", "II", "III"), title = "\nWhat is the Inspection Level?")
   INSL
   # Get the lot size
