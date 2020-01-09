@@ -1,8 +1,8 @@
 Package: AQLSchemes
 Type: Package
 Title: Retrieving Acceptance Sampling Schemes
-Version: 1.6-5
-Date: 2019-11-22
+Version: 1.6-6
+Date: 2020-01-09
 Author: John Lawson <lawson@byu.edu>
 Maintainer: John Lawson <lawson@byu.edu>
 Description: Functions are included for recalling AQL (Acceptable Quality Level or Acceptance Quality Level) 
