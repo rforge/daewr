@@ -38,9 +38,10 @@ export(Fcrit,
        EEw2s2,
        EEw2s3,
        EEw3,
-       ihstep,
        fhstep,
-       bstep,
-       step.forward,
+       firstm,
+       fnextrm,
+       HierAFS,
+       ihstep,
        colormap
 	   )
