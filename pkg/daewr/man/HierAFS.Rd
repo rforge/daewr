@@ -43,7 +43,7 @@ set.seed(1234)
 x <- DefScreen(m=5,c=0)
 colnames(x) <- paste("x",1:5,sep="")
 x$y <- 3*x$x1 + 2*x$x2 + 2*x$x4*x$x5 + x$x3^2 + 2*x$x1^2 + rnorm(nrow(x),0,1)
-(z <- HierAFS(x$y,x[,-6],m=5,c=0,step=4,nm1=FALSE ))
+HierAFS(x$y,x[,-6],m=5,c=0,step=4,nm1=FALSE )
 # Example p. 240 Design and Analysis of Experiments with R PB Design
 library(BsMD)
 data(PB12Des,package="BsMD")

@@ -4,7 +4,7 @@ Title: Design and Analysis of Experiments with R
 Version: 1.1-9
 Date: 2020-2-19
 Authors@R: c(
-     person("John", "Lawson", email = "lawsonjsl7net@gmail", role=c("aut","cre")),
+     person("John", "Lawson", email = "lawsonjsl7net@gmail.com", role=c("aut","cre")),
      person("Gerhard", "Krennrich", email="krennri@uni-heidelberg.de", role="aut"))           
 Maintainer: John Lawson <lawsonjsl7net@gmail.com>
 Description: Contains Data frames and functions used in the book "Design and Analysis of Experiments with R".
