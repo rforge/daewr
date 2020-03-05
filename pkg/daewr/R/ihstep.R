@@ -43,7 +43,7 @@ ihstep <- function(y,des,m,c) {
   t2<-substr(trm,2,2)
   t3<-substr(trm,3,3)
   iquad=FALSE
-  if(t1=="I"& t2=="(") {iquad=TRUE}
+  if(t1=="I" && t2=="(") {iquad=TRUE}
   hmt<-trm
   if(t2=="") {
     nms<-names(d1)

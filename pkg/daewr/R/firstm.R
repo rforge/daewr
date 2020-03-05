@@ -11,11 +11,11 @@ for (i in 1:nmt) {
   t2<-substr(term,2,2)
   t3<-substr(term,3,3)
   iquad=FALSE
-  if(t1=="I"& t2=="(") {iquad=TRUE}
+  if(t1=="I"&& t2=="(") {iquad=TRUE}
   hmt<-term
   if(iquad){hmt<-c(term,t3)}
   cmp<-FALSE
-  if(t2!= ""&iquad!=TRUE){cmp=TRUE}
+  if(t2!= ""&&iquad!=TRUE){cmp=TRUE}
   if(cmp){hmt<-c(t1,t3,term)}
 #  print(i)
 #  print(hmt)
@@ -35,11 +35,11 @@ t1<-substr(term,1,1)
 t2<-substr(term,2,2)
 t3<-substr(term,3,3)
 iquad=FALSE
-if(t1=="I"& t2=="(") {iquad=TRUE}
+if(t1=="I"&& t2=="(") {iquad=TRUE}
 mt<-term
 if(iquad){mt<-c(term,t3)}
 cmp<-FALSE
-if(t2!= ""&iquad!=TRUE){cmp=TRUE}
+if(t2!= ""&&iquad!=TRUE){cmp=TRUE}
 if(cmp){mt<-c(t1,t3,term)}
 return(mt)
 }
