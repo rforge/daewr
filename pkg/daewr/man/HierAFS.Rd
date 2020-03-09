@@ -6,7 +6,7 @@
 \description{This function performs a hierarchical forward stepwise regression. If an interaction or quadratic term is entered in the model, the parent main effects are also entered into the model.
 }
 \usage{
-HierAFS(y,x,m,c,step,nm1=TRUE) 
+HierAFS(y,x,m,c,step) 
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -14,7 +14,8 @@ HierAFS(y,x,m,c,step,nm1=TRUE)
 input - this is a vector containing a single numeric column of response data.
 }
   \item{x}{
-input - this is a data frame containing the numeric columns of the candidate independent variables. The m three-level factors always preceed the c two-level factors in the design.
+input - this is a data frame containing the numeric columns of the candidate independent variables. The m three-level factors always preceed the c two-level factors in the design. The factor names or colnames(x)
+should always be of length (for example letters of the alphabet "A", "B", etc.)
 }
   \item{m}{
 input - this is an integer equal to the number of three-level factors in the design
@@ -24,9 +25,6 @@ input - this is an integer equal to the number of two-level factors in the desig
 }
   \item{step}{
 input - this is a single numeric value containing the n umber of steps requested.
-}
-  \item{nm1}{
-input - this is a single logical variable. Its default value is TRUE if the column names of des in the header are each of length 1. If the column names of des are greater than one (i.e., x1, x2 etc.) then nm1 should be set to FALSE
 }
 }
 \value{
@@ -41,9 +39,8 @@ Gerhard Krennrich, and modified by John Lawson
 library(daewr)
 set.seed(1234)
 x <- DefScreen(m=5,c=0)
-colnames(x) <- paste("x",1:5,sep="")
-x$y <- 3*x$x1 + 2*x$x2 + 2*x$x4*x$x5 + x$x3^2 + 2*x$x1^2 + rnorm(nrow(x),0,1)
-HierAFS(x$y,x[,-6],m=5,c=0,step=4,nm1=FALSE )
+x$y <- 3*x$A + 2*x$B + 3*x$A*x$B + 2*x$A^2 + 2*x$C+rnorm(nrow(x),0,.5) 
+HierAFS(x$y,x[,-6],m=5,c=0,step=3)
 # Example p. 240 Design and Analysis of Experiments with R PB Design
 library(BsMD)
 data(PB12Des,package="BsMD")

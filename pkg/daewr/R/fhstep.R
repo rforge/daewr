@@ -1,4 +1,4 @@
-fhstep <- function(y,des,m, c,prvm) {
+fhstep <- function(y,des,m,c,prvm) {
 
   #get names of linear terms
   lin<-colnames(des)

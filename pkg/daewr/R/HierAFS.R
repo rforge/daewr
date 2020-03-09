@@ -8,9 +8,9 @@
 ## require(daewr)
 ## if the data frame of x variables has column names of length 1 nm1 should be TRUE
 ## if the column namees of x are more than length 1 nm1 should be FALSE
-HierAFS <- function(y,x,m,c,step,nm1=TRUE) 
+HierAFS <- function(y,x,m,c,step) 
   {
-  #  require(daewr)
+  nm1=TRUE
   colx<-ncol(x)
   try(if(m+c!=colx) stop("m+c must equal the number of columns of x"))
   if(nm1==TRUE)

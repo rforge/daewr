@@ -20,7 +20,7 @@ fnextrm<-function(y,des,prvm) {
     hmt<-term
     if(iquad){hmt<-c(term,t3)}
     cmp<-FALSE
-    if(t2!= ""&&iquad!=TRUE){cmp=TRUE}
+    if(t2 !=  "" && iquad != TRUE){cmp=TRUE}
     if(cmp){hmt<-c(t1,t3,term)}
     hmt<-union(hmt,prvm)
     d2<-data.frame(y=y,des[,hmt])
@@ -40,11 +40,11 @@ fnextrm<-function(y,des,prvm) {
   t2<-substr(term,2,2)
   t3<-substr(term,3,3)
   iquad=FALSE
-  if(t1=="I"&& t2=="(") {iquad=TRUE}
+  if(t1=="I"& t2=="(") {iquad=TRUE}
   mt<-term
   if(iquad){mt<-c(term,t3)}
   cmp<-FALSE
-  if(t2!= ""&&iquad!=TRUE){cmp=TRUE}
+  if(t2!= ""&iquad!=TRUE){cmp=TRUE}
   if(cmp){mt<-c(t1,t3,term)}
   mt<-union(mt,prvm)
   return(mt)
