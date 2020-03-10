@@ -46,6 +46,7 @@ library(daewr)
 Design<-Altscreen(nfac=6,randomize=FALSE)
 Thickness<-c(4494,4592,4357,4489,4513,4483,4288,4448,4691,4671,4219,4271,4530,4632,4337,4391)
 HierAFS(Thickness,Design,m=0,c=6,step=3)
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{htest}
