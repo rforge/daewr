@@ -1,4 +1,6 @@
 AAZ19<-function(type="Normal",stype="unknown",INSL="II",LOTS="2-8",AQL="1.0"){
+  newvalue<-NULL
+  op <- options(changedop=newvalue)
   message("ANSI/ASQ Z1.9 converted from MIL-STD-414 using Gasciogne Method")
   dINSL <- menu(c("S-3", "S-4","I", "II", "III"), title = "\nWhat is the Inspection Level?")
   INSL
@@ -232,6 +234,7 @@ while(stype=="known") {
   k<-sqrt((S-1)/S)*qnorm(M,0,1,lower.tail=F)
   result<-c(S,k,M)
   names(result)<-c("n","k","M")
+  on.exit(options(op))
   return(result)
 stype="done" }
 }
