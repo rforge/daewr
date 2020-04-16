@@ -16,6 +16,13 @@ returns a data frame containing three columns 1)proportion defective=pd, 2)OC=pr
   \item{pd}{pd is a vector of values of the poprtion defective to b used in the OC ASN Curves}
 }
 \note{ This function calls the function AAZ14Double to get the specifications and recall and print the plan.}
+\examples{
+planm<-data.frame(n=c(50,50,50,50,50,50,50),c=c(0,1,3,5,7,10,13),r=c(4,6,8,10,11,12,14))
+Pnc<-seq(0,.08,.005)
+OCASNM<-OCASNZ4M(planm,Pnc)
+OCASNM$OC
+OCASNM$ASN
+}
 \author{ John S. Lawson \email{lawson@byu.edu}}
 
 \keyword{file}
