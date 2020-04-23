@@ -1,0 +1,58 @@
+---
+title: "**Model Robust Designs and Analysis with daewr**"
+output:  
+  pdf_document: default
+fig_width: 10 
+fig_height: 4
+vignette: >
+  \usepackage[utf8]{inputenc}
+---
+<!-- rmarkdown::html_vignette 
+%\VignetteIndexEntry{AQL Based Acceptance Sampling Schemes}
+  %\VignetteEngine{knitr::rmarkdown}--> 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Abstract
+
+Placket-Burman and other two-level and three-level designs with complex aliasing are useful for determining the subset of important factors and interactions in screening experiments. Complex aliasing means that main effects and quadratic effects (for three-level designs) are only partially confounded with two-factor interactions. The number of runs required by designs with complex aliasing is similar to the minimal number of runs required by resolution III fractional factorial designs. 
+
+  
+However, in resolution III fractional factorial designs, main effects are completely confounded with two-factor interactions and cannot be separated without further experiments. On the other hand, models fit to designs with complex aliasing can contain some main effects and some interactions since they are not completely confounded. Therefore, an appropriate subset of main effects and interactions can be found using forward stepwise regression. Hamada and Wu(1992) and Jones and Nachtsheim(2011) suggested using a forward stepwise regression that enforces model hierarchy. In other words, when an interaction or quadratic term is the next term to enter the model, the parent linear main effect(s) are automatically included.
+  
+ 
+ The \texttt{R} package \texttt{daewr}(lawson(2020)) contains functions for retrieving designs with complex aliasing such as Placket-Burman designs(1946), Definitive Screening designs(Jones and Nachtsheim(2011)), Model Robust designs(Li and Nachtsheim(2000)), and Alternative Screening designs in 16 runs(Jones and Mongomery(2010)). The package also contains functions for forward stepwise regression that preserves model hierarchy. This vignette illustrates the use of these functions, and the example analyses include data from previously published sources.
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r fig1, fig.height = 4, fig.width = 7}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## References
+Hamada, M. and Wu, C. F. J. 1992 "Analysis of Experiments with Complex Aliasing", *JQT*, 24, pp 130-137.
+
+Jones, B. and Nachtsheim 2011 "A Class of Three-level Designs for Definitive Screening in the Presence of Second-order Effects", *JQT*, 43, pp 1-15.
+
+Plackett, R. L. and Burman, J. P. 1946 "The Design of Optimum Multifactor Experiments", *Biometrika*, 33, pp. 305-325.
+
+Lawson, J. 2020 "\texttt{daewr}: Design and Analysis of Experiments with \texttt{R}", \texttt{R} package version 1.2-3, http://www.r-qualitytools.org.
+
+Li, W. and Nachtsheim, C. 2000 "Model Robust Factorial Designs", *Technometrics*, 42, pp 345-352.
+
+Jones, B. and Montgomery, D. C. 2010 "Alternatives to Resolution IV Screening Designs in 16 Runs", *Int. J. Experimental Design and Process Optimisation*,1,pp 285-295.
+
+Christensen, C., Betz, K. M. and Stein, M.S. 2013. *The Certified Quality Process Analyst Handbook*, 2nd Ed., ASQ Quality Press, Milwaukee Wisconsin. 

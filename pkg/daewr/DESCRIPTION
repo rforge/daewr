@@ -1,7 +1,7 @@
 Package: daewr
 Type: Package
 Title: Design and Analysis of Experiments with R
-Version: 1.2-3
+Version: 1.2-4
 Date: 2020-3-10
 Authors@R: c(
      person("John", "Lawson", email = "lawsonjsl7net@gmail.com", role=c("aut","cre")),
@@ -12,3 +12,7 @@ License: GPL-2
 Imports: lattice, FrF2, graphics, grDevices, stats, stringi
 LazyLoad: yes
 LazyData: yes
+License: GPL-2 
+LazyLoad: yes
+Suggests: R.rsp
+VignetteBuilder: R.rsp
