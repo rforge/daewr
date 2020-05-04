@@ -245,13 +245,15 @@ OCV<-V@paccept
 ASNV<-rep(75,length(OCASNS$pd))
 # Plot all four OC curves on the same graph
 par(mfcol=c(1,2))
-plot(OCASNS$pd,OCASNS$OC,type='l',xlab='Proportion Nonconforming',ylab="OC Curves",main="Figure 1",lty=1)
+plot(OCASNS$pd,OCASNS$OC,type='l',xlab='Proportion Nonconforming',ylab="OC Curves",
+     main="Figure 1",lty=1)
 lines(OCASND$pd,OCASND$OC,type='l',lty=2,col=2)
 lines(OCASNM$pd,OCASNM$OC,type='l',lty=4,col=4)
 lines(OCASNM$pd,OCV,type='l',lty=2,col=3)
 legend(.04,.95,c("S","D","M","V"),lty=c(1,2,4,2),col=c(1,2,4,3))
 # Plot all four ASN curves on the same graph
-plot(OCASNS$pd,OCASNS$ASN,type='l',lty=1,xlab='Proportion Nonconforming',ylab="ASN Curves",ylim=c(50,200))
+plot(OCASNS$pd,OCASNS$ASN,type='l',lty=1,xlab='Proportion Nonconforming',
+     ylab="ASN Curves",ylim=c(50,200))
 lines(OCASND$pd,OCASND$ASN,type='l',lty=2,col=2)
 lines(OCASNM$pd,OCASNM$ASN,type='l',lty=4,col=4)
 lines(OCASNM$pd,ASNV,type='l',lty=2,col=3)
