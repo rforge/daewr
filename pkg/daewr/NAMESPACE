@@ -14,8 +14,7 @@ importFrom("utils", "capture.output")
 importFrom("graphics", "abline", "lines", "plot", "text")
 importFrom("grDevices", "colorRampPalette")
 importFrom("stats", "coefficients", "cor", "lm", "median", "model.matrix", "pf", "qf", "qnorm", "qqnorm", "qt", "reformulate", "runif")
-export(bstep,
-       Fcrit,
+export(Fcrit,
        Fpower,
        Fpower1,
        Fpower2,
