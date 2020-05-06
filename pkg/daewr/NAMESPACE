@@ -9,12 +9,13 @@ importFrom("FrF2", "IAPlot")
 importFrom("FrF2", "MEPlot")
 importFrom("FrF2", "pb")
 importFrom("FrF2", "FrF2")
-importFrom("stats", "formula")
+importFrom("stats", "formula","var","anova")
 importFrom("utils", "capture.output")
 importFrom("graphics", "abline", "lines", "plot", "text")
 importFrom("grDevices", "colorRampPalette")
 importFrom("stats", "coefficients", "cor", "lm", "median", "model.matrix", "pf", "qf", "qnorm", "qqnorm", "qt", "reformulate", "runif")
-export(Fcrit,
+export(bstep,
+       Fcrit,
        Fpower,
        Fpower1,
        Fpower2,
@@ -42,8 +43,10 @@ export(Fcrit,
        EEw2s3,
        EEw3,
        fhstep,
+       fhstepDS,
        firstm,
        fnextrm,
+       fntrmDS,
        HierAFS,
        ihstep,
        colormap,
