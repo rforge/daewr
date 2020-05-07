@@ -2,7 +2,7 @@ Package: daewr
 Type: Package
 Title: Design and Analysis of Experiments with R
 Version: 1.2-4
-Date: 2020-3-10
+Date: 2020-5-7
 Authors@R: c(
      person("John", "Lawson", email = "lawsonjsl7net@gmail.com", role=c("aut","cre")),
      person("Gerhard", "Krennrich", email="krennri@uni-heidelberg.de", role="aut"))           
