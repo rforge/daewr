@@ -1,0 +1,17 @@
+import("lattice")
+import("stringi")
+importFrom("abind", "abind")
+importFrom("grDevices", "grey")
+importFrom("graphics", "axis", "par", "segments", "strheight","plot","abline","text")
+importFrom("stats", "coef")
+importFrom("FrF2", "IAPlot")
+importFrom("FrF2", "MEPlot")
+importFrom("FrF2", "pb")
+importFrom("FrF2", "FrF2")
+importFrom("stats", "formula","var","anova","cov")
+importFrom("utils", "capture.output")
+importFrom("stats", "coefficients", "cor", "lm", "median", "model.matrix", "pf", "qf", "qnorm", "qqnorm", "qt", "reformulate", "runif")
+export(MEWMA,
+       GVcontrol
+	   )
+exportPattern("^[[:alpha:]]+")
