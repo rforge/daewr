@@ -1,0 +1,189 @@
+---
+title: "Chapter 6 Solutions"
+author: "John Lawson"
+date: "8/4/2020"
+output: 
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+2. Assuming the target mean is 15 and the in-control standard deviation is $\sigma$= 2.0,
+
+a) make a cusum chart with h = 4 that will quickly detect a one $\sigma$ shift in the mean in the following Phase II data: 10.5 14.0 15.4 10.7 13.7 13.3 16.4 17.2 14.2 12.6 12.9 13.4 13.0 10.7 10.8 12.9 12.1 10.1 11.4 10.9
+
+
+Note: Using the argument se.shift=1 in the following code is equivalent to k = $\frac{1}{2}$, which will detect a one $\sigma$ shift in the mean quickly.
+
+```{r}
+library(qcc)
+x<-c(10.5,14.0,15.4,10.7,13.7,13.3,16.4,17.2,14.2,12.6,12.9,13.4,13.0,10.7,10.8,12.9,12.1,
+10.1,11.4,10.9)
+p2<-cusum(x,decision.interval=4,se.shift=1,center=15,std.dev=2.0)
+summary(p2)
+```
+
+b) Calculate the ARL$_0$ for the chart you constructed in part a).
+
+```{r}
+library(spc)
+xcusum.arl(0,k=.5,h=4,sided="two")
+```
+
+3. If $\lambda$ = .3, find the value of $L$ for an EWMA chart that would match the $ARL_0$ of the cusum chart you
+   made in question 2.
+   
+```{r}
+xewma.crit(mu=0,l=.3,L0=167.6838,sided="two")
+```
+
+Therefore, if $\lambda$=.3, the value of $L$ to match the $ARL_0$ of the Cusum chart with $k$=.5 and $h$=4 is $L$=2.6488.
+
+a) Make the EWMA chart of the data in exercise 2 using $\lambda=.3$ and the value of $L$ you determined above.
+
+```{r}
+library(qcc)
+ewma(x,center=15,std.dev=2.0,lambda=.3, nsigmas=2.6488)
+```
+
+b) Are the results the same as they were for the cusum char in exercise 2?
+
+Answer: Yes
+
+4. E.L. Grant(1946) showed the following data from a Chemical plant. The numbers represent the daily analyses of the percentages on unreacted lime (CaO) at an intermediate stage of a continuous process. 
+
+.24,.13,.11,.19,.16,.17,.13,.17,.10,.14,.16,.14,.17,.15,.20,.26,.16,0.0,.18,.18,.20,.11,.30,.21,.11,.17,.18,.13,.28,
+.16,.14,.16,.14,.10,.13,.20,.14,.10,.18,.11,.08,.12,.13,.12,.17,.10,.09
+
+a) Make a Cusum chart of the data assuming the in-control mean was $\mu=0.15$ and the in-control standard deviation $\sigma=.04$. use $k=\frac{1}{2}$ and $h=5$.
+
+```{r}
+CaO<-c(.24,.13,.11,.19,.16,.17,.13,.17,.10,.14,.16,.14,.17,.15,.20,.26,.16,0.0,.18,.18,
+       .20,.11,.30,.21,.11,.17,.18,.13,.28,.16,.14,.16,.14,.10,.13,.20,.14,.10,.18,.11,
+       .08,.12,.13,.12,.17,.10,.09)
+library(qcc)
+cusum(CaO,center=.15, std.dev=.04,decision.interval=5, se.shift=1)
+```
+
+b) Remake the chart using the head start feature. Is there any difference in the two charts?
+
+```{r} 
+library(qcc)
+cusum(CaO,center=.15, std.dev=.04,decision.interval=5, se.shift=1,head.start=2.5,sided="two")
+```
+
+Answer: The first point is closer to the control or decision limit when using the head start feature, but beyond observation 11, there is little difference. 
+
+c) When would you recommend using the head start feature with individual data from a chemical plant?
+
+Answer: If the process was adjusted after out of control points were found, I would recommend implementing the head start feature when monitoring data after the adjustment.
+
+d) Make a EWMA chart with the similar $ARL_0$ and the head start feature.
+
+Answer: From Table 6.6 $ARL_0$ for the cusum chart with $k$=.5, $h$=5 is 465.44, and an EWMA with $\lambda=.2$ and $L=2.938$ has a similar $ARL_0$ (i.e. 465.48). To incorporate the head start feature in the EWMA chart we need to recalculate the control limits using Eq (6.8) as shown in the code below.
+
+```{r}
+library(qcc)
+EW<-ewma(CaO,center=.15,std.dev=.04,lambda=.2,nsigmas=2.938,plot=FALSE)
+# recalculate limits using Eq (6.8) with f=.5 and a=[-2/log(1-f)-1]/15
+lambda<-.2
+L<-2.938
+center<-.15
+std.dev<-.04
+f<-.5
+a<-(-2/(log(1-f))-1)/19
+t<-1:47
+UCL<-center+(L*std.dev)*((1-(1-f)^(1+a*(t-1)) )*sqrt((lambda/(2-lambda))*(1-(1-lambda)^(2*t))) )
+LCL<-center-(L*std.dev)*((1-(1-f)^(1+a*(t-1)) )*sqrt((lambda/(2-lambda))*(1-(1-lambda)^(2*t))) )
+EW$limits[ ,1]<-LCL
+EW$limits[ ,2]<-UCL
+plot(EW)
+```
+
+e) Is the result the same as the Cusum chart used in b)
+
+Answer: Yes the first point is very close to the upper control limit (similar to the Cusum with headstart) but still within the limit since the point is black not red. 
+
+5. Using Borror et. al.(1998)’s method, make an EWMA control chart of the count data data in Table  6.10 assuming $\mu_0$ = 1.88 and using $\lambda$ = 0.2, and $A$ = 2.55.
+
+```{r}
+x<-c(3,1,4,1,3,1,5,4,5,5)
+Z<-c(rep(0,10))
+Z[1]<-.2*x[1]+.8*1.88
+for (i in 2:10) {
+Z[i]<-.2*x[i]+.8*Z[i-1]
+}
+M<-cbind(x,Z)
+colnames(M)<-c("x=count","Z=EWMA") 
+M
+UCL<-1.88+2.55*sqrt((.2*1.88/(2-.2))) 
+LCL<-1.88-2.55*sqrt((.2*1.88/(2-.2))) 
+cat("UCL = ",UCL," LCL = ",LCL)
+```
+
+a) do you detect any out of control signal? If so at what observation number?
+
+Answer: Yes at observation 9 UCL is exceeded.
+
+b) If $\mu_0$ = 4.0, and $\lambda$ = 0.3, what values of $A$ would you recomend to obtain an $ARL_0$ = 500 for an EWMA
+   chart made with Borror et. al.(1998)â€™s method.
+   
+Answer: about $A$=3.1 from Figure 2 in the Lecture Slides.
+
+
+6. Hawkins proposed a Cusum chart of $v_i=\frac{\sqrt{|y_i}-0.822}{0.349}$, where $y_i=(x_i-\mu)/\sigma$ to detect changes in the standard deviation of $x_i$. 
+
+a) Can you use an EWMA chart with individual observations to detect an increase in the standard deviation?
+
+Answer: Yes
+
+b) If so, do it with the data in the first column of Table 6.1 and assuming $\mu_0=50$ and $\sigma_0=5.$ 
+
+Answer: to get an EWMA chart with properties similar to Hawkins Cusum chart for detecting a 50\% increase in the standard deviation, use $\lambda=.05$ and $L=2.31934$ as shown in Table 6.8.
+
+```{r}
+library(qcc)
+x<-c(40.208,56.211,51.236,60.686,45.230,49.849,52.491,59.762,59.462,59.302,55.679,57.155,
+60.219,56.770,55.949)
+y<-(x-50)/5
+v<-(sqrt(abs(y))-.822)/.349
+e2<-ewma(v,center=0,std.dev=1,lambda=.05,nsigmas=2.31934)
+```
+
+7. The data in the data vector $\verb!x2!$ in the R package $\verb!IAcsSPCR!$ is from Phase II monitoring. The in-control mean and standard deviation are unknown, but the data in the vector $\verb!x1!$ in the R package $\verb!IAcsSPCR!$ are from a Phase I study after eliminating out-of control data points. 
+
+a) Find the 90th percentile of the multiplier $L$ for the control limits of a Phase II EWMA chart with $\lambda=.2$ so that the $ARL_0$ will be guaranteed to be at least 465.48 90% of the time.
+
+```{r}
+library(IAcsSPCR)
+data(x1)
+library(spcadjust)
+chart<-new("SPCEWMA",model=SPCModelNormal(Delta=0),lambda=.2)
+xihat<-xiofdata(chart,x1)
+str(xihat)
+str(xihat)
+cal<-SPCproperty(data=x1,nrep=1000,property="calARL",chart=chart,
+                 params=list(target=465.48),quiet=TRUE)
+cal
+## assuming the threshold = 1.213
+L<-1.213/sqrt(.2/(2-.2))
+L
+```
+
+b) Use the multiplier you found in a) to construct the EWMA control chart of the data in the vector $\verb!x2!$.
+
+```{r}
+library(IAcsSPCR)
+data(x2)
+library(qcc)
+ewma(x2,center=xihat$mu, std.dev=xihat$sd,lambda=.2,nsigmas=3.639)
+```
+
+
+
+c) Has the process remained in control during Phase II?
+
+Answer: No exceeds upper control limit at point 13.

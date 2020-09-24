@@ -1,0 +1,17 @@
+library(IAcsSPCR)
+data(x1)
+library(spcadjust)
+chart<-new("SPCEWMA",model=SPCModelNormal(Delta=0),lambda=.2)
+xihat<-xiofdata(chart,x1)
+str(xihat)
+cal<-SPCproperty(data=x1,nrep=1000,property="calARL",chart=chart,
+                 params=list(target=465.48),quiet=TRUE)
+cal
+## assuming the threshold = 1.213
+L<-1.213/sqrt(.2/(2-.2))
+L
+
+library(IAcsSPCR)
+data(x2)
+library(qcc)
+ewma(x2,center=xihat$mu, std.dev=xihat$sd,lambda=.2,nsigmas=3.639)

@@ -1,0 +1,584 @@
+#summary data from Montgomery p 519
+m<-20
+p<-2
+n<-10
+UCL<-((p*(m-1)*(n-1))/(m*n-m-p+1))*qf(1-.001,2,179)
+Tstrength<-c(115.25,115.91,115.05,116.21,115.90,115.55,114.98,115.25,116.15,115.92,115.75,114.90,116.01,115.83,115.29,115.63,115.47,115.58,115.72,115.40)
+Diameter<-c(1.04,1.06,1.09,1.05,1.07,1.06,1.05,1.10,1.09,1.05,0.99,1.06,1.05,1.07,1.11,1.04,1.03,1.05,1.06,1.04)
+s<-c(1.25,.8,.8,.87,1.26,.81,.81,.85,1.30,.82,.82,.90,1.02,.81,.81,.85,1.16,.8,.8,.73,
+     1.01,.76,.76,.8,1.25,.75,.75,.78,1.4,.8,.8,.83,1.19,.83,.83,.87,1.17,.95,.95,.86,
+     1.45,.78,.78,.79,1.24,.81,.81,.82,1.26,.72,.72,.55,1.17,.75,.75,.76,1.23,.82,.82,.89,
+     1.24,.83,.83,.91,1.20,.7,.7,.95,1.18,.79,.79,.83,1.31,.76,.76,.89,1.29,.68,.68,.85)
+S<-array(s,dim=c(2,2,20))
+Sbar<-apply(S, c(1,2), FUN=mean)
+xbbar1<-mean(Tstrength)
+xbbar2<-mean(Diameter)
+xbbar<-c(xbar1,xbar2)
+xbar<-cbind(Tstrength,Diameter)
+xbbarc<-xbar-t(matrix(rep(xbbar,20),nrow=2))
+T2<-diag(10*xbbarc %*% solve(Sbar) %*% t(xbbarc))
+plot(c(1:20),T2,type='b',ylim=c(0,15),xlab="sample number",main="T^2 Chart")
+abline(h=UCL)
+b<-round(UCL,digits=2)
+text(2,14.5,paste("UCL=",b))
+
+#make up example data
+set.seed(11)
+X11<-round(rnorm(4,25,4),digits=1)
+X12<-round(rnorm(4,25,4),digits=1)
+X13<-round(rnorm(4,25,4),digits=1)
+X14<-round(rnorm(4,25,4),digits=1)
+X15<-round(rnorm(4,25,4),digits=1)
+X16<-round(rnorm(4,25,4),digits=1)
+X17<-round(rnorm(4,25,4),digits=1)
+X18<-round(rnorm(4,25,4),digits=1)
+X19<-round(rnorm(4,25,4),digits=1)
+X110<-round(rnorm(4,25,4),digits=1)
+X21<-round(.15*X11+3+rnorm(4,3,1.5),digits=1)
+X22<-round(.15*X12+3+rnorm(4,3,1.5),digits=1)
+X23<-round(.15*X13+3+rnorm(4,3,1.5),digits=1)
+X24<-round(.15*X14+3+rnorm(4,3,1.5),digits=1)
+X25<-round(.15*X15+3+rnorm(4,3,1.5),digits=1)
+X26<-round(.15*X16+3+rnorm(4,3,1.5),digits=1)
+X27<-round(.15*X17+3+rnorm(4,3,1.5),digits=1)
+X28<-round(.15*X18+3+rnorm(4,3,1.5),digits=1)
+X29<-round(.15*X19+3+rnorm(4,3,1.5),digits=1)
+X210<-round(.15*X110+3+rnorm(4,3,1.5),digits=1)
+X31<-round(.2*X11+.1*X21+rnorm(4,2,2),digits=1)
+X32<-round(.2*X12+.1*X22+rnorm(4,2,2),digits=1)
+X33<-round(.2*X13+.1*X23+rnorm(4,2,2),digits=1)
+X34<-round(.2*X14+.1*X24+rnorm(4,2,2),digits=1)
+X35<-round(.2*X15+.1*X25+rnorm(4,2,2),digits=1)
+X36<-round(.2*X16+.1*X26+rnorm(4,2,2),digits=1)
+X37<-round(.2*X17+.1*X27+rnorm(4,2,2),digits=1)
+X38<-round(.2*X18+.1*X28+rnorm(4,2,2),digits=1)
+X39<-round(.2*X19+.1*X29+rnorm(4,2,2),digits=1)
+X310<-round(.2*X110+.1*X210+rnorm(4,2,2),digits=1)
+X1<-c(X11,X12,X13,X14,X15,X16,X17,X18,X19,X110)
+X2<-c(X21,X22,X23,X24,X25,X26,X27,X28,X29,X210)
+X3<-c(X31,X32,X33,X34,X35,X36,X37,X38,X39,X310)
+# check
+d<-data.frame(X1,X2,X3)
+cov(d)
+X1<-matrix(X1,ncol=4)
+X2<-matrix(X2,ncol=4)
+X3<-matrix(X3,ncol=4)
+# use mqcc to get T2 chart
+X<-list(X1=X1, X2=X2, X3=X3)
+q = mqcc(X, type = "T2")
+summary(q)
+
+t1<-matrix(c(X11,X21,X22),ncol=3)
+t2<-matrix(c(X12,X22,X32),ncol=3)
+t3<-matrix(c(X13,X23,X33),ncol=3)
+t4<-matrix(c(X14,X24,X34),ncol=3)
+t5<-matrix(c(X15,X25,X35),ncol=3)
+t6<-matrix(c(X16,X26,X36),ncol=3)
+t7<-matrix(c(X17,X27,X37),ncol=3)
+t8<-matrix(c(X18,X28,X38),ncol=3)
+t9<-matrix(c(X19,X29,X39),ncol=3)
+t10<-matrix(c(X110,X210,X310),ncol=3)
+S1<-cov(t1)
+S2<-cov(t2)
+S3<-cov(t3)
+S4<-cov(t4)
+S5<-cov(t5)
+S6<-cov(t6)
+S7<-cov(t7)
+S8<-cov(t8)
+S9<-cov(t9)
+S10<-cov(t10)
+S<-array(c(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10),dim=c(3,3,20))
+Sbar<-apply(S, c(1,2), FUN=mean)
+
+S<-sapply(t, c(1,2), FUN=cov)
+
+# do it manually like above to compare
+m<-10
+p<-3
+n<-4
+UCL<-((p*(m-1)*(n-1))/(m*n-m-p+1))*qf((1-.0027)^3,(p*(m-1)*(n-1)),(m*n-m-p+1))
+xbar1<-apply(X1,c(1),FUN=mean)
+xbar2<-apply(X2,c(1),FUN=mean)
+xbar3<-apply(X3,c(1),FUN=mean)
+
+
+S<-apply(X,c(1,2),FUN=cov)
+
+
+
+
+#data from Ryan(2000) Table 9.2
+library(qcc)
+X1 = matrix(c(72, 56, 55, 44, 97, 83, 47, 88, 57, 26, 46,
+              49, 71, 71, 67, 55, 49, 72, 61, 35, 84, 87, 73, 80, 26, 89, 66,
+              50, 47, 39, 27, 62, 63, 58, 69, 63, 51, 80, 74, 38, 79, 33, 22,
+              54, 48, 91, 53, 84, 41, 52, 63, 78, 82, 69, 70, 72, 55, 61, 62,
+              41, 49, 42, 60, 74, 58, 62, 58, 69, 46, 48, 34, 87, 55, 70, 94,
+              49, 76, 59, 57, 46), ncol = 4)
+X2 = matrix(c(23, 14, 13, 9, 36, 30, 12, 31, 14, 7, 10,
+              11, 22, 21, 18, 15, 13, 22, 19, 10, 30, 31, 22, 28, 10, 35, 18,
+              11, 10, 11, 8, 20, 16, 19, 19, 16, 14, 28, 20, 11, 28, 8, 6,
+              15, 14, 36, 14, 30, 8, 35, 19, 27, 31, 17, 18, 20, 16, 18, 16,
+              13, 10, 9, 16, 25, 15, 18, 16, 19, 10, 30, 9, 31, 15, 20, 35,
+              12, 26, 17, 14, 16), ncol = 4)
+X = list(X1 = X1, X2 = X2) # a list of matrices, one for each variable
+
+q = mqcc(X, type = "T2")
+summary(q)
+
+
+# Repeat this using data frame in IAcsSPCR
+library(IAcsSPCR)
+data(Ryan92)
+head(Ryan92,10)
+X1<-matrix(Ryan92$x1,nrow=20,byrow=TRUE)
+X2<-matrix(Ryan92$x2,nrow=20,byrow=TRUE)
+X = list(X1 = X1, X2 = X2) # a list of matrices, one for each variable
+library(qcc)
+q = mqcc(X, type = "T2",add.stats=TRUE,title="T2 chart for Data in Ryan's Table 9.2")
+summary(q)
+ellipseChart(q, show.id = TRUE)
+# duplicate UCL using Equation 7.3
+p<-2
+m<-20
+n<-4
+num<-m*n*p-m*p-n*p+p
+dfd<-m*n-m-p+1
+alpha<-1-(1-.0027)^p
+UCL<-(num/dfd)*qf(1-alpha,p,dfd)
+UCL
+# this is qcc mqcc result for UCL
+# Repeat eliminating out-of-control points
+library(IAcsSPCR)
+data(Ryan92)
+Ryan92s<-subset(Ryan92, subgroup != 10)
+Ryan92s<-subset(Ryan92s, subgroup != 20)
+# Reformat
+X1<-matrix(Ryan92s$x1,nrow=18,byrow=TRUE)
+X2<-matrix(Ryan92s$x2,nrow=18,byrow=TRUE)
+X = list(X1 = X1, X2 = X2) # a list of matrices, one for each variable
+library(qcc)
+q = mqcc(X, type = "T2",add.stats=TRUE,title="T2 chart for Data in Ryan's Table 9.2 eliminating Subgroups 10 and 20")
+summary(q)
+ellipseChart(q, show.id = TRUE)
+# 2nd iteration of removing out of control points
+Ryan92s<-subset(Ryan92s, subgroup != 6)
+X1<-matrix(Ryan92s$x1,nrow=17,byrow=TRUE)
+X2<-matrix(Ryan92s$x2,nrow=17,byrow=TRUE)
+X = list(X1 = X1, X2 = X2) # a list of matrices, one for each variable
+library(qcc)
+q = mqcc(X, type = "T2",add.stats=TRUE,title="T2 chart for Data in Ryan's Table 9.2 Eliminating Subgroups, 6, 10, and 20")
+summary(q)
+################ Phase II chart
+library(IAcsSPCR)
+data(Xnew)
+X1<-matrix(Xnew$x1,nrow=20,byrow=TRUE)
+X2<-matrix(Xnew$x2,nrow=20,byrow=TRUE)
+Xn = list(X1 = X1, X2 = X2) # a list of matrices, one for each variable
+library(qcc)
+q = mqcc(Xn, type = "T2",add.stats=TRUE,limits=FALSE,pred.limits=TRUE,center=c(61.47,18.04),
+         cov=matrix(c(241.75,105.38,105.38,50.91), 2, 2),
+         title="T2 chart for Phase II data")
+q = mqcc(X, type = "T2", newdata=Xn,add.stats=TRUE,limits=FALSE,pred.limits=TRUE,center=c(61.47,18.04),
+         cov=matrix(c(241.75,105.38,105.38,50.91), 2, 2),
+         title="T2 chart for Phase II data")
+
+qn = mqcc(X, type = "T2", newdata=Xn,add.stats=TRUE,limits=FALSE,pred.limits=TRUE,center=q$center,
+         cov=q$cov,
+         title="T2 chart for Phase II data")
+# duplicate UPL using Equation 7.5
+p<-2
+m<-17
+n<-4
+num<-p*(m+1)*(n-1)
+dfd<-m*n-m-p+1
+#alpha<-1-(1-.0027)^2
+alpha<-1-(1-.0027)^p
+UPL<-(num/dfd)*qf(1-alpha,p,dfd)
+UPL
+
+
+
+##########
+#generate my own phase II data
+require(MASS)
+xni <- mvrnorm(40, mu = q$center, Sigma = q$cov)
+xno <- mvrnorm(40, mu = 1.5*q$center, Sigma = q$cov)
+xn<-round(rbind(xni,xno),digits=0)
+Xnew<-data.frame(Ryan92$subgroup,xn)
+colnames(Xnew)<-c("subgroup","x1","x2")
+#######################################
+
+save(Xnew, file='Xnew.rda')
+
+##########Phase I with individual data
+library(IAcsSPCR)
+library(qcc)
+qi<-mqcc(DrugI[,-1],type="T2.single",add.stats=TRUE,
+           title="Historical data for Drug impurities")
+summary(qi)
+# calculate UCL using Equation 7.7
+p<-5
+m<-30
+n<-1
+num<-(m-1)^2
+denom<-m
+dfn<-p/2
+dfd<-(m-p-1)/2
+alpha<-1-(1-.0027)^p
+UCL<-(num/denom)*qbeta(1-alpha,dfn,dfd)
+UCL
+
+
+# Redo eliminating observation 8
+DrugIe<-DrugI[-8,]
+qi<-mqcc(DrugIe[,-1],type="T2.single",add.stats=TRUE,
+         title="Historical data for Drug impurities")
+summary(qi)
+# Redo eliminating observation 4
+DrugIe2<-DrugIe[-4,]
+qi<-mqcc(DrugIe2[,-1],type="T2.single",add.stats=TRUE,
+         title="Historical data for Drug impurities")
+summary(qi)
+## Read Phase II data
+DrugIn<-read.csv('DrugIn.csv')
+DrugIn<-DrugIn[1:10, ]
+save(DrugIn, file='DrugIn.rda')
+# Retrieve Phase II data
+library(IAcsSPCR)
+library(qcc)
+data(DrugIn)
+qn = mqcc(DrugIe2[,-1], type = "T2.single", newdata=DrugIn[,-1],add.stats=TRUE,limits=FALSE,pred.limits=TRUE,center=qi$center,
+          cov=qi$cov,
+          title="T2 Individual chart for Phase II data")
+summary(qn)
+# duplicate UPL using Equation 7.8
+p<-5
+m<-28
+n<-1
+num<-p*(m+1)*(m-1)
+denom<-m^2-m*p
+dfd<-m*n-p
+alpha<-1-(1-.0027)^p
+UPL<-(num/denom)*qf(1-alpha,p,dfd)
+UPL
+# Duplicate this using robust estimates
+require(MASS)
+rob <- cov.rob(DrugI[,-1])
+qr <- mqcc(DrugIn[1:10,-1], type = "T2.single", center = rob$center, cov = rob$cov,add.stats=TRUE,limits=FALSE,pred.limits=TRUE,
+           title="T2 Individual chart for Phase II data with robust estimates")
+summary(qr)
+# interpret out of control signal
+Sub8<-subset(DrugI,observation==8)
+meanv<-c(23.33333,74.0,625.66667,151,684.0)
+sub8<-c(Sub8$A,Sub8$B,Sub8$D,Sub8$E,Sub8$G)
+percentM<-100*(sub8/meanv)
+comp<-data.frame(colnames(Sub8[-1]),percentM)
+names(comp)<-c("Impurity","percent_of_mean")
+barplot(comp$percent_of_mean, names.arg = comp$Impurity,
+        ylab="Obs. 8  - percent of mean vector", xlab = "Impurity",ylim=c(0,180),col='grey')
+abline(h=100)
+
+# generate phase II data
+require(MASS)
+# generate new "in control" data
+Xnew <- list(X1 = matrix(NA, 10, 4), X2 =  matrix(NA, 10, 4))
+for(i in 1:4)
+{ x <- mvrnorm(10, mu = q$center, Sigma = q$cov)
+Xnew$X1[,i] <- x[,1]
+Xnew$X2[,i] <- x[,2]
+}
+# generate new "out of control" data
+Xnew <- list(X1 = matrix(NA, 10, 4), X2 =  matrix(NA, 10, 4))
+for(i in 1:4)
+{ x <- mvrnorm(10, mu = 1.2*q$center, Sigma = q$cov)
+Xnew$X1[,i] <- x[,1]
+Xnew$X2[,i] <- x[,2]
+}
+qq <- mqcc(X, type = "T2", newdata = Xnew, pred.limits = TRUE,confidence.level=(1-0.0027)^2)
+summary(qq)
+# duplicate UPL using Equation 7.5
+p<-2
+m<-17
+n<-4
+num<-p*(m+1)*(n-1)
+dfd<-m*n-m-p+1
+#alpha<-1-(1-.0027)^2
+alpha<-1-(1-.0027)^p
+UPL<-(num/dfd)*qf(1-alpha,p,dfd)
+UPL
+# this is qcc mqcc result for UPL
+
+
+devtools::install_github("luca-scr/qcc", build = TRUE, build_opts = c("--no-resave-data", "--no-manual"))
+
+
+
+nms<-colnames(Ryan92)
+for (i in 2:3) {nms[i]<-Ryan92[i]}
+
+
+
+data(RyanMultivar)
+
+qq <- mqcc(X, type = "T2", newdata = Xnew, pred.limits = TRUE)
+# generate new "out of control" data
+Xnew <- list(X1 = matrix(NA, 10, 4), X2 =  matrix(NA, 10, 4))
+for(i in 1:4)
+{ x <- mvrnorm(10, mu = 1.2*q$center, Sigma = q$cov)
+Xnew$X1[,i] <- x[,1]
+Xnew$X2[,i] <- x[,2]
+}
+qq <- mqcc(X, type = "T2", newdata = Xnew, pred.limits = TRUE)
+summary(qq)
+
+summary(qq)
+
+# duplicate UCL
+p<-2
+m<-20
+n<-4
+num<-m*n*p-m*p-n*p+p
+dfd<-m*n-m-p+1
+alpha<-1-(1-.0027)^2
+# check
+F<-11.03976/(num/dfd)
+qf(1-alpha,2,59)
+UCL<-(num/dfd)*qf(1-alpha,2,59) # this is close to qcc mqcc result
+#match Minitab
+alpha<-.0027
+UCL<-(num/dfd)*qf(1-alpha,2,59) # this matches Minitab
+# read table 9.2 from a file
+Ryan92<-read.csv('Ryan92.csv')
+save(Ryan92, file='Ryan92.rda')
+
+# individual data
+library(qcc)
+data(boiler)
+var(boiler$t1)
+
+q <- mqcc(boiler, type = "T2.single", confidence.level = 0.999)
+summary(q)
+
+require(MASS)
+# generate new "in control" data
+Xnew <- list(X1 = matrix(NA, 10, 4), X2 =  matrix(NA, 10, 4))
+for(i in 1:4)
+{ x <- mvrnorm(10, mu = q$center, Sigma = q$cov)
+Xnew$X1[,i] <- x[,1]
+Xnew$X2[,i] <- x[,2]
+}
+qq <- mqcc(X, type = "T2", newdata = Xnew, pred.limits = TRUE)
+summary(qq)
+
+# generate new "out of control" data
+Xnew <- list(X1 = matrix(NA, 10, 4), X2 =  matrix(NA, 10, 4))
+for(i in 1:4)
+{ x <- mvrnorm(10, mu = 1.2*q$center, Sigma = q$cov)
+Xnew$X1[,i] <- x[,1]
+Xnew$X2[,i] <- x[,2]
+}
+qq <- mqcc(X, type = "T2", newdata = Xnew, pred.limits = TRUE)
+summary(qq)
+
+# Multivariate ewma from mvdlab
+library(mvdalab)
+mewma(iris[, -5], phase = 1, lambda = 0.2, conf = c(0.95, 0.99),
+      asymptotic.form = FALSE)
+#compare to minitab
+write.csv(iris[-5],file="iris.csv")
+
+
+
+
+
+
+
+
+
+
+
+# Radial plot
+#This on seems good
+
+library(plotly)
+
+fig <- plot_ly(
+  type = 'scatterpolar',
+  fill = 'toself'
+)
+fig <- fig %>%
+  add_trace(
+    r = c(39, 28, 8, 7, 28, 39),
+    theta = c('A','B','C', 'D', 'E', 'A'),
+    name = 'Group A'
+  )
+fig <- fig %>%
+  add_trace(
+    r = c(1.5, 10, 39, 31, 15, 1.5),
+    theta = c('A','B','C', 'D', 'E', 'A'),
+    name = 'Group B'
+  )
+fig <- fig %>%
+  layout(
+    polar = list(
+      radialaxis = list(
+        visible = T,
+        range = c(0,50)
+      )
+    )
+  )
+
+fig
+
+# Drug Impurities data
+DrugI<-read.csv('DrugImp.csv')
+save(DrugI, file='DrugI.rda')
+
+library(IAcsSPCR)
+data(DrugI)
+qi<-mqcc(DrugI[,-1],type="T2.single",add.stats=TRUE,title="Historical data for Drug impurities")
+summary(qi)
+# duplicate UCL using Equation 7.7
+p<-5
+m<-30
+n<-1
+alpha<-1-(1-.0027)^p
+UCL<-(((m-1)^2)/m)*qbeta(alpha,p/2,(m-p-1)/2,ncp=0,lower.tail=FALSE)
+UCL
+# matches mqcc
+
+# MEWMA example
+x1<-c(-1.19,0.12,-1.69,0.3,0.89,0.82,-0.3,0.63,1.56,1.46)
+x2<-c(0.59,0.9,0.4,0.46,-0.75,0.98,2.28,1.75,1.58,3.05)
+Lowry<-data.frame(x1,x2) #data from Lowry, Woodall, Champ and Rigdon
+save(Lowry, file='Lowry.rda')
+# copy article formulas myself
+r<-.1
+Sigma<-matrix(c(1, .5, .5, 1), nrow=2, ncol=2)
+SigmaZ<-(r/(2-r))*Sigma
+XL<-data.frame(x1,x2)
+Z<-matrix(c(rep(0,22)),nrow=11,ncol=2)
+X<-matrix(c(x1,x2),nrow=10,ncol=2)
+# Calculate Zi
+Z[1,]<-r*X[1,]
+for(i in 2:10){
+  Z[i,]<-r*X[i,]+(1-r)*Z[i-1, ] # (2.4)
+}
+# Calculate T2
+T2<-c(rep(0,10))
+for (i in 1:10) {
+  T2[i]<-t(Z[i,])%*%solve(SigmaZ)%*%Z[i,]
+}
+# make the plot
+plot(c(1:10), T2, type='b',xlab="i",ylab="T^2", main="MEWMA with ARL0=200")
+abline(h=8.66)
+text(1.5,9.5,'h4=8.66')
+# calculate h4 for ARL0=200
+h4<-c(8.66,10.79,12.73,14.56,22.67)
+p<-c(2,3,4,5,10)
+xv<-(p-4.8)
+ch4<-lm(h4~xv)
+summary(ch4)
+plot(xv, h4,pch=16, ylab = "h4 ", cex.lab = 1.3, col = "red" )
+abline(lm(h4 ~ xv), col = "blue")
+xv2<-xv*xv
+ch42<-lm(h4~xv+xv2)
+summary(ch42)
+plot(xv, h4,pch=16, ylab = "h4 ", cex.lab = 1.3, col = "red" )
+abline(lm(h4 ~ xv+xv2), col = "blue")
+par(mfrow=c(2,2))
+plot(ch42)
+par(mfrow=c(1,1))
+plot(p,ch42$fitted.values,type="l")
+points(p,h4)
+lines(p,ch4$fitted.values,col='red')
+beta0 <- ch42[["coefficients"]][1]
+beta1 <- ch42[["coefficients"]][2]
+beta2 <- ch42[["coefficients"]][3]
+xp<-c(6,7,8,9)-c(4.8,4.8,4.8,4.8)
+ph4<-round(beta0+beta1*xp+beta2*xp*xp,digits=2)
+beta0 <- ch4[["coefficients"]][1]
+beta1 <- ch4[["coefficients"]][2]
+ph4<-round(beta0+beta1*xp,digits=2)
+
+limits<-data.frame(c(p[1:4],c(6,7,8,9),p[5]),c(h4[1:4],ph4,h4[5]))
+colnames(limits)<-c("p","h4")
+
+predict.lm(ch4)
+ch4$fitted.values
+predict(200)
+library(mvdalab)
+me<-mewma(X,phase=1,lambda=.1,conf=c(.95, .99),asymptotic.form=FALSE)
+me$Results
+
+
+#use for exercise
+library(IAcsSPCR)
+data(DrugI)
+me<-mewma(DrugI[,-1],phase=1,lambda=.2,asymptotic.form=FALSE)
+DrugIe<-DrugI[-4,]
+me<-mewma(DrugIe[,-1],lambda=.1,conf=c(.95, .99),asymptotic.form=FALSE)
+
+
+################
+x1<-c(-1.19,0.12,-1.69,0.3,0.89,0.82,-0.3,0.63,1.56,1.46)
+x2<-c(0.59,0.9,0.4,0.46,-0.75,0.98,2.28,1.75,1.58,3.05)
+X<-rbind(x1,x2)
+R<-matrix(c(.1,0,.0,.1),ncol=2,nrow=2,byrow=TRUE)
+I<-diag(2)
+Z<-matrix( c(rep(0,2*ncol(X))),ncol=ncol(X),nrow=2,byrow=TRUE)
+Z[,1]<-R%*%c(X[,1])
+for (i in 2:10){
+  Z[,i]<-R%*%X[,i] - (I-R)%*%X[,i-1]
+}
+##############################
+
+library(IAcsSPCR)
+data(Lowry)
+Sigma<-matrix(c(1, .5, .5, 1), nrow=2, ncol=2)
+mu<-c(0,0)
+MEWMA(Lowry,Sigma,mu,Sigma.known=TRUE)
+library(qcc)
+mqcc(Lowry,type="T2.single",mu,Sigma)
+
+
+MEWMA(Lowry,Sigma.known=FALSE)
+mu5<-c(-.314,.32)
+Sig5<-matrix(c(1.16893, -.3243, -.3243, 1.16893), nrow=2, ncol=2)
+MEWMA(Lowry,Sig5,mu5,Sigma.known=TRUE)
+
+################### example MEWMA from chapter 7 ###############
+# generate random sample of 10  multivariate obs. with p=4 and mean vector muv
+ muv<-c(25,10,17,15)
+ covm<-matrix(c(5.40000000, .09583333, 2.0583333, 3.12916667,
+                 .09583333, .48400000,  .2963333, .26866667,
+                 2.05833333, .29633333, 2.2993333, 1.00566667,
+                 3.12916667, .26866667, 1.0056667,
+                 2.23100000),nrow=4,ncol=4 )
+
+# generate a random sample of 10 obs. with p=4 and mean vector muv and covariance matrix covm
+library(MASS)
+set.seed(100)
+d1<-mvrnorm(10,mu=muv,Sigma=covm)
+# generate random sample of 15 multivariate obs. with p=4 and mean vector muv+mud and
+#  covariance matrix covm
+mud<-c(1.1,.6,1.0,.70)
+d2<-mvrnorm(15,mu=muv+mud,Sigma=covm)
+# calculate the noncentrality parameter for detecting the mean shift
+lambda<-mud%*%solve(covm)%*%mud
+lambda
+
+
+#combine the data in the combined data the mean shifts after the 10th obs.
+D<-rbind(d1,d2)
+D
+
+# MEWMA chart assuming mean and covariance matrix is known
+library(IAcsSPCR)
+MEWMA(D,covm,muv,Sigma.known=TRUE)
+
+library(IAcsSPCR)
+data(Ryan92)
+GVcontrol(Ryan92,20,4,2)

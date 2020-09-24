@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1590511684891.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3646521627",
+    "id" : "63C5A11C",
+    "lastKnownWriteTime" : 1591740910,
+    "last_content_update" : 1591740911004,
+    "path" : "C:/Users/lawso/Box/IntroAccSampSPC/MultivariateCC.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "584,0",
+        "scrollLine" : "545"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
