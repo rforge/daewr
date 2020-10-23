@@ -2,7 +2,7 @@
 \alias{MEWMA}
 \title{Multivariate EWMA Control Chart
 }
-\description{This function computes a MEWMA using the method of Lowry, Woodall, Champ  and Rigdon. The number of variables p must be between 2 and 10, r is fixed at .1
+\description{Computes a MEWMA using the method of Lowry, Woodall, Champ  and Rigdon. The number of variables p must be between 2 and 10, r is fixed at .1
 }
 \usage{
 MEWMA(X,Sigma=NULL,mu=NULL,Sigma.known=TRUE)
@@ -25,7 +25,7 @@ input this is a logical variable, if TRUE, Sigma, and mu must be supplied, if FA
 \value{returned list containing the upper control limit, the covariance matrix and the mean vector.
 }
 \references{
-Lowry, Woodall, Champ  and Rigdon--Technometrics (34)1992 pp 46--53.
+Lowry, Woodall, Champ  and Rigdon(1992)<https://www.tandfonline.com/doi/abs/10.1080/00401706.1992.10485232.>
 }
 \author{
 John Lawson

@@ -1,10 +1,10 @@
 Package: IAcsSPCR
 Type: Package
-Title: Data Frames and Functions for the Book "An Introduction to Acceptance Sampling and SPC with R"
-Version: 0.1.5
+Title: Data and Functions for "An Intro. to Accept. Samp. & SPC/R"
+Version: 0.1.6
 Author: John Lawson
 Maintainer: John Lawson <lawsonjsl7net@gmail.com>
-Description: Contains Data frames and functions used in the book "An Introduction to Acceptance Sampling and SPC with R", This book is available electronically on Bookdown.org. A physical copy will be published by CRC Press.
+Description: Contains data frames and functions used in the book "An Introduction to Acceptance Sampling and SPC with R". This book is available electronically at <https://bookdown.org/>. A physical copy will be published by CRC Press.
 License: GPL-2 
 Imports: lattice, FrF2, graphics, grDevices, stats, stringi, abind
 Encoding: UTF-8
