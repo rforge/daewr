@@ -11,7 +11,8 @@ importFrom("FrF2", "FrF2")
 importFrom("stats", "formula","var","anova","cov")
 importFrom("utils", "capture.output")
 importFrom("stats", "coefficients", "cor", "lm", "median", "model.matrix", "pf", "qf", "qnorm", "qqnorm", "qt", "reformulate", "runif")
-export(MEWMA,
+export(arl,
+       MEWMA,
        GVcontrol
 	   )
 exportPattern("^[[:alpha:]]+")
