@@ -39,11 +39,6 @@ MEWMA(Lowry,Sigma.known=FALSE)
 mu5<-c(-.314,.32)
 Sig5<-matrix(c(1.16893, -.3243, -.3243, 1.16893), nrow=2, ncol=2)
 MEWMA(Lowry,Sig5,mu5,Sigma.known=TRUE)
-
-## The function is currently defined as
-function(X,Sigma=NULL,mu=NULL,Sigma.known=TRUE)
-{
-  }
 }
 \keyword{ htest }% use one of  RShowDoc("KEYWORDS")
 
