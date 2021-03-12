@@ -22,6 +22,6 @@ Design and Analysis of Experiments with R, by John Lawson, CRC/Chapman Hall
 }
 
 \examples{
-data(web)
+data(Rations)
 }
 \keyword{datasets}
